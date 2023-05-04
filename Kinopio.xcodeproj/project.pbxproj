@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A08D27542A0384FB0076B0B0 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F3CCEC2A03836F00F86AC7 /* Color.swift */; };
 		A09799942A035734009F4681 /* KinopioApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09799932A035734009F4681 /* KinopioApp.swift */; };
 		A09799962A035734009F4681 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09799952A035734009F4681 /* ContentView.swift */; };
 		A09799982A035736009F4681 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A09799972A035736009F4681 /* Assets.xcassets */; };
@@ -36,6 +37,7 @@
 		A09799B02A035B59009F4681 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		A09799B22A035C9C009F4681 /* WKWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKWebView.swift; sourceTree = "<group>"; };
 		A0F3CCEA2A0378FD00F86AC7 /* web.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = web.js; sourceTree = "<group>"; };
+		A0F3CCEC2A03836F00F86AC7 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 				A09799A92A035A4C009F4681 /* UserDefaults.swift */,
 				A09799AE2A035B08009F4681 /* WebViewWrapper+JSMethod.swift */,
 				A09799B22A035C9C009F4681 /* WKWebView.swift */,
+				A0F3CCEC2A03836F00F86AC7 /* Color.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -191,6 +194,7 @@
 				A09799AD2A035AA1009F4681 /* Haptics.swift in Sources */,
 				A09799A52A035964009F4681 /* Configuration.swift in Sources */,
 				A09799AA2A035A4C009F4681 /* UserDefaults.swift in Sources */,
+				A08D27542A0384FB0076B0B0 /* Color.swift in Sources */,
 				A09799A72A0359EC009F4681 /* WebViewWrapper.swift in Sources */,
 				A09799962A035734009F4681 /* ContentView.swift in Sources */,
 				A09799B12A035B59009F4681 /* Storage.swift in Sources */,

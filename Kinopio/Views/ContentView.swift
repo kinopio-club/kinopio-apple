@@ -3,10 +3,11 @@ import SwiftUI
 struct ContentView: View {
     @State var isLoading = false
     @SceneStorage("url") var url = Configuration.webURL
+    @SceneStorage("backgroundColor") var backgroundColor = Color.white
     
     var body: some View {
         ZStack {
-            Color.white.ignoresSafeArea(.all)
+            backgroundColor.ignoresSafeArea(.all)
             
             if isLoading {
                 VStack {
@@ -19,7 +20,8 @@ struct ContentView: View {
             
             WebViewWrapper(
                 url: $url,
-                isLoading: $isLoading
+                isLoading: $isLoading,
+                backgroundColor: $backgroundColor
             )
             .ignoresSafeArea(edges: [.bottom, .horizontal])
             .opacity(isLoading ? 0 : 1)
