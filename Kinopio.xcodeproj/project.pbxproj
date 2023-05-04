@@ -11,6 +11,14 @@
 		A09799962A035734009F4681 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09799952A035734009F4681 /* ContentView.swift */; };
 		A09799982A035736009F4681 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A09799972A035736009F4681 /* Assets.xcassets */; };
 		A097999C2A035736009F4681 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A097999B2A035736009F4681 /* Preview Assets.xcassets */; };
+		A09799A52A035964009F4681 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09799A42A035964009F4681 /* Configuration.swift */; };
+		A09799A72A0359EC009F4681 /* WebViewWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09799A62A0359EC009F4681 /* WebViewWrapper.swift */; };
+		A09799AA2A035A4C009F4681 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09799A92A035A4C009F4681 /* UserDefaults.swift */; };
+		A09799AD2A035AA1009F4681 /* Haptics.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09799AC2A035AA1009F4681 /* Haptics.swift */; };
+		A09799AF2A035B08009F4681 /* WebViewWrapper+JSMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09799AE2A035B08009F4681 /* WebViewWrapper+JSMethod.swift */; };
+		A09799B12A035B59009F4681 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09799B02A035B59009F4681 /* Storage.swift */; };
+		A09799B32A035C9C009F4681 /* WKWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09799B22A035C9C009F4681 /* WKWebView.swift */; };
+		A0F3CCEB2A0378FD00F86AC7 /* web.js in Resources */ = {isa = PBXBuildFile; fileRef = A0F3CCEA2A0378FD00F86AC7 /* web.js */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +28,14 @@
 		A09799972A035736009F4681 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A09799992A035736009F4681 /* Kinopio.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Kinopio.entitlements; sourceTree = "<group>"; };
 		A097999B2A035736009F4681 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		A09799A42A035964009F4681 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
+		A09799A62A0359EC009F4681 /* WebViewWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewWrapper.swift; sourceTree = "<group>"; };
+		A09799A92A035A4C009F4681 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
+		A09799AC2A035AA1009F4681 /* Haptics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Haptics.swift; sourceTree = "<group>"; };
+		A09799AE2A035B08009F4681 /* WebViewWrapper+JSMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WebViewWrapper+JSMethod.swift"; sourceTree = "<group>"; };
+		A09799B02A035B59009F4681 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
+		A09799B22A035C9C009F4681 /* WKWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKWebView.swift; sourceTree = "<group>"; };
+		A0F3CCEA2A0378FD00F86AC7 /* web.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = web.js; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,7 +69,12 @@
 			isa = PBXGroup;
 			children = (
 				A09799932A035734009F4681 /* KinopioApp.swift */,
-				A09799952A035734009F4681 /* ContentView.swift */,
+				A09799AB2A035A68009F4681 /* Views */,
+				A09799A82A035A3F009F4681 /* Extensions */,
+				A09799A42A035964009F4681 /* Configuration.swift */,
+				A09799AC2A035AA1009F4681 /* Haptics.swift */,
+				A09799B02A035B59009F4681 /* Storage.swift */,
+				A0F3CCE92A03786700F86AC7 /* JavaScript */,
 				A09799972A035736009F4681 /* Assets.xcassets */,
 				A09799992A035736009F4681 /* Kinopio.entitlements */,
 				A097999A2A035736009F4681 /* Preview Content */,
@@ -67,6 +88,33 @@
 				A097999B2A035736009F4681 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		A09799A82A035A3F009F4681 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A09799A92A035A4C009F4681 /* UserDefaults.swift */,
+				A09799AE2A035B08009F4681 /* WebViewWrapper+JSMethod.swift */,
+				A09799B22A035C9C009F4681 /* WKWebView.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		A09799AB2A035A68009F4681 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A09799952A035734009F4681 /* ContentView.swift */,
+				A09799A62A0359EC009F4681 /* WebViewWrapper.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A0F3CCE92A03786700F86AC7 /* JavaScript */ = {
+			isa = PBXGroup;
+			children = (
+				A0F3CCEA2A0378FD00F86AC7 /* web.js */,
+			);
+			path = JavaScript;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -128,6 +176,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A097999C2A035736009F4681 /* Preview Assets.xcassets in Resources */,
+				A0F3CCEB2A0378FD00F86AC7 /* web.js in Resources */,
 				A09799982A035736009F4681 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -139,8 +188,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A09799AD2A035AA1009F4681 /* Haptics.swift in Sources */,
+				A09799A52A035964009F4681 /* Configuration.swift in Sources */,
+				A09799AA2A035A4C009F4681 /* UserDefaults.swift in Sources */,
+				A09799A72A0359EC009F4681 /* WebViewWrapper.swift in Sources */,
 				A09799962A035734009F4681 /* ContentView.swift in Sources */,
+				A09799B12A035B59009F4681 /* Storage.swift in Sources */,
+				A09799B32A035C9C009F4681 /* WKWebView.swift in Sources */,
 				A09799942A035734009F4681 /* KinopioApp.swift in Sources */,
+				A09799AF2A035B08009F4681 /* WebViewWrapper+JSMethod.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
