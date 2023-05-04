@@ -36,6 +36,12 @@ struct WebViewWrapper: UIViewRepresentable {
         webView.uiDelegate = context.coordinator
         webView.scrollView.contentInsetAdjustmentBehavior = .never
         
+#if DEBUG
+        if #available(iOS 16.4, *) {
+            webView.isInspectable = true
+        }
+#endif
+        
         context.coordinator.urlChangedObservation = webView.observe(\.url, options: .new) { view, change in
             if let url = view.url {
                 self.url = url
