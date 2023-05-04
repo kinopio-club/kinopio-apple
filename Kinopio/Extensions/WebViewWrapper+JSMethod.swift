@@ -4,6 +4,7 @@ extension WebViewWrapper {
     
     enum JSMethod: String, CaseIterable {
         case onLogout
+        case setApiKey
         
         // UISelectionFeedbackGenerator
         case onSelectionFeedback
@@ -33,6 +34,10 @@ extension WebViewWrapper {
                     )
                     
                     Storage.reset()
+                case .setApiKey:
+                    if let token = message.body as? String {
+                        Storage.setToken(token)
+                    }
                 case .onSelectionFeedback:
                     Haptics.selectionChanged()
                 case .onRigidImpactFeedback:
