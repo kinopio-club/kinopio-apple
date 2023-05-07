@@ -7,9 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A0129DF82A07D69F00FDE908 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A08EE7682A07411700D7AADB /* MainInterface.storyboard */; };
 		A08D27542A0384FB0076B0B0 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F3CCEC2A03836F00F86AC7 /* Color.swift */; };
 		A08EE75E2A0740EF00D7AADB /* Sequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08EE75C2A0740EF00D7AADB /* Sequence.swift */; };
 		A08EE75F2A0740EF00D7AADB /* NSItemProvider+Async.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08EE75D2A0740EF00D7AADB /* NSItemProvider+Async.swift */; };
+		A08EE7672A07411700D7AADB /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08EE7662A07411700D7AADB /* ShareViewController.swift */; };
+		A08EE76E2A07411800D7AADB /* KinopioShareExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = A08EE7642A07411700D7AADB /* KinopioShareExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		A08EE7732A07415700D7AADB /* NSItemProvider+Async.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08EE75D2A0740EF00D7AADB /* NSItemProvider+Async.swift */; };
+		A08EE7742A07415A00D7AADB /* Sequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08EE75C2A0740EF00D7AADB /* Sequence.swift */; };
+		A08EE7782A07516C00D7AADB /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09799A42A035964009F4681 /* Configuration.swift */; };
 		A09799942A035734009F4681 /* KinopioApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09799932A035734009F4681 /* KinopioApp.swift */; };
 		A09799962A035734009F4681 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09799952A035734009F4681 /* ContentView.swift */; };
 		A09799982A035736009F4681 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A09799972A035736009F4681 /* Assets.xcassets */; };
@@ -24,9 +30,37 @@
 		A0F3CCEB2A0378FD00F86AC7 /* web.js in Resources */ = {isa = PBXBuildFile; fileRef = A0F3CCEA2A0378FD00F86AC7 /* web.js */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		A08EE76C2A07411800D7AADB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A09799882A035734009F4681 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A08EE7632A07411700D7AADB;
+			remoteInfo = KinopioShareExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A08EE7722A07411800D7AADB /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				A08EE76E2A07411800D7AADB /* KinopioShareExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		A08EE75C2A0740EF00D7AADB /* Sequence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sequence.swift; sourceTree = "<group>"; };
 		A08EE75D2A0740EF00D7AADB /* NSItemProvider+Async.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSItemProvider+Async.swift"; sourceTree = "<group>"; };
+		A08EE7642A07411700D7AADB /* KinopioShareExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = KinopioShareExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		A08EE7662A07411700D7AADB /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
+		A08EE7692A07411800D7AADB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		A08EE76B2A07411800D7AADB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A09799902A035734009F4681 /* Kinopio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kinopio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A09799932A035734009F4681 /* KinopioApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KinopioApp.swift; sourceTree = "<group>"; };
 		A09799952A035734009F4681 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -45,6 +79,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		A08EE7612A07411700D7AADB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A097998D2A035734009F4681 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -55,10 +96,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A08EE7652A07411700D7AADB /* KinopioShareExtension */ = {
+			isa = PBXGroup;
+			children = (
+				A08EE7662A07411700D7AADB /* ShareViewController.swift */,
+				A08EE7682A07411700D7AADB /* MainInterface.storyboard */,
+				A08EE76B2A07411800D7AADB /* Info.plist */,
+			);
+			path = KinopioShareExtension;
+			sourceTree = "<group>";
+		};
 		A09799872A035734009F4681 = {
 			isa = PBXGroup;
 			children = (
 				A09799922A035734009F4681 /* Kinopio */,
+				A08EE7652A07411700D7AADB /* KinopioShareExtension */,
 				A09799912A035734009F4681 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -67,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				A09799902A035734009F4681 /* Kinopio.app */,
+				A08EE7642A07411700D7AADB /* KinopioShareExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -129,6 +182,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		A08EE7632A07411700D7AADB /* KinopioShareExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A08EE76F2A07411800D7AADB /* Build configuration list for PBXNativeTarget "KinopioShareExtension" */;
+			buildPhases = (
+				A08EE7602A07411700D7AADB /* Sources */,
+				A08EE7612A07411700D7AADB /* Frameworks */,
+				A08EE7622A07411700D7AADB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KinopioShareExtension;
+			productName = KinopioShareExtension;
+			productReference = A08EE7642A07411700D7AADB /* KinopioShareExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		A097998F2A035734009F4681 /* Kinopio */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = A097999F2A035736009F4681 /* Build configuration list for PBXNativeTarget "Kinopio" */;
@@ -136,10 +206,12 @@
 				A097998C2A035734009F4681 /* Sources */,
 				A097998D2A035734009F4681 /* Frameworks */,
 				A097998E2A035734009F4681 /* Resources */,
+				A08EE7722A07411800D7AADB /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				A08EE76D2A07411800D7AADB /* PBXTargetDependency */,
 			);
 			name = Kinopio;
 			productName = Kinopio;
@@ -156,6 +228,9 @@
 				LastSwiftUpdateCheck = 1430;
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
+					A08EE7632A07411700D7AADB = {
+						CreatedOnToolsVersion = 14.3;
+					};
 					A097998F2A035734009F4681 = {
 						CreatedOnToolsVersion = 14.3;
 					};
@@ -175,11 +250,20 @@
 			projectRoot = "";
 			targets = (
 				A097998F2A035734009F4681 /* Kinopio */,
+				A08EE7632A07411700D7AADB /* KinopioShareExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		A08EE7622A07411700D7AADB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A0129DF82A07D69F00FDE908 /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A097998E2A035734009F4681 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -193,6 +277,17 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		A08EE7602A07411700D7AADB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A08EE7672A07411700D7AADB /* ShareViewController.swift in Sources */,
+				A08EE7782A07516C00D7AADB /* Configuration.swift in Sources */,
+				A08EE7732A07415700D7AADB /* NSItemProvider+Async.swift in Sources */,
+				A08EE7742A07415A00D7AADB /* Sequence.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A097998C2A035734009F4681 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -214,7 +309,81 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		A08EE76D2A07411800D7AADB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A08EE7632A07411700D7AADB /* KinopioShareExtension */;
+			targetProxy = A08EE76C2A07411800D7AADB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		A08EE7682A07411700D7AADB /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A08EE7692A07411800D7AADB /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
+		A08EE7702A07411800D7AADB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = KinopioShareExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = KinopioShareExtension;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = club.kinopio.app.KinopioShareExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A08EE7712A07411800D7AADB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = KinopioShareExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = KinopioShareExtension;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = club.kinopio.app.KinopioShareExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 		A097999D2A035736009F4681 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -327,9 +496,11 @@
 		A09799A02A035736009F4681 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Kinopio/Kinopio.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Kinopio/Preview Content\"";
@@ -365,9 +536,11 @@
 		A09799A12A035736009F4681 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Kinopio/Kinopio.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Kinopio/Preview Content\"";
@@ -403,6 +576,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		A08EE76F2A07411800D7AADB /* Build configuration list for PBXNativeTarget "KinopioShareExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A08EE7702A07411800D7AADB /* Debug */,
+				A08EE7712A07411800D7AADB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		A097998B2A035734009F4681 /* Build configuration list for PBXProject "Kinopio" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
