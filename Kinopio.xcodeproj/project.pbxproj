@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		A08D27542A0384FB0076B0B0 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F3CCEC2A03836F00F86AC7 /* Color.swift */; };
+		A08EE75E2A0740EF00D7AADB /* Sequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08EE75C2A0740EF00D7AADB /* Sequence.swift */; };
+		A08EE75F2A0740EF00D7AADB /* NSItemProvider+Async.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08EE75D2A0740EF00D7AADB /* NSItemProvider+Async.swift */; };
 		A09799942A035734009F4681 /* KinopioApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09799932A035734009F4681 /* KinopioApp.swift */; };
 		A09799962A035734009F4681 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09799952A035734009F4681 /* ContentView.swift */; };
 		A09799982A035736009F4681 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A09799972A035736009F4681 /* Assets.xcassets */; };
@@ -23,6 +25,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A08EE75C2A0740EF00D7AADB /* Sequence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sequence.swift; sourceTree = "<group>"; };
+		A08EE75D2A0740EF00D7AADB /* NSItemProvider+Async.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSItemProvider+Async.swift"; sourceTree = "<group>"; };
 		A09799902A035734009F4681 /* Kinopio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kinopio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A09799932A035734009F4681 /* KinopioApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KinopioApp.swift; sourceTree = "<group>"; };
 		A09799952A035734009F4681 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -99,6 +103,8 @@
 				A09799AE2A035B08009F4681 /* WebViewWrapper+JSMethod.swift */,
 				A09799B22A035C9C009F4681 /* WKWebView.swift */,
 				A0F3CCEC2A03836F00F86AC7 /* Color.swift */,
+				A08EE75D2A0740EF00D7AADB /* NSItemProvider+Async.swift */,
+				A08EE75C2A0740EF00D7AADB /* Sequence.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -192,11 +198,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				A09799AD2A035AA1009F4681 /* Haptics.swift in Sources */,
+				A08EE75F2A0740EF00D7AADB /* NSItemProvider+Async.swift in Sources */,
 				A09799A52A035964009F4681 /* Configuration.swift in Sources */,
 				A09799AA2A035A4C009F4681 /* UserDefaults.swift in Sources */,
 				A08D27542A0384FB0076B0B0 /* Color.swift in Sources */,
 				A09799A72A0359EC009F4681 /* WebViewWrapper.swift in Sources */,
 				A09799962A035734009F4681 /* ContentView.swift in Sources */,
+				A08EE75E2A0740EF00D7AADB /* Sequence.swift in Sources */,
 				A09799B12A035B59009F4681 /* Storage.swift in Sources */,
 				A09799B32A035C9C009F4681 /* WKWebView.swift in Sources */,
 				A09799942A035734009F4681 /* KinopioApp.swift in Sources */,
