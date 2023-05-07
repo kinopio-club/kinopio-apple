@@ -64,15 +64,24 @@ class ShareViewController: UIViewController {
             webView.layer.cornerRadius = 10
             webView.layer.masksToBounds = true
             
-            webView.load(URLRequest(url: Configuration.webURL.appendingPathComponent("/add")))
+            var request = URLRequest(url: Configuration.webURL.appendingPathComponent("/add"))
+            webView.load(request)
             
-            self.view = webView
+            self.view.addSubview(webView)
+            
+            webView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+            webView.translatesAutoresizingMaskIntoConstraints = false
+            webView.heightAnchor.constraint(equalToConstant: 240).isActive = true
+            webView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1).isActive = true
             
             view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
             view.translatesAutoresizingMaskIntoConstraints = false
-            view.topAnchor.constraint(equalTo: view.superview!.topAnchor).isActive = true
+            view.backgroundColor = .black.withAlphaComponent(0.01)
+            
             view.bottomAnchor.constraint(equalTo: view.superview!.bottomAnchor).isActive = true
+            view.topAnchor.constraint(equalTo: view.superview!.topAnchor).isActive = true
             view.widthAnchor.constraint(equalTo: view.superview!.widthAnchor, multiplier: 1).isActive = true
+            view.keyboardLayoutGuide.topAnchor.constraint(equalToSystemSpacingBelow: webView.bottomAnchor, multiplier: 1).isActive = true
             
         }
         
