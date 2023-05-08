@@ -55,6 +55,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		A07D72B42A0939AA00FBD477 /* KinopioShareExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KinopioShareExtension.entitlements; sourceTree = "<group>"; };
 		A08EE75C2A0740EF00D7AADB /* Sequence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sequence.swift; sourceTree = "<group>"; };
 		A08EE75D2A0740EF00D7AADB /* NSItemProvider+Async.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSItemProvider+Async.swift"; sourceTree = "<group>"; };
 		A08EE7642A07411700D7AADB /* KinopioShareExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = KinopioShareExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -99,6 +100,7 @@
 		A08EE7652A07411700D7AADB /* KinopioShareExtension */ = {
 			isa = PBXGroup;
 			children = (
+				A07D72B42A0939AA00FBD477 /* KinopioShareExtension.entitlements */,
 				A08EE7662A07411700D7AADB /* ShareViewController.swift */,
 				A08EE7682A07411700D7AADB /* MainInterface.storyboard */,
 				A08EE76B2A07411800D7AADB /* Info.plist */,
@@ -332,9 +334,10 @@
 		A08EE7702A07411800D7AADB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = KinopioShareExtension/KinopioShareExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = VWRQY6FSN5;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = KinopioShareExtension/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = KinopioShareExtension;
@@ -359,9 +362,10 @@
 		A08EE7712A07411800D7AADB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = KinopioShareExtension/KinopioShareExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = VWRQY6FSN5;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = KinopioShareExtension/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = KinopioShareExtension;
@@ -504,7 +508,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Kinopio/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = VWRQY6FSN5;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -544,7 +548,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Kinopio/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = VWRQY6FSN5;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
