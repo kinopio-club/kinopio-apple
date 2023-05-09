@@ -64,7 +64,7 @@ class ShareViewController: UIViewController {
             webView.layer.cornerRadius = 10
             webView.layer.masksToBounds = true
             
-            var request = URLRequest(url: Configuration.webURL.appendingPathComponent("/add"))
+            var request = URLRequest(url: Configuration.webURL.appendingPathComponent("add"))
             webView.load(request)
             
             self.view.addSubview(webView)
