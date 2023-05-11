@@ -140,6 +140,9 @@ extension WebViewWrapper.Coordinator: WKNavigationDelegate {
     }
     
     func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
+        if let url = webView.url {
+            self.url = url
+        }
         isLoading = true
     }
     
