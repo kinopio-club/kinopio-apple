@@ -4,6 +4,7 @@ struct ContentView: View {
     @State var isLoading = false
     @SceneStorage("url") var url = Configuration.webURL
     @SceneStorage("backgroundColor") var backgroundColor = Color.white
+    @State private var showAddToInput = false
     
     var body: some View {
         ZStack {
@@ -26,6 +27,15 @@ struct ContentView: View {
             .ignoresSafeArea(edges: [.bottom, .horizontal])
             .opacity(isLoading ? 0 : 1)
             .animation(.default, value: isLoading)
+            .sheet(isPresented: $showAddToInput) {
+                AddToInboxView()
+                    .presentationDetents([.height(240)])
+            }
+            .onOpenURL { url in
+                if url.path == ("/add") {
+                    showAddToInput = true
+                }
+            }
         }
     }
     

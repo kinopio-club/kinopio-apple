@@ -8,6 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		A0129DF82A07D69F00FDE908 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A08EE7682A07411700D7AADB /* MainInterface.storyboard */; };
+		A08A654D2A2672E200186F8F /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A08A654C2A2672E200186F8F /* WidgetKit.framework */; };
+		A08A654F2A2672E200186F8F /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A08A654E2A2672E200186F8F /* SwiftUI.framework */; };
+		A08A65522A2672E200186F8F /* KinopioWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08A65512A2672E200186F8F /* KinopioWidgetBundle.swift */; };
+		A08A65542A2672E200186F8F /* InboxWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08A65532A2672E200186F8F /* InboxWidget.swift */; };
+		A08A655A2A2672E300186F8F /* WidgetExtensionExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = A08A654A2A2672E200186F8F /* WidgetExtensionExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		A08A655F2A26736900186F8F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A09799972A035736009F4681 /* Assets.xcassets */; };
+		A08A65602A26736900186F8F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A09799972A035736009F4681 /* Assets.xcassets */; };
+		A08A65632A27234B00186F8F /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08A65622A27234B00186F8F /* AvatarView.swift */; };
+		A08A65642A27234B00186F8F /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08A65622A27234B00186F8F /* AvatarView.swift */; };
+		A08A65652A27234B00186F8F /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08A65622A27234B00186F8F /* AvatarView.swift */; };
+		A08A65662A275B1600186F8F /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F3CCEC2A03836F00F86AC7 /* Color.swift */; };
+		A08A65672A275B1700186F8F /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F3CCEC2A03836F00F86AC7 /* Color.swift */; };
+		A08A65692A27A21400186F8F /* AddToInboxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08A65682A27A21400186F8F /* AddToInboxView.swift */; };
+		A08A656A2A27A21400186F8F /* AddToInboxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08A65682A27A21400186F8F /* AddToInboxView.swift */; };
+		A08A656B2A27A21400186F8F /* AddToInboxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08A65682A27A21400186F8F /* AddToInboxView.swift */; };
+		A08A656C2A27A4B100186F8F /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09799A42A035964009F4681 /* Configuration.swift */; };
 		A08D27542A0384FB0076B0B0 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F3CCEC2A03836F00F86AC7 /* Color.swift */; };
 		A08EE75E2A0740EF00D7AADB /* Sequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08EE75C2A0740EF00D7AADB /* Sequence.swift */; };
 		A08EE75F2A0740EF00D7AADB /* NSItemProvider+Async.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08EE75D2A0740EF00D7AADB /* NSItemProvider+Async.swift */; };
@@ -31,6 +47,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		A08A65582A2672E300186F8F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A09799882A035734009F4681 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A08A65492A2672E200186F8F;
+			remoteInfo = WidgetExtensionExtension;
+		};
 		A08EE76C2A07411800D7AADB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = A09799882A035734009F4681 /* Project object */;
@@ -47,6 +70,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
+				A08A655A2A2672E300186F8F /* WidgetExtensionExtension.appex in Embed Foundation Extensions */,
 				A08EE76E2A07411800D7AADB /* KinopioShareExtension.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
@@ -57,6 +81,14 @@
 /* Begin PBXFileReference section */
 		A07D72B42A0939AA00FBD477 /* KinopioShareExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KinopioShareExtension.entitlements; sourceTree = "<group>"; };
 		A07D72B52A09DD8E00FBD477 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		A08A654A2A2672E200186F8F /* WidgetExtensionExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = WidgetExtensionExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		A08A654C2A2672E200186F8F /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		A08A654E2A2672E200186F8F /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		A08A65512A2672E200186F8F /* KinopioWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KinopioWidgetBundle.swift; sourceTree = "<group>"; };
+		A08A65532A2672E200186F8F /* InboxWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InboxWidget.swift; sourceTree = "<group>"; };
+		A08A65572A2672E300186F8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A08A65622A27234B00186F8F /* AvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarView.swift; sourceTree = "<group>"; };
+		A08A65682A27A21400186F8F /* AddToInboxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToInboxView.swift; sourceTree = "<group>"; };
 		A08EE75C2A0740EF00D7AADB /* Sequence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sequence.swift; sourceTree = "<group>"; };
 		A08EE75D2A0740EF00D7AADB /* NSItemProvider+Async.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSItemProvider+Async.swift"; sourceTree = "<group>"; };
 		A08EE7642A07411700D7AADB /* KinopioShareExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = KinopioShareExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -81,6 +113,15 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		A08A65472A2672E200186F8F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A08A654F2A2672E200186F8F /* SwiftUI.framework in Frameworks */,
+				A08A654D2A2672E200186F8F /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A08EE7612A07411700D7AADB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -98,6 +139,42 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A08A654B2A2672E200186F8F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A08A654C2A2672E200186F8F /* WidgetKit.framework */,
+				A08A654E2A2672E200186F8F /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A08A65502A2672E200186F8F /* WidgetExtension */ = {
+			isa = PBXGroup;
+			children = (
+				A08A65512A2672E200186F8F /* KinopioWidgetBundle.swift */,
+				A08A65532A2672E200186F8F /* InboxWidget.swift */,
+				A08A65572A2672E300186F8F /* Info.plist */,
+			);
+			path = WidgetExtension;
+			sourceTree = "<group>";
+		};
+		A08A655E2A26731B00186F8F /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				A08A65612A27233C00186F8F /* View */,
+				A09799972A035736009F4681 /* Assets.xcassets */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		A08A65612A27233C00186F8F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A08A65622A27234B00186F8F /* AvatarView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		A08EE7652A07411700D7AADB /* KinopioShareExtension */ = {
 			isa = PBXGroup;
 			children = (
@@ -112,8 +189,11 @@
 		A09799872A035734009F4681 = {
 			isa = PBXGroup;
 			children = (
+				A08A655E2A26731B00186F8F /* Shared */,
 				A09799922A035734009F4681 /* Kinopio */,
 				A08EE7652A07411700D7AADB /* KinopioShareExtension */,
+				A08A65502A2672E200186F8F /* WidgetExtension */,
+				A08A654B2A2672E200186F8F /* Frameworks */,
 				A09799912A035734009F4681 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -123,6 +203,7 @@
 			children = (
 				A09799902A035734009F4681 /* Kinopio.app */,
 				A08EE7642A07411700D7AADB /* KinopioShareExtension.appex */,
+				A08A654A2A2672E200186F8F /* WidgetExtensionExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -138,7 +219,6 @@
 				A09799AC2A035AA1009F4681 /* Haptics.swift */,
 				A09799B02A035B59009F4681 /* Storage.swift */,
 				A0F3CCE92A03786700F86AC7 /* JavaScript */,
-				A09799972A035736009F4681 /* Assets.xcassets */,
 				A09799992A035736009F4681 /* Kinopio.entitlements */,
 				A097999A2A035736009F4681 /* Preview Content */,
 			);
@@ -171,6 +251,7 @@
 			children = (
 				A09799952A035734009F4681 /* ContentView.swift */,
 				A09799A62A0359EC009F4681 /* WebViewWrapper.swift */,
+				A08A65682A27A21400186F8F /* AddToInboxView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -186,6 +267,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		A08A65492A2672E200186F8F /* WidgetExtensionExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A08A655D2A2672E400186F8F /* Build configuration list for PBXNativeTarget "WidgetExtensionExtension" */;
+			buildPhases = (
+				A08A65462A2672E200186F8F /* Sources */,
+				A08A65472A2672E200186F8F /* Frameworks */,
+				A08A65482A2672E200186F8F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WidgetExtensionExtension;
+			productName = WidgetExtensionExtension;
+			productReference = A08A654A2A2672E200186F8F /* WidgetExtensionExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		A08EE7632A07411700D7AADB /* KinopioShareExtension */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = A08EE76F2A07411800D7AADB /* Build configuration list for PBXNativeTarget "KinopioShareExtension" */;
@@ -216,6 +314,7 @@
 			);
 			dependencies = (
 				A08EE76D2A07411800D7AADB /* PBXTargetDependency */,
+				A08A65592A2672E300186F8F /* PBXTargetDependency */,
 			);
 			name = Kinopio;
 			productName = Kinopio;
@@ -232,6 +331,9 @@
 				LastSwiftUpdateCheck = 1430;
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
+					A08A65492A2672E200186F8F = {
+						CreatedOnToolsVersion = 14.3;
+					};
 					A08EE7632A07411700D7AADB = {
 						CreatedOnToolsVersion = 14.3;
 					};
@@ -255,15 +357,25 @@
 			targets = (
 				A097998F2A035734009F4681 /* Kinopio */,
 				A08EE7632A07411700D7AADB /* KinopioShareExtension */,
+				A08A65492A2672E200186F8F /* WidgetExtensionExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		A08A65482A2672E200186F8F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A08A65602A26736900186F8F /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A08EE7622A07411700D7AADB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A08A655F2A26736900186F8F /* Assets.xcassets in Resources */,
 				A0129DF82A07D69F00FDE908 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -281,14 +393,30 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		A08A65462A2672E200186F8F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A08A656C2A27A4B100186F8F /* Configuration.swift in Sources */,
+				A08A65522A2672E200186F8F /* KinopioWidgetBundle.swift in Sources */,
+				A08A65672A275B1700186F8F /* Color.swift in Sources */,
+				A08A65542A2672E200186F8F /* InboxWidget.swift in Sources */,
+				A08A65652A27234B00186F8F /* AvatarView.swift in Sources */,
+				A08A656B2A27A21400186F8F /* AddToInboxView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A08EE7602A07411700D7AADB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				A08EE7672A07411700D7AADB /* ShareViewController.swift in Sources */,
+				A08A656A2A27A21400186F8F /* AddToInboxView.swift in Sources */,
 				A08EE7782A07516C00D7AADB /* Configuration.swift in Sources */,
 				A08EE7732A07415700D7AADB /* NSItemProvider+Async.swift in Sources */,
 				A08EE7742A07415A00D7AADB /* Sequence.swift in Sources */,
+				A08A65642A27234B00186F8F /* AvatarView.swift in Sources */,
+				A08A65662A275B1600186F8F /* Color.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,6 +424,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A08A65632A27234B00186F8F /* AvatarView.swift in Sources */,
 				A09799AD2A035AA1009F4681 /* Haptics.swift in Sources */,
 				A08EE75F2A0740EF00D7AADB /* NSItemProvider+Async.swift in Sources */,
 				A09799A52A035964009F4681 /* Configuration.swift in Sources */,
@@ -303,6 +432,7 @@
 				A08D27542A0384FB0076B0B0 /* Color.swift in Sources */,
 				A09799A72A0359EC009F4681 /* WebViewWrapper.swift in Sources */,
 				A09799962A035734009F4681 /* ContentView.swift in Sources */,
+				A08A65692A27A21400186F8F /* AddToInboxView.swift in Sources */,
 				A08EE75E2A0740EF00D7AADB /* Sequence.swift in Sources */,
 				A09799B12A035B59009F4681 /* Storage.swift in Sources */,
 				A09799B32A035C9C009F4681 /* WKWebView.swift in Sources */,
@@ -314,6 +444,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		A08A65592A2672E300186F8F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A08A65492A2672E200186F8F /* WidgetExtensionExtension */;
+			targetProxy = A08A65582A2672E300186F8F /* PBXContainerItemProxy */;
+		};
 		A08EE76D2A07411800D7AADB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = A08EE7632A07411700D7AADB /* KinopioShareExtension */;
@@ -333,6 +468,65 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		A08A655B2A2672E400186F8F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = VWRQY6FSN5;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WidgetExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = WidgetExtension;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = club.kinopio.app.WidgetExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A08A655C2A2672E400186F8F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = VWRQY6FSN5;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WidgetExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = WidgetExtension;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = club.kinopio.app.WidgetExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 		A08EE7702A07411800D7AADB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -584,6 +778,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		A08A655D2A2672E400186F8F /* Build configuration list for PBXNativeTarget "WidgetExtensionExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A08A655B2A2672E400186F8F /* Debug */,
+				A08A655C2A2672E400186F8F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		A08EE76F2A07411800D7AADB /* Build configuration list for PBXNativeTarget "KinopioShareExtension" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

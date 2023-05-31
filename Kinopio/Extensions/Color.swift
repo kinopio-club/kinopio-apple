@@ -6,6 +6,20 @@ typealias PlatformColor = NSColor
 #endif
 
 extension Color {
+    static let secondaryBackground = Color("SecondaryBackground")
+}
+
+extension Color {
+    var isDark: Bool {
+        var r, g, b, a: CGFloat
+        (r, g, b, a) = (0, 0, 0, 0)
+        UIColor(self).getRed(&r, green: &g, blue: &b, alpha: &a)
+        let luminance = 0.2126 * r + 0.7152 * g + 0.0722 * b
+        return  luminance < 0.40
+    }
+}
+
+extension Color {
     init(hex string: String) {
         var string: String = string.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
         if string.hasPrefix("#") {
