@@ -52,6 +52,15 @@ class ShareViewController: UIViewController {
             
             let contentController = WKUserContentController()
             contentController.add(self, name: "onAdded")
+            var source = "localStorage.clear()"
+            
+            // MARK: Inject API Key
+            if let token = Storage.getToken() {
+                source = "localStorage.setItem('user', JSON.stringify({\"apiKey\": \"\(token)\"}))"
+            }
+            
+            let script = WKUserScript(source: source, injectionTime: .atDocumentStart, forMainFrameOnly: true)
+            contentController.addUserScript(script)
             
             let config = WKWebViewConfiguration()
             config.userContentController = contentController
