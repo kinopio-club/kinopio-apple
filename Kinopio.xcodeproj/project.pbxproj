@@ -43,10 +43,31 @@
 		A09799AF2A035B08009F4681 /* WebViewWrapper+JSMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09799AE2A035B08009F4681 /* WebViewWrapper+JSMethod.swift */; };
 		A09799B12A035B59009F4681 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09799B02A035B59009F4681 /* Storage.swift */; };
 		A09799B32A035C9C009F4681 /* WKWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09799B22A035C9C009F4681 /* WKWebView.swift */; };
+		A0A113792A2F7B6D00C5114B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A113782A2F7B6D00C5114B /* User.swift */; };
+		A0A1137A2A2F7B6D00C5114B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A113782A2F7B6D00C5114B /* User.swift */; };
+		A0A1137B2A2F7B6D00C5114B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A113782A2F7B6D00C5114B /* User.swift */; };
 		A0A1137D2A2F80C700C5114B /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09799A92A035A4C009F4681 /* UserDefaults.swift */; };
 		A0A1137E2A2F80C700C5114B /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09799A92A035A4C009F4681 /* UserDefaults.swift */; };
 		A0A1137F2A2F80EA00C5114B /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09799B02A035B59009F4681 /* Storage.swift */; };
 		A0A113802A2F80EB00C5114B /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09799B02A035B59009F4681 /* Storage.swift */; };
+		A0A113822A30483B00C5114B /* Space.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A113812A30483B00C5114B /* Space.swift */; };
+		A0A113832A30483B00C5114B /* Space.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A113812A30483B00C5114B /* Space.swift */; };
+		A0A113842A30483B00C5114B /* Space.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A113812A30483B00C5114B /* Space.swift */; };
+		A0A113862A30489500C5114B /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A113852A30489400C5114B /* Card.swift */; };
+		A0A113872A30489500C5114B /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A113852A30489400C5114B /* Card.swift */; };
+		A0A113882A30489500C5114B /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A113852A30489400C5114B /* Card.swift */; };
+		A0A1138A2A30492800C5114B /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A113892A30492800C5114B /* Networking.swift */; };
+		A0A1138B2A30492800C5114B /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A113892A30492800C5114B /* Networking.swift */; };
+		A0A1138C2A30492800C5114B /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A113892A30492800C5114B /* Networking.swift */; };
+		A0A1138F2A30499600C5114B /* Networking+Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A1138E2A30499600C5114B /* Networking+Error.swift */; };
+		A0A113902A30499600C5114B /* Networking+Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A1138E2A30499600C5114B /* Networking+Error.swift */; };
+		A0A113912A30499600C5114B /* Networking+Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A1138E2A30499600C5114B /* Networking+Error.swift */; };
+		A0A113932A304A0700C5114B /* Networking+APIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A113922A304A0700C5114B /* Networking+APIResponse.swift */; };
+		A0A113942A304A0700C5114B /* Networking+APIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A113922A304A0700C5114B /* Networking+APIResponse.swift */; };
+		A0A113952A304A0700C5114B /* Networking+APIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A113922A304A0700C5114B /* Networking+APIResponse.swift */; };
+		A0A113972A304A5300C5114B /* JSONDecodeer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A113962A304A5300C5114B /* JSONDecodeer.swift */; };
+		A0A113982A304A5300C5114B /* JSONDecodeer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A113962A304A5300C5114B /* JSONDecodeer.swift */; };
+		A0A113992A304A5300C5114B /* JSONDecodeer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A113962A304A5300C5114B /* JSONDecodeer.swift */; };
 		A0F3CCEB2A0378FD00F86AC7 /* web.js in Resources */ = {isa = PBXBuildFile; fileRef = A0F3CCEA2A0378FD00F86AC7 /* web.js */; };
 /* End PBXBuildFile section */
 
@@ -112,6 +133,14 @@
 		A09799AE2A035B08009F4681 /* WebViewWrapper+JSMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WebViewWrapper+JSMethod.swift"; sourceTree = "<group>"; };
 		A09799B02A035B59009F4681 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		A09799B22A035C9C009F4681 /* WKWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKWebView.swift; sourceTree = "<group>"; };
+		A0A113782A2F7B6D00C5114B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		A0A113812A30483B00C5114B /* Space.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Space.swift; sourceTree = "<group>"; };
+		A0A113852A30489400C5114B /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		A0A113892A30492800C5114B /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
+		A0A1138E2A30499600C5114B /* Networking+Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Networking+Error.swift"; sourceTree = "<group>"; };
+		A0A113922A304A0700C5114B /* Networking+APIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Networking+APIResponse.swift"; sourceTree = "<group>"; };
+		A0A113962A304A5300C5114B /* JSONDecodeer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONDecodeer.swift; sourceTree = "<group>"; };
+		A0A1139A2A3052F800C5114B /* WidgetExtensionExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WidgetExtensionExtension.entitlements; sourceTree = "<group>"; };
 		A0F3CCEA2A0378FD00F86AC7 /* web.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = web.js; sourceTree = "<group>"; };
 		A0F3CCEC2A03836F00F86AC7 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -165,7 +194,9 @@
 		A08A655E2A26731B00186F8F /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				A0A1138D2A30497700C5114B /* Networking */,
 				A0A1137C2A2F80BE00C5114B /* Extensions */,
+				A0A113772A2F7B5E00C5114B /* Models */,
 				A08A65612A27233C00186F8F /* View */,
 				A09799B02A035B59009F4681 /* Storage.swift */,
 				A09799972A035736009F4681 /* Assets.xcassets */,
@@ -195,6 +226,7 @@
 		A09799872A035734009F4681 = {
 			isa = PBXGroup;
 			children = (
+				A0A1139A2A3052F800C5114B /* WidgetExtensionExtension.entitlements */,
 				A08A655E2A26731B00186F8F /* Shared */,
 				A09799922A035734009F4681 /* Kinopio */,
 				A08EE7652A07411700D7AADB /* KinopioShareExtension */,
@@ -243,7 +275,6 @@
 			children = (
 				A09799AE2A035B08009F4681 /* WebViewWrapper+JSMethod.swift */,
 				A09799B22A035C9C009F4681 /* WKWebView.swift */,
-				A0F3CCEC2A03836F00F86AC7 /* Color.swift */,
 				A08EE75D2A0740EF00D7AADB /* NSItemProvider+Async.swift */,
 				A08EE75C2A0740EF00D7AADB /* Sequence.swift */,
 			);
@@ -260,12 +291,34 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		A0A113772A2F7B5E00C5114B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A0A113782A2F7B6D00C5114B /* User.swift */,
+				A0A113812A30483B00C5114B /* Space.swift */,
+				A0A113852A30489400C5114B /* Card.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		A0A1137C2A2F80BE00C5114B /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				A09799A92A035A4C009F4681 /* UserDefaults.swift */,
+				A0A113962A304A5300C5114B /* JSONDecodeer.swift */,
+				A0F3CCEC2A03836F00F86AC7 /* Color.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		A0A1138D2A30497700C5114B /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				A0A113892A30492800C5114B /* Networking.swift */,
+				A0A1138E2A30499600C5114B /* Networking+Error.swift */,
+				A0A113922A304A0700C5114B /* Networking+APIResponse.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 		A0F3CCE92A03786700F86AC7 /* JavaScript */ = {
@@ -409,14 +462,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0A113842A30483B00C5114B /* Space.swift in Sources */,
 				A08A656C2A27A4B100186F8F /* Configuration.swift in Sources */,
 				A08A65522A2672E200186F8F /* KinopioWidgetBundle.swift in Sources */,
+				A0A1138C2A30492800C5114B /* Networking.swift in Sources */,
 				A08A65672A275B1700186F8F /* Color.swift in Sources */,
 				A08A65542A2672E200186F8F /* InboxWidget.swift in Sources */,
 				A0A1137E2A2F80C700C5114B /* UserDefaults.swift in Sources */,
 				A0A113802A2F80EB00C5114B /* Storage.swift in Sources */,
+				A0A113992A304A5300C5114B /* JSONDecodeer.swift in Sources */,
 				A08A65652A27234B00186F8F /* AvatarView.swift in Sources */,
+				A0A113912A30499600C5114B /* Networking+Error.swift in Sources */,
 				A08A656B2A27A21400186F8F /* AddToInboxView.swift in Sources */,
+				A0A1137B2A2F7B6D00C5114B /* User.swift in Sources */,
+				A0A113882A30489500C5114B /* Card.swift in Sources */,
+				A0A113952A304A0700C5114B /* Networking+APIResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -424,15 +484,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0A113902A30499600C5114B /* Networking+Error.swift in Sources */,
 				A08EE7672A07411700D7AADB /* ShareViewController.swift in Sources */,
+				A0A113982A304A5300C5114B /* JSONDecodeer.swift in Sources */,
+				A0A113832A30483B00C5114B /* Space.swift in Sources */,
 				A08A656A2A27A21400186F8F /* AddToInboxView.swift in Sources */,
+				A0A1138B2A30492800C5114B /* Networking.swift in Sources */,
 				A08EE7782A07516C00D7AADB /* Configuration.swift in Sources */,
 				A08EE7732A07415700D7AADB /* NSItemProvider+Async.swift in Sources */,
+				A0A1137A2A2F7B6D00C5114B /* User.swift in Sources */,
 				A0A1137D2A2F80C700C5114B /* UserDefaults.swift in Sources */,
+				A0A113872A30489500C5114B /* Card.swift in Sources */,
 				A08EE7742A07415A00D7AADB /* Sequence.swift in Sources */,
 				A08A65642A27234B00186F8F /* AvatarView.swift in Sources */,
 				A08A65662A275B1600186F8F /* Color.swift in Sources */,
 				A0A1137F2A2F80EA00C5114B /* Storage.swift in Sources */,
+				A0A113942A304A0700C5114B /* Networking+APIResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -442,18 +509,25 @@
 			files = (
 				A08A65632A27234B00186F8F /* AvatarView.swift in Sources */,
 				A09799AD2A035AA1009F4681 /* Haptics.swift in Sources */,
+				A0A113822A30483B00C5114B /* Space.swift in Sources */,
+				A0A1138A2A30492800C5114B /* Networking.swift in Sources */,
 				A08EE75F2A0740EF00D7AADB /* NSItemProvider+Async.swift in Sources */,
 				A09799A52A035964009F4681 /* Configuration.swift in Sources */,
 				A09799AA2A035A4C009F4681 /* UserDefaults.swift in Sources */,
+				A0A113862A30489500C5114B /* Card.swift in Sources */,
+				A0A113972A304A5300C5114B /* JSONDecodeer.swift in Sources */,
 				A08D27542A0384FB0076B0B0 /* Color.swift in Sources */,
 				A09799A72A0359EC009F4681 /* WebViewWrapper.swift in Sources */,
 				A09799962A035734009F4681 /* ContentView.swift in Sources */,
+				A0A113792A2F7B6D00C5114B /* User.swift in Sources */,
 				A08A65692A27A21400186F8F /* AddToInboxView.swift in Sources */,
+				A0A1138F2A30499600C5114B /* Networking+Error.swift in Sources */,
 				A08EE75E2A0740EF00D7AADB /* Sequence.swift in Sources */,
 				A09799B12A035B59009F4681 /* Storage.swift in Sources */,
 				A09799B32A035C9C009F4681 /* WKWebView.swift in Sources */,
 				A09799942A035734009F4681 /* KinopioApp.swift in Sources */,
 				A09799AF2A035B08009F4681 /* WebViewWrapper+JSMethod.swift in Sources */,
+				A0A113932A304A0700C5114B /* Networking+APIResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -489,6 +563,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = WidgetExtensionExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = VWRQY6FSN5;
@@ -518,6 +593,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = WidgetExtensionExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = VWRQY6FSN5;

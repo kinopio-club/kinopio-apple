@@ -1,4 +1,6 @@
 import SwiftUI
+import RegexBuilder
+
 #if os(iOS)
 typealias PlatformColor = UIColor
 #elseif os(macOS)
@@ -90,6 +92,43 @@ extension Color {
             
         } else {
             self.init(.sRGB, red: 1, green: 1, blue: 1, opacity: 1)
+        }
+    }
+}
+
+extension Color {
+    init(rgb string: String) {
+        var string: String = string.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+        
+        let digits = Regex {
+            Optionally(.whitespace)
+            Capture {
+                Repeat(1...3) {
+                    One(.digit)
+                }
+            }
+            Optionally(.whitespace)
+        }
+        let pattern = Regex {
+            "rgb("
+            digits
+            ","
+            digits
+            ","
+            digits
+            ")"
+        }.ignoresCase()
+        
+        if let match = string.firstMatch(of: pattern) {
+            let (_, red, green, blue) = match.output
+            guard let red = Double(red), let green = Double(green), let blue = Double(blue) else {
+                self.init(.sRGB, red: 1, green: 1, blue: 1)
+                return
+            }
+            
+            self.init(.sRGB, red: red / 255, green: green / 255, blue: blue / 255)
+        } else {
+            self.init(.sRGB, red: 1, green: 1, blue: 1)
         }
     }
 }

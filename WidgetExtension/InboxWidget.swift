@@ -4,7 +4,7 @@ import SwiftUI
 extension InboxWidget {
     struct Provider: TimelineProvider {
         func placeholder(in context: Context) -> Entry {
-            Entry(date: Date(), card: "This is the most recent card in your inbox.")
+            Entry(date: Date(), card: "This is the most recent card in your inbox.", isPreview: true)
         }
         
         func getSnapshot(in context: Context, completion: @escaping (Entry) -> ()) {
@@ -13,18 +13,26 @@ extension InboxWidget {
         }
         
         func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
-            var entries: [Entry] = []
+            let date = Calendar.current.date(byAdding: .minute, value: 15, to: Date())!
             
-            // Generate a timeline consisting of five entries an hour apart, starting from the current date.
-            let currentDate = Date()
-            for hourOffset in 0 ..< 5 {
-                let entryDate = Calendar.current.date(byAdding: .hour, value: hourOffset, to: currentDate)!
-                let entry = Entry(date: entryDate, card: "This is the most recent card in your inbox.")
-                entries.append(entry)
+            guard let token = Storage.getToken() else {
+                return completion(Timeline(entries: [Entry(date: date, card: "", isAuthenticated: false)], policy: .atEnd))
             }
             
-            let timeline = Timeline(entries: entries, policy: .atEnd)
-            completion(timeline)
+            Task {
+                do {
+                    let space = try await Networking.getUserInboxSpace(token: token)
+                    let user = try await Networking.getUser(token: token)
+                    let entry = Entry(date: date, card: space.cards.last?.name ?? "", userColor: user.nativeColor, isAuthenticated: true)
+                    let timeline = Timeline(entries: [entry], policy: .atEnd)
+                    completion(timeline)
+                } catch {
+                    let entry = Entry(date: date, card: "", isAuthenticated: false)
+                    let timeline = Timeline(entries: [entry], policy: .atEnd)
+                    completion(timeline)
+                }
+            }
+            
         }
     }
 }
@@ -35,6 +43,7 @@ extension InboxWidget {
         let card: String
         var userColor: Color = Color("AccentColor")
         var isPreview = false
+        var isAuthenticated: Bool = true
     }
 }
 
@@ -103,30 +112,35 @@ struct InboxWidgetView : View {
     
     
     var body: some View {
-        GeometryReader { geometry in
-            VStack(alignment: .leading) {
-                Text("Add to Inbox")
-                    .font(.footnote)
-                    .fontWeight(.bold)
-                
-                InputForm()
-                
-                AddButton()
-                
-                if entry.isPreview {
-                    Card(entry.card)
-                        .padding(.top, 4)
-                        .redacted(reason: .placeholder)
-                } else {
-                    Card(entry.card)
-                        .padding(.top, 4)
+        if entry.isAuthenticated {
+            GeometryReader { geometry in
+                VStack(alignment: .leading) {
+                    Text("Add to Inbox")
+                        .font(.footnote)
+                        .fontWeight(.bold)
+                    
+                    InputForm()
+                    
+                    AddButton()
+                    
+                    if entry.isPreview {
+                        Card(entry.card)
+                            .padding(.top, 4)
+                            .redacted(reason: .placeholder)
+                    } else {
+                        Card(entry.card)
+                            .padding(.top, 4)
+                    }
+                    
                 }
-                
+                .frame(height: geometry.size.height, alignment: .top)
             }
-            .frame(height: geometry.size.height, alignment: .top)
+            .padding()
+            .widgetURL(Configuration.addUrl)
+        } else {
+            Text("You have to login to Kinopio before using this widget.")
+                .padding()
         }
-        .padding()
-        .widgetURL(Configuration.addUrl)
     }
 }
 
@@ -154,6 +168,10 @@ struct WidgetExtension_Previews: PreviewProvider {
             InboxWidgetView(entry: InboxWidget.Entry(date: Date(), card: "This is the most recent card in your inbox.", isPreview: true))
                 .previewContext(WidgetPreviewContext(family: .systemSmall))
                 .previewDisplayName("InboxWidget Placeholder")
+            
+            InboxWidgetView(entry: InboxWidget.Entry(date: Date(), card: "This is the most recent card in your inbox.", isAuthenticated: false))
+                .previewContext(WidgetPreviewContext(family: .systemSmall))
+                .previewDisplayName("InboxWidget No Auth")
         }
         
     }
