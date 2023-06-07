@@ -198,6 +198,7 @@
 				A0A1137C2A2F80BE00C5114B /* Extensions */,
 				A0A113772A2F7B5E00C5114B /* Models */,
 				A08A65612A27233C00186F8F /* View */,
+				A09799A42A035964009F4681 /* Configuration.swift */,
 				A09799B02A035B59009F4681 /* Storage.swift */,
 				A09799972A035736009F4681 /* Assets.xcassets */,
 			);
@@ -253,7 +254,6 @@
 				A09799932A035734009F4681 /* KinopioApp.swift */,
 				A09799AB2A035A68009F4681 /* Views */,
 				A09799A82A035A3F009F4681 /* Extensions */,
-				A09799A42A035964009F4681 /* Configuration.swift */,
 				A09799AC2A035AA1009F4681 /* Haptics.swift */,
 				A0F3CCE92A03786700F86AC7 /* JavaScript */,
 				A09799992A035736009F4681 /* Kinopio.entitlements */,
