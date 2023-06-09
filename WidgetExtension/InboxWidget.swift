@@ -23,7 +23,7 @@ extension InboxWidget {
                 do {
                     let space = try await Networking.getUserInboxSpace(token: token)
                     let user = try await Networking.getUser(token: token)
-                    let entry = Entry(date: date, card: space.cards.last?.name ?? "", userColor: user.nativeColor, isAuthenticated: true)
+                    let entry = Entry(date: date, card: space.cards?.last?.name ?? "", userColor: user.nativeColor, isAuthenticated: true)
                     let timeline = Timeline(entries: [entry], policy: .atEnd)
                     completion(timeline)
                 } catch {
