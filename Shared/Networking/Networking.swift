@@ -140,4 +140,20 @@ enum Networking {
         return try await self.request(request: request)
     }
     
+    static func getUserSpaces(token: String) async throws -> [Space] {
+        let url = baseURL.appendingPathComponent("user/spaces")
+        var request = URLRequest(url: url)
+        request.addValue(token, forHTTPHeaderField: "Authorization")
+        
+        return try await self.request(request: request)
+    }
+    
+    static func createCard(token: String, card: Card) async throws -> Card {
+        let url = baseURL.appendingPathComponent("card")
+        var request = URLRequest(url: url)
+        request.addValue(token, forHTTPHeaderField: "Authorization")
+        
+        return try await Networking.postRequest(request: request, data: card)
+    }
+    
 }
