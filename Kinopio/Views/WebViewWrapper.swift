@@ -31,12 +31,11 @@ struct WebViewWrapper: UIViewRepresentable {
         config.userContentController = contentController
         
         let webView = WKWebView(frame: .zero, configuration: config)
-        webView.underPageBackgroundColor = .systemBackground
-        webView.backgroundColor = .systemBackground
+        webView.underPageBackgroundColor = .clear
+        webView.backgroundColor = .clear
         webView.allowsBackForwardNavigationGestures = false
         webView.navigationDelegate = context.coordinator
         webView.uiDelegate = context.coordinator
-        webView.scrollView.contentInsetAdjustmentBehavior = .never
         
 #if DEBUG
         if #available(iOS 16.4, *) {

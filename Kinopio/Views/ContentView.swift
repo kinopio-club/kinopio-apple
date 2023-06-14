@@ -25,6 +25,7 @@ struct ContentView: View {
                 backgroundColor: $backgroundColor
             )
             .ignoresSafeArea(edges: [.bottom, .horizontal])
+            .ignoresSafeArea()
             .opacity(isLoading ? 0 : 1)
             .animation(.default, value: isLoading)
             .sheet(isPresented: $showAddToInput) {
