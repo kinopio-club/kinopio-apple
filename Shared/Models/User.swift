@@ -11,12 +11,6 @@ struct User: Identifiable, Codable {
 
 extension User {
     var nativeColor: Color {
-        if color.hasPrefix("#") {
-            return Color(hex: color)
-        } else if color.hasPrefix("rgb(") {
-            return Color(rgb: color)
-        } else {
-            return .accentColor
-        }
+        Color.parseWebColor(color) ?? .accentColor
     }
 }

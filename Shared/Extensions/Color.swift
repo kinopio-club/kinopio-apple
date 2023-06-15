@@ -22,6 +22,18 @@ extension Color {
 }
 
 extension Color {
+    static func parseWebColor(_ color: String) -> Color? {
+        if color.hasPrefix("#") {
+            return Color(hex: color)
+        } else if color.hasPrefix("rgb(") {
+            return Color(rgb: color)
+        } else {
+            return nil
+        }
+    }
+}
+
+extension Color {
     init(hex string: String) {
         var string: String = string.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
         if string.hasPrefix("#") {
