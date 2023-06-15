@@ -24,7 +24,6 @@ struct ContentView: View {
                 isLoading: $isLoading,
                 backgroundColor: $backgroundColor
             )
-            .ignoresSafeArea(edges: [.bottom, .horizontal])
             .ignoresSafeArea()
             .opacity(isLoading ? 0 : 1)
             .animation(.default, value: isLoading)
