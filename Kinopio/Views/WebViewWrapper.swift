@@ -206,8 +206,8 @@ extension WebViewWrapper.Coordinator: WKScriptMessageHandler {
             // Requires an injected JS file that calls `window.webkit.messageHandlers.onLoad.postMessage('')`
             isLoading = false
         }
-        else if message.name == "setBackgroundColor", let hexColor = message.body as? String{
-            backgroundColor = Color(hex: hexColor)
+        else if message.name == "setBackgroundColor", let color = message.body as? String {
+            backgroundColor = Color.parseWebColor(color) ?? Color(uiColor: .systemBackground)
         }
         else {
             print("Unkown JSMethod: \(message.name)")
