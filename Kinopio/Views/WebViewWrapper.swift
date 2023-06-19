@@ -6,7 +6,6 @@ struct WebViewWrapper: UIViewRepresentable {
     @Binding var url: URL
     @Binding var isLoading: Bool
     @Binding var backgroundColor: Color
-    @Binding var backgroundTintColor: Color?
     
     func makeUIView(context: Context) -> WKWebView  {
         guard let scriptPath = Bundle.main.path(forResource: "web", ofType: "js"),
@@ -20,7 +19,6 @@ struct WebViewWrapper: UIViewRepresentable {
         contentController.addUserScript(script)
         contentController.add(context.coordinator, name: "onLoad")
         contentController.add(context.coordinator, name: "setBackgroundColor")
-        contentController.add(context.coordinator, name: "setBackgroundTintColor")
         for method in JSMethod.allCases {
             contentController.add(context.coordinator, name: method.name)
         }
@@ -66,25 +64,23 @@ struct WebViewWrapper: UIViewRepresentable {
     }
     
     func makeCoordinator() -> Coordinator {
-        return Coordinator(url: $url, isLoading: $isLoading, backgroundColor: $backgroundColor, backgroundTintColor: $backgroundTintColor)
+        return Coordinator(url: $url, isLoading: $isLoading, backgroundColor: $backgroundColor)
     }
     
     class Coordinator: NSObject {
         @Binding var url: URL
         @Binding var isLoading: Bool
         @Binding var backgroundColor: Color
-        @Binding var backgroundTintColor: Color?
         
         var webView: WKWebView?
         
         let downloadDelegate = DownloadDelegate()
         var urlChangedObservation: NSKeyValueObservation?
         
-        init(url: Binding<URL>, isLoading: Binding<Bool>, backgroundColor: Binding<Color>, backgroundTintColor: Binding<Color?>) {
+        init(url: Binding<URL>, isLoading: Binding<Bool>, backgroundColor: Binding<Color>) {
             _url = url
             _isLoading = isLoading
             _backgroundColor = backgroundColor
-            _backgroundTintColor = backgroundTintColor
             
             super.init()
         }
@@ -212,9 +208,6 @@ extension WebViewWrapper.Coordinator: WKScriptMessageHandler {
         }
         else if message.name == "setBackgroundColor", let color = message.body as? String {
             backgroundColor = Color.parseWebColor(color) ?? Color(uiColor: .systemBackground)
-        }
-        else if message.name == "setBackgroundTintColor", let color = message.body as? String {
-            backgroundTintColor = Color.parseWebColor(color)
         }
         else {
             print("Unkown JSMethod: \(message.name)")

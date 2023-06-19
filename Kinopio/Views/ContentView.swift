@@ -4,22 +4,11 @@ struct ContentView: View {
     @State var isLoading = false
     @SceneStorage("url") var url = Configuration.webURL
     @SceneStorage("backgroundColor") var backgroundColor = Color.white
-    @State private var backgroundTintColor: Color? = nil
     @State private var showAddToInput = false
-    
-    @ViewBuilder
-    var Background: some View {
-        if let backgroundTintColor {
-            backgroundColor.colorMultiply(backgroundTintColor)
-        } else {
-            backgroundColor
-        }
-    }
     
     var body: some View {
         ZStack {
-            Background
-                .ignoresSafeArea()
+            backgroundColor.ignoresSafeArea(.all)
             
             if isLoading {
                 VStack {
@@ -33,8 +22,7 @@ struct ContentView: View {
             WebViewWrapper(
                 url: $url,
                 isLoading: $isLoading,
-                backgroundColor: $backgroundColor,
-                backgroundTintColor: $backgroundTintColor
+                backgroundColor: $backgroundColor
             )
             .ignoresSafeArea()
             .opacity(isLoading ? 0 : 1)
