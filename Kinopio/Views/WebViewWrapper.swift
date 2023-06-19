@@ -170,8 +170,7 @@ extension WebViewWrapper.Coordinator: WKUIDelegate {
             completionHandler(false)
         }))
         
-        
-        if let vc = UIApplication.shared.windows.first?.rootViewController{
+        if let vc = webView.window?.rootViewController {
             vc.present(alertController, animated: true, completion: nil)
         }
     }
@@ -190,7 +189,7 @@ extension WebViewWrapper.Coordinator: WKUIDelegate {
             completionHandler(nil)
         }))
         
-        if let vc = UIApplication.shared.windows.first?.rootViewController{
+        if let vc = webView.window?.rootViewController {
             vc.present(alertController, animated: true, completion: nil)
         }
     }
@@ -243,7 +242,9 @@ extension WebViewWrapper.Coordinator {
             if let url = filePathDestination {
                 DispatchQueue.main.async {
                     let activityVC = UIActivityViewController(activityItems: [url], applicationActivities: nil)
-                    UIApplication.shared.windows.first?.rootViewController?.present(activityVC, animated: true, completion: nil)
+                    if let webView = download.webView, let controller = webView.window?.rootViewController {
+                        controller.present(activityVC, animated: true, completion: nil)
+                    }
                 }
             }
         }
