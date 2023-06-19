@@ -25,7 +25,7 @@ extension Color {
     static func parseWebColor(_ color: String) -> Color? {
         if color.hasPrefix("#") {
             return Color(hex: color)
-        } else if color.hasPrefix("rgb(") {
+        } else if color.hasPrefix("rgb") {
             return Color(rgb: color)
         } else {
             return nil
@@ -110,7 +110,7 @@ extension Color {
 
 extension Color {
     init(rgb string: String) {
-        var string: String = string.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+        let string: String = string.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
         
         let digits = Regex {
             Optionally(.whitespace)
@@ -122,23 +122,39 @@ extension Color {
             Optionally(.whitespace)
         }
         let pattern = Regex {
-            "rgb("
+            ChoiceOf {
+                "rgb("
+                "rgba("
+            }
             digits
             ","
             digits
             ","
             digits
+            Optionally {
+                ","
+                Optionally(.whitespace)
+                Capture {
+                    Optionally {
+                        One(.digit)
+                        "."
+                    }
+                    Repeat(1...10) {
+                        One(.digit)
+                    }
+                }
+            }
+            Optionally(.whitespace)
             ")"
         }.ignoresCase()
         
         if let match = string.firstMatch(of: pattern) {
-            let (_, red, green, blue) = match.output
-            guard let red = Double(red), let green = Double(green), let blue = Double(blue) else {
+            let (_, red, green, blue, opacity) = match.output
+            guard let red = Double(red), let green = Double(green), let blue = Double(blue), let opacity = Double(opacity ?? "1") else {
                 self.init(.sRGB, red: 1, green: 1, blue: 1)
                 return
             }
-            
-            self.init(.sRGB, red: red / 255, green: green / 255, blue: blue / 255)
+            self.init(.sRGB, red: red / 255, green: green / 255, blue: blue / 255, opacity: opacity)
         } else {
             self.init(.sRGB, red: 1, green: 1, blue: 1)
         }
