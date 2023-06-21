@@ -68,6 +68,7 @@ extension InboxWidget {
 struct InboxWidgetView : View {
     var entry: InboxWidget.Entry
     
+    @Environment(\.widgetFamily) var family: WidgetFamily
     @Environment(\.colorScheme) var colorScheme: ColorScheme
     
     let green = Color(hex: "#223C2F")
@@ -116,7 +117,7 @@ struct InboxWidgetView : View {
         }
     }
     
-    var body: some View {
+    func HomeScreen() -> some View {
         VStack {
             if entry.isAuthenticated {
                 VStack(alignment: .leading) {
@@ -161,6 +162,42 @@ struct InboxWidgetView : View {
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(green)
     }
+    
+    func LockScreen() -> some View{
+        Image("Inbox")
+            .resizable()
+            .padding()
+            .background(green.ignoresSafeArea())
+    }
+    
+    var body: some View {
+        switch family {
+            case .systemSmall, .systemMedium, .systemLarge, .systemExtraLarge:
+                HomeScreen()
+            case .accessoryCircular:
+                HStack {
+                    Image("Inbox")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                }
+                .padding()
+                .widgetURL(Configuration.addUrl)
+            case .accessoryInline:
+                Text("\(entry.numberOfCards) Cards in Inbox")
+                    .widgetURL(Configuration.addUrl)
+            case .accessoryRectangular:
+                HStack {
+                    Image("Inbox")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 16)
+                    Text("\(entry.numberOfCards) Cards")
+                }
+                .widgetURL(Configuration.addUrl)
+            @unknown default:
+                HomeScreen()
+        }
+    }
 }
 
 struct InboxWidget: Widget {
@@ -172,7 +209,7 @@ struct InboxWidget: Widget {
         }
         .configurationDisplayName("Add to Inbox")
         .description("Quickly add cards to your Inbox.")
-        .supportedFamilies([.systemSmall])
+        .supportedFamilies([.systemSmall, .accessoryInline, .accessoryCircular, .accessoryRectangular])
     }
 }
 
@@ -191,6 +228,10 @@ struct WidgetExtension_Previews: PreviewProvider {
             InboxWidgetView(entry: InboxWidget.Entry(date: Date(), numberOfCards: 0, spacesNames: [], isAuthenticated: false))
                 .previewContext(WidgetPreviewContext(family: .systemSmall))
                 .previewDisplayName("InboxWidget No Auth")
+            
+            InboxWidgetView(entry: InboxWidget.Entry(date: Date(), numberOfCards: 21, spacesNames: ["Last Space Name", "Another Space Name"]))
+                .previewContext(WidgetPreviewContext(family: .accessoryCircular))
+                .previewDisplayName("Lock Screen")
         }
         
     }
