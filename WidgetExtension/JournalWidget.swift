@@ -15,8 +15,6 @@ extension JournalWidget {
         func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
             let date = Calendar.current.date(byAdding: .minute, value: 15, to: Date())!
             
-            
-            
             Task {
                 do {
                     let prompt = try await Networking.getJournalDailyPrompt()
@@ -115,7 +113,6 @@ struct JournalWidgetView : View {
                     }
                     
                 }
-                .widgetURL(Configuration.addUrl)
             } else {
                 Text("There was a network error.")
                     .font(.caption)
@@ -125,6 +122,7 @@ struct JournalWidgetView : View {
         .padding()
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(green)
+        .widgetURL(Configuration.newJournalURL)
     }
 }
 
