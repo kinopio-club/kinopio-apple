@@ -156,4 +156,11 @@ enum Networking {
         return try await Networking.postRequest(request: request, data: card)
     }
     
+    static func getJournalDailyPrompt() async throws -> JournalDailyPrompt {
+        let url = baseURL.appendingPathComponent("journal-daily-prompt")
+        var request = URLRequest(url: url)
+        
+        return try await Networking.request(request: request)
+    }
+    
 }

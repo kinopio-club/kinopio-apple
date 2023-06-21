@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		A0129DF82A07D69F00FDE908 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A08EE7682A07411700D7AADB /* MainInterface.storyboard */; };
+		A08501A72A4318B500DF6813 /* JournalWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08501A62A4318B500DF6813 /* JournalWidget.swift */; };
+		A08501A92A4319AC00DF6813 /* JournalDailyPrompt.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08501A82A4319AC00DF6813 /* JournalDailyPrompt.swift */; };
+		A08501AA2A4319AC00DF6813 /* JournalDailyPrompt.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08501A82A4319AC00DF6813 /* JournalDailyPrompt.swift */; };
+		A08501AB2A4319AC00DF6813 /* JournalDailyPrompt.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08501A82A4319AC00DF6813 /* JournalDailyPrompt.swift */; };
 		A08A654D2A2672E200186F8F /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A08A654C2A2672E200186F8F /* WidgetKit.framework */; };
 		A08A654F2A2672E200186F8F /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A08A654E2A2672E200186F8F /* SwiftUI.framework */; };
 		A08A65522A2672E200186F8F /* KinopioWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08A65512A2672E200186F8F /* KinopioWidgetBundle.swift */; };
@@ -109,6 +113,8 @@
 /* Begin PBXFileReference section */
 		A07D72B42A0939AA00FBD477 /* KinopioShareExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KinopioShareExtension.entitlements; sourceTree = "<group>"; };
 		A07D72B52A09DD8E00FBD477 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		A08501A62A4318B500DF6813 /* JournalWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalWidget.swift; sourceTree = "<group>"; };
+		A08501A82A4319AC00DF6813 /* JournalDailyPrompt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalDailyPrompt.swift; sourceTree = "<group>"; };
 		A08A654A2A2672E200186F8F /* WidgetExtensionExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = WidgetExtensionExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		A08A654C2A2672E200186F8F /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		A08A654E2A2672E200186F8F /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
@@ -191,6 +197,7 @@
 			isa = PBXGroup;
 			children = (
 				A08A65512A2672E200186F8F /* KinopioWidgetBundle.swift */,
+				A08501A62A4318B500DF6813 /* JournalWidget.swift */,
 				A08A65532A2672E200186F8F /* InboxWidget.swift */,
 				A08A65572A2672E300186F8F /* Info.plist */,
 			);
@@ -304,6 +311,7 @@
 				A0A113782A2F7B6D00C5114B /* User.swift */,
 				A0A113812A30483B00C5114B /* Space.swift */,
 				A0A113852A30489400C5114B /* Card.swift */,
+				A08501A82A4319AC00DF6813 /* JournalDailyPrompt.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -479,6 +487,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A08501A72A4318B500DF6813 /* JournalWidget.swift in Sources */,
 				A0A113842A30483B00C5114B /* Space.swift in Sources */,
 				A08A656C2A27A4B100186F8F /* Configuration.swift in Sources */,
 				A08A65522A2672E200186F8F /* KinopioWidgetBundle.swift in Sources */,
@@ -491,6 +500,7 @@
 				A08A65652A27234B00186F8F /* AvatarView.swift in Sources */,
 				A0A113912A30499600C5114B /* Networking+Error.swift in Sources */,
 				A08A656B2A27A21400186F8F /* AddToInboxView.swift in Sources */,
+				A08501AB2A4319AC00DF6813 /* JournalDailyPrompt.swift in Sources */,
 				A0A1137B2A2F7B6D00C5114B /* User.swift in Sources */,
 				A0A113882A30489500C5114B /* Card.swift in Sources */,
 				A0A113952A304A0700C5114B /* Networking+APIResponse.swift in Sources */,
@@ -514,6 +524,7 @@
 				A0A113872A30489500C5114B /* Card.swift in Sources */,
 				A08EE7742A07415A00D7AADB /* Sequence.swift in Sources */,
 				A08A65642A27234B00186F8F /* AvatarView.swift in Sources */,
+				A08501AA2A4319AC00DF6813 /* JournalDailyPrompt.swift in Sources */,
 				A08A65662A275B1600186F8F /* Color.swift in Sources */,
 				A0A1137F2A2F80EA00C5114B /* Storage.swift in Sources */,
 				A0A113942A304A0700C5114B /* Networking+APIResponse.swift in Sources */,
@@ -537,6 +548,7 @@
 				A0C0014E2A338B0A004FCBED /* CreateCardIntent.swift in Sources */,
 				A0A113972A304A5300C5114B /* JSONDecodeer.swift in Sources */,
 				A08D27542A0384FB0076B0B0 /* Color.swift in Sources */,
+				A08501A92A4319AC00DF6813 /* JournalDailyPrompt.swift in Sources */,
 				A09799A72A0359EC009F4681 /* WebViewWrapper.swift in Sources */,
 				A09799962A035734009F4681 /* ContentView.swift in Sources */,
 				A0A113792A2F7B6D00C5114B /* User.swift in Sources */,
