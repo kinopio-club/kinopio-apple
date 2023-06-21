@@ -5,5 +5,6 @@ struct Space: Identifiable, Codable {
     var cards: [Card]?
     var name: String
     var privacy: String
-    var editedAt: Date
+    var createdAt: Date
+    var editedAt: Date?
 }

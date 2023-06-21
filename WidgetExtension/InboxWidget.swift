@@ -26,7 +26,7 @@ extension InboxWidget {
                     let spaces = try await Networking.getUserSpaces(token: token)
                     
                     let spaceNames = spaces.sorted {
-                        $0.editedAt.compare($1.editedAt) == .orderedDescending
+                        ($0.editedAt ?? $0.createdAt).compare($1.editedAt ?? $1.createdAt) == .orderedDescending
                     }
                         .map { $0.name }
                     
