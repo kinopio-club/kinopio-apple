@@ -34,6 +34,8 @@ struct ContentView: View {
             .onOpenURL { url in
                 if url.path == ("/add") {
                     showAddToInput = true
+                } else {
+                    self.url = url
                 }
             }
         }
