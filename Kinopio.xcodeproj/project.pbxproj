@@ -68,6 +68,9 @@
 		A0A113972A304A5300C5114B /* JSONDecodeer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A113962A304A5300C5114B /* JSONDecodeer.swift */; };
 		A0A113982A304A5300C5114B /* JSONDecodeer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A113962A304A5300C5114B /* JSONDecodeer.swift */; };
 		A0A113992A304A5300C5114B /* JSONDecodeer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A113962A304A5300C5114B /* JSONDecodeer.swift */; };
+		A0C0014E2A338B0A004FCBED /* CreateCardIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C0014D2A338B0A004FCBED /* CreateCardIntent.swift */; };
+		A0C001502A338C4A004FCBED /* SpaceEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C0014F2A338C4A004FCBED /* SpaceEntity.swift */; };
+		A0C001522A338ED3004FCBED /* IntentError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C001512A338ED3004FCBED /* IntentError.swift */; };
 		A0F3CCEB2A0378FD00F86AC7 /* web.js in Resources */ = {isa = PBXBuildFile; fileRef = A0F3CCEA2A0378FD00F86AC7 /* web.js */; };
 /* End PBXBuildFile section */
 
@@ -141,6 +144,9 @@
 		A0A113922A304A0700C5114B /* Networking+APIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Networking+APIResponse.swift"; sourceTree = "<group>"; };
 		A0A113962A304A5300C5114B /* JSONDecodeer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONDecodeer.swift; sourceTree = "<group>"; };
 		A0A1139A2A3052F800C5114B /* WidgetExtensionExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WidgetExtensionExtension.entitlements; sourceTree = "<group>"; };
+		A0C0014D2A338B0A004FCBED /* CreateCardIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCardIntent.swift; sourceTree = "<group>"; };
+		A0C0014F2A338C4A004FCBED /* SpaceEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceEntity.swift; sourceTree = "<group>"; };
+		A0C001512A338ED3004FCBED /* IntentError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentError.swift; sourceTree = "<group>"; };
 		A0F3CCEA2A0378FD00F86AC7 /* web.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = web.js; sourceTree = "<group>"; };
 		A0F3CCEC2A03836F00F86AC7 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -194,6 +200,7 @@
 		A08A655E2A26731B00186F8F /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				A0C0014C2A338ADA004FCBED /* AppIntents */,
 				A0A1138D2A30497700C5114B /* Networking */,
 				A0A1137C2A2F80BE00C5114B /* Extensions */,
 				A0A113772A2F7B5E00C5114B /* Models */,
@@ -319,6 +326,16 @@
 				A0A113922A304A0700C5114B /* Networking+APIResponse.swift */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		A0C0014C2A338ADA004FCBED /* AppIntents */ = {
+			isa = PBXGroup;
+			children = (
+				A0C0014D2A338B0A004FCBED /* CreateCardIntent.swift */,
+				A0C0014F2A338C4A004FCBED /* SpaceEntity.swift */,
+				A0C001512A338ED3004FCBED /* IntentError.swift */,
+			);
+			path = AppIntents;
 			sourceTree = "<group>";
 		};
 		A0F3CCE92A03786700F86AC7 /* JavaScript */ = {
@@ -508,13 +525,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				A08A65632A27234B00186F8F /* AvatarView.swift in Sources */,
+				A0C001502A338C4A004FCBED /* SpaceEntity.swift in Sources */,
 				A09799AD2A035AA1009F4681 /* Haptics.swift in Sources */,
 				A0A113822A30483B00C5114B /* Space.swift in Sources */,
 				A0A1138A2A30492800C5114B /* Networking.swift in Sources */,
 				A08EE75F2A0740EF00D7AADB /* NSItemProvider+Async.swift in Sources */,
 				A09799A52A035964009F4681 /* Configuration.swift in Sources */,
 				A09799AA2A035A4C009F4681 /* UserDefaults.swift in Sources */,
+				A0C001522A338ED3004FCBED /* IntentError.swift in Sources */,
 				A0A113862A30489500C5114B /* Card.swift in Sources */,
+				A0C0014E2A338B0A004FCBED /* CreateCardIntent.swift in Sources */,
 				A0A113972A304A5300C5114B /* JSONDecodeer.swift in Sources */,
 				A08D27542A0384FB0076B0B0 /* Color.swift in Sources */,
 				A09799A72A0359EC009F4681 /* WebViewWrapper.swift in Sources */,
