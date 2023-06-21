@@ -6,5 +6,5 @@ struct Configuration {
     
     static let apiURL = URL(string: "https://\(apiHost)")!
     static let webURL = URL(string: "https://\(host)/")!
-    static let addUrl = webURL.appendingPathComponent("add")
+    static let addURL = webURL.appendingPathComponent("add")
 }

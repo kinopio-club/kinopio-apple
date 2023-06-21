@@ -151,7 +151,7 @@ struct InboxWidgetView : View {
                         }
                     }
                 }
-                .widgetURL(Configuration.addUrl)
+                .widgetURL(Configuration.addURL)
             } else {
                 Text("You have to login to Kinopio before using this widget.")
                     .font(.caption)
@@ -181,10 +181,10 @@ struct InboxWidgetView : View {
                         .aspectRatio(contentMode: .fit)
                 }
                 .padding()
-                .widgetURL(Configuration.addUrl)
+                .widgetURL(Configuration.addURL)
             case .accessoryInline:
                 Text("\(entry.numberOfCards) Cards in Inbox")
-                    .widgetURL(Configuration.addUrl)
+                    .widgetURL(Configuration.addURL)
             case .accessoryRectangular:
                 HStack {
                     Image("Inbox")
@@ -193,7 +193,7 @@ struct InboxWidgetView : View {
                         .frame(width: 16)
                     Text("\(entry.numberOfCards) Cards")
                 }
-                .widgetURL(Configuration.addUrl)
+                .widgetURL(Configuration.addURL)
             @unknown default:
                 HomeScreen()
         }

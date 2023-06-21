@@ -73,7 +73,7 @@ class ShareViewController: UIViewController {
             webView.layer.cornerRadius = 10
             webView.layer.masksToBounds = true
             
-            let request = URLRequest(url: Configuration.addUrl)
+            let request = URLRequest(url: Configuration.addURL)
             webView.load(request)
             
             self.view.addSubview(webView)
