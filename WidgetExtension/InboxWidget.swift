@@ -4,11 +4,11 @@ import SwiftUI
 extension InboxWidget {
     struct Provider: TimelineProvider {
         func placeholder(in context: Context) -> Entry {
-            Entry(date: Date(), card: "This is the most recent card in your inbox.", isPreview: true)
+            Entry(date: Date(), numberOfCards: 21, spacesNames: ["Random Space Name", "Another Random Space Name"], isPreview: true)
         }
         
         func getSnapshot(in context: Context, completion: @escaping (Entry) -> ()) {
-            let entry = Entry(date: Date(), card: "This is the most recent card in your inbox.")
+            let entry = Entry(date: Date(), numberOfCards: 21, spacesNames: [])
             completion(entry)
         }
         
@@ -16,18 +16,35 @@ extension InboxWidget {
             let date = Calendar.current.date(byAdding: .minute, value: 15, to: Date())!
             
             guard let token = Storage.getToken() else {
-                return completion(Timeline(entries: [Entry(date: date, card: "", isAuthenticated: false)], policy: .atEnd))
+                return completion(Timeline(entries: [Entry(date: date, numberOfCards: 0, spacesNames: [], isAuthenticated: false)], policy: .atEnd))
             }
             
             Task {
                 do {
                     let space = try await Networking.getUserInboxSpace(token: token)
                     let user = try await Networking.getUser(token: token)
-                    let entry = Entry(date: date, card: space.cards?.last?.name ?? "", userColor: user.nativeColor, isAuthenticated: true)
-                    let timeline = Timeline(entries: [entry], policy: .atEnd)
+                    let spaces = try await Networking.getUserSpaces(token: token)
+                    
+                    let spaceNames = spaces.sorted {
+                        $0.editedAt.compare($1.editedAt) == .orderedDescending
+                    }
+                        .map { $0.name }
+                    
+                    let entry = Entry(
+                        date: date,
+                        numberOfCards: space.cards?.count ?? 0,
+                        spacesNames: Array(spaceNames[0...1]),
+                        userColor: user.nativeColor,
+                        isAuthenticated: true
+                    )
+                    let timeline = Timeline(
+                        entries: [entry],
+                        policy: .atEnd
+                    )
+                    
                     completion(timeline)
                 } catch {
-                    let entry = Entry(date: date, card: "", isAuthenticated: false)
+                    let entry = Entry(date: date, numberOfCards: 0, spacesNames: [], isAuthenticated: false)
                     let timeline = Timeline(entries: [entry], policy: .atEnd)
                     completion(timeline)
                 }
@@ -40,7 +57,8 @@ extension InboxWidget {
 extension InboxWidget {
     struct Entry: TimelineEntry {
         let date: Date
-        let card: String
+        let numberOfCards: Int
+        let spacesNames: [String]
         var userColor: Color = Color("AccentColor")
         var isPreview = false
         var isAuthenticated: Bool = true
@@ -52,95 +70,96 @@ struct InboxWidgetView : View {
     
     @Environment(\.colorScheme) var colorScheme: ColorScheme
     
-    var isDarkMode: Bool { colorScheme == .dark }
+    let green = Color(hex: "#223C2F")
     
     @ViewBuilder
-    func InputForm() -> some View {
-        HStack(alignment: .bottom, spacing: 4) {
+    func Header() -> some View {
+        HStack {
             AvatarView(color: entry.userColor, size: 20)
-            
-            VStack(alignment: .leading, spacing: 2) {
-                Text("Type text here")
-                    .foregroundColor(isDarkMode ? Color(hex: "#898989") : .black.opacity(0.4))
-                    .font(.system(size: 11))
-                
-                Rectangle()
-                    .foregroundColor(isDarkMode ? Color(hex: "4D4D4D") : .black)
-                    .frame(height: 1)
-            }
-        }
-    }
-    
-    @ViewBuilder
-    func Card(_ text: String) -> some View {
-        HStack(alignment: .top, spacing: 0) {
-            Text(text)
-                .multilineTextAlignment(.leading)
-                .font(.caption)
-                .fixedSize(horizontal: false, vertical: true)
             
             Spacer()
             
-            Circle()
-                .stroke(isDarkMode ? Color(hex: "#666666") : .black.opacity(0.4))
-                .frame(width: 14, height: 14)
+            HStack(spacing: 4) {
+                Image("Inbox")
+                Text("\(entry.numberOfCards) Cards")
+                    .font(.caption)
+                    .fontWeight(.medium)
+            }
+            .foregroundColor(.white)
         }
-        .padding(6)
-        .frame(maxWidth: .infinity)
-        .background(
-            RoundedRectangle(cornerRadius: 6)
-                .fill(isDarkMode ? Color(hex: "#262626") : Color.secondaryBackground)
-        )
     }
     
     @ViewBuilder
-    func AddButton() -> some View {
-        HStack(spacing: 2) {
-            Image(systemName: "plus")
-            Text("Add")
+    func WidgetButton<C: View>(@ViewBuilder content: () -> C) -> some View {
+        HStack(spacing: 3) {
+            content()
+                .foregroundColor(.white)
         }
         .labelStyle(.titleAndIcon)
         .buttonStyle(.plain)
         .font(.caption)
         .padding(.horizontal, 6)
-        .padding(.vertical, 4)
+        .padding(.vertical, 3)
         .background(
             RoundedRectangle(cornerRadius: 4)
-                .stroke(isDarkMode ? .white : .black)
+                .stroke(.white)
+                .opacity(0.3)
         )
     }
     
+    @ViewBuilder
+    func ApplyPlaceholder<C: View>(@ViewBuilder content: () -> C) -> some View {
+        if entry.isPreview {
+            content().redacted(reason: .placeholder)
+        } else {
+            content()
+        }
+    }
     
     var body: some View {
-        if entry.isAuthenticated {
-            GeometryReader { geometry in
+        VStack {
+            if entry.isAuthenticated {
                 VStack(alignment: .leading) {
-                    Text("Add to Inbox")
-                        .font(.footnote)
-                        .fontWeight(.bold)
-                    
-                    InputForm()
-                    
-                    AddButton()
-                    
                     if entry.isPreview {
-                        Card(entry.card)
-                            .padding(.top, 4)
+                        Header()
                             .redacted(reason: .placeholder)
                     } else {
-                        Card(entry.card)
-                            .padding(.top, 4)
+                        Header()
                     }
                     
+                    Spacer()
+                    
+                    ApplyPlaceholder {
+                        WidgetButton {
+                            Image(systemName: "plus")
+                            Image("Inbox")
+                            Text("Add To Inbox")
+                                .fontWeight(.medium)
+                        }
+                        
+                        ForEach(entry.spacesNames, id: \.self) { name in
+                            
+                            Spacer()
+                            WidgetButton {
+                                Text(name)
+                                    .fontWeight(.medium)
+                                    .lineLimit(1)
+                            }
+                            
+                            
+                        }
+                    }
                 }
-                .frame(height: geometry.size.height, alignment: .top)
+                .widgetURL(Configuration.addUrl)
+            } else {
+                Text("You have to login to Kinopio before using this widget.")
+                    .font(.caption)
+                    .foregroundColor(.white)
             }
-            .padding()
-            .widgetURL(Configuration.addUrl)
-        } else {
-            Text("You have to login to Kinopio before using this widget.")
-                .padding()
         }
+        .padding()
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(green)
     }
 }
 
@@ -161,15 +180,15 @@ struct WidgetExtension_Previews: PreviewProvider {
     static var previews: some View {
         
         Group {
-            InboxWidgetView(entry: InboxWidget.Entry(date: Date(), card: "This is the most recent card in your inbox."))
+            InboxWidgetView(entry: InboxWidget.Entry(date: Date(), numberOfCards: 21, spacesNames: ["Last Space Name", "Another Space Name"]))
                 .previewContext(WidgetPreviewContext(family: .systemSmall))
                 .previewDisplayName("InboxWidget")
             
-            InboxWidgetView(entry: InboxWidget.Entry(date: Date(), card: "This is the most recent card in your inbox.", isPreview: true))
+            InboxWidgetView(entry: InboxWidget.Entry(date: Date(), numberOfCards: 21, spacesNames: ["Random Space Name", "Another Random Space Name"], isPreview: true))
                 .previewContext(WidgetPreviewContext(family: .systemSmall))
                 .previewDisplayName("InboxWidget Placeholder")
             
-            InboxWidgetView(entry: InboxWidget.Entry(date: Date(), card: "This is the most recent card in your inbox.", isAuthenticated: false))
+            InboxWidgetView(entry: InboxWidget.Entry(date: Date(), numberOfCards: 0, spacesNames: [], isAuthenticated: false))
                 .previewContext(WidgetPreviewContext(family: .systemSmall))
                 .previewDisplayName("InboxWidget No Auth")
         }
