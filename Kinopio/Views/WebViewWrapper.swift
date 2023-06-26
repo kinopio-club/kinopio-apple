@@ -145,6 +145,22 @@ extension WebViewWrapper.Coordinator: WKNavigationDelegate {
         isLoading = true
     }
     
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        let idiom = UIDevice.current.userInterfaceIdiom
+        
+        let devicesWithNeedForSafeAreaPaddingBottom: [UIUserInterfaceIdiom] = [.pad, .phone]
+        let shouldAddSafeAreaPaddingBottom = devicesWithNeedForSafeAreaPaddingBottom.contains(idiom)
+        
+        let devicesWithNeedForSafeAreaPaddingTop: [UIUserInterfaceIdiom] = []
+        let shouldAddSafeAreaPaddingTop = devicesWithNeedForSafeAreaPaddingTop.contains(idiom)
+        
+        let script = """
+navigator.shouldAddSafeAreaPaddingTop = \(shouldAddSafeAreaPaddingTop.description)
+navigator.shouldAddSafeAreaPaddingBottom = \(shouldAddSafeAreaPaddingBottom)
+"""
+        webView.evaluateJavaScript(script)
+    }
+    
 }
 
 extension WebViewWrapper.Coordinator: WKUIDelegate {
