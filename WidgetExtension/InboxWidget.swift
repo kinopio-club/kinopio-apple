@@ -172,30 +172,37 @@ struct InboxWidgetView : View {
     
     var body: some View {
         switch family {
-            case .systemSmall, .systemMedium, .systemLarge, .systemExtraLarge:
-                HomeScreen()
-            case .accessoryCircular:
-                HStack {
-                    Image("Inbox")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                }
-                .padding()
+        case .systemSmall, .systemMedium, .systemLarge, .systemExtraLarge:
+            HomeScreen()
+        case .accessoryCircular:
+            VStack(spacing: 0) {
+                Image("Inbox")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 18, height: 18)
+                    .opacity(0.6)
+                
+                Text(entry.numberOfCards.description)
+                    .font(.headline)
+            }
+            .padding()
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .background(Color.black.ignoresSafeArea())
+            .widgetURL(Configuration.addURL)
+        case .accessoryInline:
+            Text("\(entry.numberOfCards) Cards in Inbox")
                 .widgetURL(Configuration.addURL)
-            case .accessoryInline:
-                Text("\(entry.numberOfCards) Cards in Inbox")
-                    .widgetURL(Configuration.addURL)
-            case .accessoryRectangular:
-                HStack {
-                    Image("Inbox")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 16)
-                    Text("\(entry.numberOfCards) Cards")
-                }
-                .widgetURL(Configuration.addURL)
-            @unknown default:
-                HomeScreen()
+        case .accessoryRectangular:
+            HStack {
+                Image("Inbox")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 16)
+                Text("\(entry.numberOfCards) Cards")
+            }
+            .widgetURL(Configuration.addURL)
+        @unknown default:
+            HomeScreen()
         }
     }
 }
