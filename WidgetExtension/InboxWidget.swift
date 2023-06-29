@@ -4,11 +4,11 @@ import SwiftUI
 extension InboxWidget {
     struct Provider: TimelineProvider {
         func placeholder(in context: Context) -> Entry {
-            Entry(date: Date(), numberOfCards: 21, spacesNames: ["Random Space Name", "Another Random Space Name"], isPreview: true)
+            Entry(date: Date(), numberOfCards: 21, isPreview: true)
         }
         
         func getSnapshot(in context: Context, completion: @escaping (Entry) -> ()) {
-            let entry = Entry(date: Date(), numberOfCards: 21, spacesNames: [])
+            let entry = Entry(date: Date(), numberOfCards: 21)
             completion(entry)
         }
         
@@ -16,24 +16,17 @@ extension InboxWidget {
             let date = Calendar.current.date(byAdding: .minute, value: 15, to: Date())!
             
             guard let token = Storage.getToken() else {
-                return completion(Timeline(entries: [Entry(date: date, numberOfCards: 0, spacesNames: [], isAuthenticated: false)], policy: .atEnd))
+                return completion(Timeline(entries: [Entry(date: date, numberOfCards: 0, isAuthenticated: false)], policy: .atEnd))
             }
             
             Task {
                 do {
                     let space = try await Networking.getUserInboxSpace(token: token)
                     let user = try await Networking.getUser(token: token)
-                    let spaces = try await Networking.getUserSpaces(token: token)
-                    
-                    let spaceNames = spaces.sorted {
-                        ($0.editedAt ?? $0.createdAt).compare($1.editedAt ?? $1.createdAt) == .orderedDescending
-                    }
-                        .map { $0.name }
                     
                     let entry = Entry(
                         date: date,
                         numberOfCards: space.cards?.count ?? 0,
-                        spacesNames: Array(spaceNames[0...1]),
                         userColor: user.nativeColor,
                         isAuthenticated: true
                     )
@@ -44,7 +37,7 @@ extension InboxWidget {
                     
                     completion(timeline)
                 } catch {
-                    let entry = Entry(date: date, numberOfCards: 0, spacesNames: [], isAuthenticated: false)
+                    let entry = Entry(date: date, numberOfCards: 0, isAuthenticated: false)
                     let timeline = Timeline(entries: [entry], policy: .atEnd)
                     completion(timeline)
                 }
@@ -58,7 +51,6 @@ extension InboxWidget {
     struct Entry: TimelineEntry {
         let date: Date
         let numberOfCards: Int
-        let spacesNames: [String]
         var userColor: Color = Color("AccentColor")
         var isPreview = false
         var isAuthenticated: Bool = true
@@ -101,6 +93,7 @@ struct InboxWidgetView : View {
         .font(.caption)
         .padding(.horizontal, 6)
         .padding(.vertical, 3)
+        .frame(maxWidth: .infinity)
         .background(
             RoundedRectangle(cornerRadius: 4)
                 .stroke(.white)
@@ -136,18 +129,7 @@ struct InboxWidgetView : View {
                             Image("Inbox")
                             Text("Add To Inbox")
                                 .fontWeight(.medium)
-                        }
-                        
-                        ForEach(entry.spacesNames, id: \.self) { name in
-                            
-                            Spacer()
-                            WidgetButton {
-                                Text(name)
-                                    .fontWeight(.medium)
-                                    .lineLimit(1)
-                            }
-                            
-                            
+                                .lineLimit(1)
                         }
                     }
                 }
@@ -224,19 +206,19 @@ struct WidgetExtension_Previews: PreviewProvider {
     static var previews: some View {
         
         Group {
-            InboxWidgetView(entry: InboxWidget.Entry(date: Date(), numberOfCards: 21, spacesNames: ["Last Space Name", "Another Space Name"]))
+            InboxWidgetView(entry: InboxWidget.Entry(date: Date(), numberOfCards: 21))
                 .previewContext(WidgetPreviewContext(family: .systemSmall))
                 .previewDisplayName("InboxWidget")
             
-            InboxWidgetView(entry: InboxWidget.Entry(date: Date(), numberOfCards: 21, spacesNames: ["Random Space Name", "Another Random Space Name"], isPreview: true))
+            InboxWidgetView(entry: InboxWidget.Entry(date: Date(), numberOfCards: 21, isPreview: true))
                 .previewContext(WidgetPreviewContext(family: .systemSmall))
                 .previewDisplayName("InboxWidget Placeholder")
             
-            InboxWidgetView(entry: InboxWidget.Entry(date: Date(), numberOfCards: 0, spacesNames: [], isAuthenticated: false))
+            InboxWidgetView(entry: InboxWidget.Entry(date: Date(), numberOfCards: 0, isAuthenticated: false))
                 .previewContext(WidgetPreviewContext(family: .systemSmall))
                 .previewDisplayName("InboxWidget No Auth")
             
-            InboxWidgetView(entry: InboxWidget.Entry(date: Date(), numberOfCards: 21, spacesNames: ["Last Space Name", "Another Space Name"]))
+            InboxWidgetView(entry: InboxWidget.Entry(date: Date(), numberOfCards: 21))
                 .previewContext(WidgetPreviewContext(family: .accessoryCircular))
                 .previewDisplayName("Lock Screen")
         }
