@@ -13,7 +13,7 @@ extension JournalWidget {
         }
         
         func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
-            let date = Calendar.current.date(byAdding: .minute, value: 15, to: Date())!
+            let date = Calendar.current.date(bySettingHour: 23, minute: 59, second: 59, of: Date(), repeatedTimePolicy: .last)!
             
             Task {
                 do {
