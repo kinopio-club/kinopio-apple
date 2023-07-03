@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		A0129DF82A07D69F00FDE908 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A08EE7682A07411700D7AADB /* MainInterface.storyboard */; };
+		A02914C22A53544200A7E0B6 /* MoonPhase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02914C12A53544200A7E0B6 /* MoonPhase.swift */; };
+		A02914C32A53544200A7E0B6 /* MoonPhase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02914C12A53544200A7E0B6 /* MoonPhase.swift */; };
+		A02914C42A53544200A7E0B6 /* MoonPhase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02914C12A53544200A7E0B6 /* MoonPhase.swift */; };
 		A08501A72A4318B500DF6813 /* JournalWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08501A62A4318B500DF6813 /* JournalWidget.swift */; };
 		A08501A92A4319AC00DF6813 /* JournalDailyPrompt.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08501A82A4319AC00DF6813 /* JournalDailyPrompt.swift */; };
 		A08501AA2A4319AC00DF6813 /* JournalDailyPrompt.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08501A82A4319AC00DF6813 /* JournalDailyPrompt.swift */; };
@@ -111,6 +114,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		A02914C12A53544200A7E0B6 /* MoonPhase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoonPhase.swift; sourceTree = "<group>"; };
 		A07D72B42A0939AA00FBD477 /* KinopioShareExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KinopioShareExtension.entitlements; sourceTree = "<group>"; };
 		A07D72B52A09DD8E00FBD477 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		A08501A62A4318B500DF6813 /* JournalWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalWidget.swift; sourceTree = "<group>"; };
@@ -214,6 +218,7 @@
 				A08A65612A27233C00186F8F /* View */,
 				A09799A42A035964009F4681 /* Configuration.swift */,
 				A09799B02A035B59009F4681 /* Storage.swift */,
+				A02914C12A53544200A7E0B6 /* MoonPhase.swift */,
 				A09799972A035736009F4681 /* Assets.xcassets */,
 			);
 			path = Shared;
@@ -503,6 +508,7 @@
 				A08501AB2A4319AC00DF6813 /* JournalDailyPrompt.swift in Sources */,
 				A0A1137B2A2F7B6D00C5114B /* User.swift in Sources */,
 				A0A113882A30489500C5114B /* Card.swift in Sources */,
+				A02914C42A53544200A7E0B6 /* MoonPhase.swift in Sources */,
 				A0A113952A304A0700C5114B /* Networking+APIResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -527,6 +533,7 @@
 				A08501AA2A4319AC00DF6813 /* JournalDailyPrompt.swift in Sources */,
 				A08A65662A275B1600186F8F /* Color.swift in Sources */,
 				A0A1137F2A2F80EA00C5114B /* Storage.swift in Sources */,
+				A02914C32A53544200A7E0B6 /* MoonPhase.swift in Sources */,
 				A0A113942A304A0700C5114B /* Networking+APIResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -539,6 +546,7 @@
 				A0C001502A338C4A004FCBED /* SpaceEntity.swift in Sources */,
 				A09799AD2A035AA1009F4681 /* Haptics.swift in Sources */,
 				A0A113822A30483B00C5114B /* Space.swift in Sources */,
+				A02914C22A53544200A7E0B6 /* MoonPhase.swift in Sources */,
 				A0A1138A2A30492800C5114B /* Networking.swift in Sources */,
 				A08EE75F2A0740EF00D7AADB /* NSItemProvider+Async.swift in Sources */,
 				A09799A52A035964009F4681 /* Configuration.swift in Sources */,

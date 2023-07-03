@@ -4,11 +4,11 @@ import SwiftUI
 extension JournalWidget {
     struct Provider: TimelineProvider {
         func placeholder(in context: Context) -> Entry {
-            Entry(date: Date(), journalDailyPrompt: "What are three small ways you can improve your relationships today?")
+            Entry(date: Date(), journalDailyPrompt: "What are three small ways you can improve your relationships today?", moonPhase: .getFrom())
         }
         
         func getSnapshot(in context: Context, completion: @escaping (Entry) -> ()) {
-            let entry = Entry(date: Date(), journalDailyPrompt: "What are three small ways you can improve your relationships today?")
+            let entry = Entry(date: Date(), journalDailyPrompt: "What are three small ways you can improve your relationships today?", moonPhase: .getFrom())
             completion(entry)
         }
         
@@ -21,7 +21,8 @@ extension JournalWidget {
                     
                     let entry = Entry(
                         date: date,
-                        journalDailyPrompt: prompt.name
+                        journalDailyPrompt: prompt.name,
+                        moonPhase: .getFrom()
                     )
                     let timeline = Timeline(
                         entries: [entry],
@@ -30,7 +31,12 @@ extension JournalWidget {
                     
                     completion(timeline)
                 } catch {
-                    let entry = Entry(date: date, journalDailyPrompt: "", isNetworkError: true)
+                    let entry = Entry(
+                        date: date,
+                        journalDailyPrompt: "",
+                        moonPhase: .getFrom(),
+                        isNetworkError: true
+                    )
                     let timeline = Timeline(entries: [entry], policy: .atEnd)
                     completion(timeline)
                 }
@@ -44,6 +50,7 @@ extension JournalWidget {
     struct Entry: TimelineEntry {
         let date: Date
         let journalDailyPrompt: String
+        let moonPhase: MoonPhase
         var isNetworkError = false
     }
 }
@@ -108,6 +115,8 @@ struct JournalWidgetView : View {
                     
                     WidgetButton {
                         Image(systemName: "plus")
+                        entry.moonPhase.image
+                            .foregroundColor(.black)
                         Text("Daily Journal")
                             .fontWeight(.medium)
                     }
@@ -143,15 +152,15 @@ struct JournalWidget_Previews: PreviewProvider {
     static var previews: some View {
         
         Group {
-            JournalWidgetView(entry: JournalWidget.Entry(date: Date(), journalDailyPrompt: "What are three small ways you can improve your relationships today?"))
+            JournalWidgetView(entry: JournalWidget.Entry(date: Date(), journalDailyPrompt: "What are three small ways you can improve your relationships today?", moonPhase: .getFrom()))
                 .previewContext(WidgetPreviewContext(family: .systemSmall))
                 .previewDisplayName("JournalWidget")
             
-            JournalWidgetView(entry: JournalWidget.Entry(date: Date(), journalDailyPrompt: "What are three small ways you can improve your relationships today?"))
+            JournalWidgetView(entry: JournalWidget.Entry(date: Date(), journalDailyPrompt: "What are three small ways you can improve your relationships today?", moonPhase: .getFrom()))
                 .previewContext(WidgetPreviewContext(family: .systemSmall))
                 .previewDisplayName("JournalWidget Placeholder")
             
-            JournalWidgetView(entry: JournalWidget.Entry(date: Date(), journalDailyPrompt: "What are three small ways you can improve your relationships today?", isNetworkError: true))
+            JournalWidgetView(entry: JournalWidget.Entry(date: Date(), journalDailyPrompt: "What are three small ways you can improve your relationships today?", moonPhase: .getFrom(), isNetworkError: true))
                 .previewContext(WidgetPreviewContext(family: .systemSmall))
                 .previewDisplayName("JournalWidget Network Error")
         }
