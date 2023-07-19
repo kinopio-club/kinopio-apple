@@ -1,10 +1,12 @@
 import SwiftUI
+import StoreKit
 
 struct ContentView: View {
     @State var isLoading = false
     @SceneStorage("url") var url = Configuration.webURL
     @SceneStorage("backgroundColor") var backgroundColor = Color.white
     @State private var showAddToInput = false
+    @State private var isManageSubscriptionsSheetVisible = false
     
     var body: some View {
         ZStack {
@@ -22,7 +24,8 @@ struct ContentView: View {
             WebViewWrapper(
                 url: $url,
                 isLoading: $isLoading,
-                backgroundColor: $backgroundColor
+                backgroundColor: $backgroundColor,
+                isManageSubscriptionsSheetVisible: $isManageSubscriptionsSheetVisible
             )
             .ignoresSafeArea()
             .opacity(isLoading ? 0 : 1)
@@ -31,6 +34,7 @@ struct ContentView: View {
                 AddToInboxView()
                     .presentationDetents([.height(240)])
             }
+            .manageSubscriptionsSheet(isPresented: $isManageSubscriptionsSheetVisible)
             .onOpenURL { url in
                 if url.path == ("/add") {
                     showAddToInput = true
