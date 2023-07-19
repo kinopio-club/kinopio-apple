@@ -9,15 +9,27 @@ struct WebViewWrapper: UIViewRepresentable {
     @Binding var isManageSubscriptionsSheetVisible: Bool
     
     func makeUIView(context: Context) -> WKWebView  {
-        guard let scriptPath = Bundle.main.path(forResource: "web", ofType: "js"),
-              let scriptSource = try? String(contentsOfFile: scriptPath) else {
-            fatalError("Couldn't load web.js")
-        }
-        
         // JS CONFIG
         let contentController = WKUserContentController()
-        let script = WKUserScript(source: scriptSource, injectionTime: .atDocumentEnd, forMainFrameOnly: true)
-        contentController.addUserScript(script)
+        
+        // Custom JS Scripts
+        guard let scriptPathStart = Bundle.main.path(forResource: "web-start", ofType: "js"),
+              let scriptSourceStart = try? String(contentsOfFile: scriptPathStart) else {
+            fatalError("Couldn't load web-start.js")
+        }
+        contentController.addUserScript(
+            WKUserScript(source: scriptSourceStart, injectionTime: .atDocumentStart, forMainFrameOnly: true)
+        )
+        guard let scriptPathEnd = Bundle.main.path(forResource: "web-end", ofType: "js"),
+              let scriptSourceEnd = try? String(contentsOfFile: scriptPathEnd) else {
+            fatalError("Couldn't load web-end.js")
+        }
+        contentController.addUserScript(
+            WKUserScript(source: scriptSourceEnd, injectionTime: .atDocumentStart, forMainFrameOnly: true)
+        )
+        
+        
+        // JS <-> Swift Interface
         contentController.add(context.coordinator, name: "onLoad")
         contentController.add(context.coordinator, name: "setBackgroundColor")
         contentController.add(context.coordinator, name: "showManageSubscriptions")

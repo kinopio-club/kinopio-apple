@@ -56,6 +56,7 @@
 		A09F6F772A685AAB00826D93 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09F6F762A685AAB00826D93 /* Store.swift */; };
 		A09F6F782A685AAB00826D93 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09F6F762A685AAB00826D93 /* Store.swift */; };
 		A09F6F792A685AAB00826D93 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09F6F762A685AAB00826D93 /* Store.swift */; };
+		A09F6F7B2A68889A00826D93 /* web-end.js in Resources */ = {isa = PBXBuildFile; fileRef = A09F6F7A2A68889A00826D93 /* web-end.js */; };
 		A0A113792A2F7B6D00C5114B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A113782A2F7B6D00C5114B /* User.swift */; };
 		A0A1137A2A2F7B6D00C5114B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A113782A2F7B6D00C5114B /* User.swift */; };
 		A0A1137B2A2F7B6D00C5114B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A113782A2F7B6D00C5114B /* User.swift */; };
@@ -84,7 +85,7 @@
 		A0C0014E2A338B0A004FCBED /* CreateCardIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C0014D2A338B0A004FCBED /* CreateCardIntent.swift */; };
 		A0C001502A338C4A004FCBED /* SpaceEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C0014F2A338C4A004FCBED /* SpaceEntity.swift */; };
 		A0C001522A338ED3004FCBED /* IntentError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C001512A338ED3004FCBED /* IntentError.swift */; };
-		A0F3CCEB2A0378FD00F86AC7 /* web.js in Resources */ = {isa = PBXBuildFile; fileRef = A0F3CCEA2A0378FD00F86AC7 /* web.js */; };
+		A0F3CCEB2A0378FD00F86AC7 /* web-start.js in Resources */ = {isa = PBXBuildFile; fileRef = A0F3CCEA2A0378FD00F86AC7 /* web-start.js */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -154,6 +155,7 @@
 		A09799B22A035C9C009F4681 /* WKWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKWebView.swift; sourceTree = "<group>"; };
 		A09F6F722A685A8000826D93 /* Kinopio.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = Kinopio.storekit; sourceTree = "<group>"; };
 		A09F6F762A685AAB00826D93 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		A09F6F7A2A68889A00826D93 /* web-end.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = "web-end.js"; sourceTree = "<group>"; };
 		A0A113782A2F7B6D00C5114B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A0A113812A30483B00C5114B /* Space.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Space.swift; sourceTree = "<group>"; };
 		A0A113852A30489400C5114B /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
@@ -165,7 +167,7 @@
 		A0C0014D2A338B0A004FCBED /* CreateCardIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCardIntent.swift; sourceTree = "<group>"; };
 		A0C0014F2A338C4A004FCBED /* SpaceEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceEntity.swift; sourceTree = "<group>"; };
 		A0C001512A338ED3004FCBED /* IntentError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentError.swift; sourceTree = "<group>"; };
-		A0F3CCEA2A0378FD00F86AC7 /* web.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = web.js; sourceTree = "<group>"; };
+		A0F3CCEA2A0378FD00F86AC7 /* web-start.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = "web-start.js"; sourceTree = "<group>"; };
 		A0F3CCEC2A03836F00F86AC7 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -364,7 +366,8 @@
 		A0F3CCE92A03786700F86AC7 /* JavaScript */ = {
 			isa = PBXGroup;
 			children = (
-				A0F3CCEA2A0378FD00F86AC7 /* web.js */,
+				A0F3CCEA2A0378FD00F86AC7 /* web-start.js */,
+				A09F6F7A2A68889A00826D93 /* web-end.js */,
 			);
 			path = JavaScript;
 			sourceTree = "<group>";
@@ -492,8 +495,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				A09F6F732A685A8000826D93 /* Kinopio.storekit in Resources */,
+				A09F6F7B2A68889A00826D93 /* web-end.js in Resources */,
 				A097999C2A035736009F4681 /* Preview Assets.xcassets in Resources */,
-				A0F3CCEB2A0378FD00F86AC7 /* web.js in Resources */,
+				A0F3CCEB2A0378FD00F86AC7 /* web-start.js in Resources */,
 				A09799982A035736009F4681 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
