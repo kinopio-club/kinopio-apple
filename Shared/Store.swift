@@ -11,8 +11,8 @@ class Store: ObservableObject {
         try await Product.products(for: [identifier]).first
     }
     
-    func purchase(_ product: Product, userId: String) async throws -> StoreKit.Transaction? {
-        let result = try await product.purchase(options: [.custom(key: "userId", value: userId)])
+    func purchase(_ product: Product, appAccountToken: UUID) async throws -> StoreKit.Transaction? {
+        let result = try await product.purchase(options: [.appAccountToken(appAccountToken)])
         switch result {
             case .success(let verification):
                 // Check whether the transaction is verified. If it isn't,

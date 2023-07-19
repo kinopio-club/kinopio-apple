@@ -42,7 +42,8 @@ extension WebViewWrapper {
                 case .createSubscription:
                     if let data = message.body as? [String: String],
                        let subscriptionId = data["appleSubscriptionId"],
-                       let userId = data["userId"] {
+                       let appAccountToken = data["appleAppAccountToken"],
+                       let appAccountToken = UUID(uuidString: appAccountToken) {
                         
                         Task {
                             var isSuccess = false
@@ -52,14 +53,14 @@ extension WebViewWrapper {
                                     print("Couldn't find product with ID `\(subscriptionId)`")
                                     return
                                 }
-                                if try await Store.shared.purchase(product, userId: userId) != nil {
+                                if try await Store.shared.purchase(product, appAccountToken: appAccountToken) != nil {
                                     isSuccess = true
                                 }
                             } catch {
                                 print(error)
                             }
                             
-                            let javaScriptString = "window.postMessage({name: 'upgradedUser', isSuccess: \(isSuccess.description), userId: '\(userId)'})"
+                            let javaScriptString = "window.postMessage({name: 'upgradedUser', isSuccess: \(isSuccess.description), appleAppAccountToken: '\(appAccountToken.uuidString)'})"
                             DispatchQueue.main.async {
                                 webView.evaluateJavaScript(javaScriptString)
                             }
