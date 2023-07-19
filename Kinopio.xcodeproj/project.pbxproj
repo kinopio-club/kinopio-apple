@@ -50,6 +50,12 @@
 		A09799AF2A035B08009F4681 /* WebViewWrapper+JSMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09799AE2A035B08009F4681 /* WebViewWrapper+JSMethod.swift */; };
 		A09799B12A035B59009F4681 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09799B02A035B59009F4681 /* Storage.swift */; };
 		A09799B32A035C9C009F4681 /* WKWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09799B22A035C9C009F4681 /* WKWebView.swift */; };
+		A09F6F732A685A8000826D93 /* Kinopio.storekit in Resources */ = {isa = PBXBuildFile; fileRef = A09F6F722A685A8000826D93 /* Kinopio.storekit */; };
+		A09F6F742A685A8000826D93 /* Kinopio.storekit in Resources */ = {isa = PBXBuildFile; fileRef = A09F6F722A685A8000826D93 /* Kinopio.storekit */; };
+		A09F6F752A685A8000826D93 /* Kinopio.storekit in Resources */ = {isa = PBXBuildFile; fileRef = A09F6F722A685A8000826D93 /* Kinopio.storekit */; };
+		A09F6F772A685AAB00826D93 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09F6F762A685AAB00826D93 /* Store.swift */; };
+		A09F6F782A685AAB00826D93 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09F6F762A685AAB00826D93 /* Store.swift */; };
+		A09F6F792A685AAB00826D93 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09F6F762A685AAB00826D93 /* Store.swift */; };
 		A0A113792A2F7B6D00C5114B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A113782A2F7B6D00C5114B /* User.swift */; };
 		A0A1137A2A2F7B6D00C5114B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A113782A2F7B6D00C5114B /* User.swift */; };
 		A0A1137B2A2F7B6D00C5114B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A113782A2F7B6D00C5114B /* User.swift */; };
@@ -146,6 +152,8 @@
 		A09799AE2A035B08009F4681 /* WebViewWrapper+JSMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WebViewWrapper+JSMethod.swift"; sourceTree = "<group>"; };
 		A09799B02A035B59009F4681 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		A09799B22A035C9C009F4681 /* WKWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKWebView.swift; sourceTree = "<group>"; };
+		A09F6F722A685A8000826D93 /* Kinopio.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = Kinopio.storekit; sourceTree = "<group>"; };
+		A09F6F762A685AAB00826D93 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		A0A113782A2F7B6D00C5114B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A0A113812A30483B00C5114B /* Space.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Space.swift; sourceTree = "<group>"; };
 		A0A113852A30489400C5114B /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
@@ -218,8 +226,10 @@
 				A08A65612A27233C00186F8F /* View */,
 				A09799A42A035964009F4681 /* Configuration.swift */,
 				A09799B02A035B59009F4681 /* Storage.swift */,
+				A09F6F762A685AAB00826D93 /* Store.swift */,
 				A02914C12A53544200A7E0B6 /* MoonPhase.swift */,
 				A09799972A035736009F4681 /* Assets.xcassets */,
+				A09F6F722A685A8000826D93 /* Kinopio.storekit */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -462,6 +472,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A09F6F752A685A8000826D93 /* Kinopio.storekit in Resources */,
 				A08A65602A26736900186F8F /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -470,6 +481,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A09F6F742A685A8000826D93 /* Kinopio.storekit in Resources */,
 				A08A655F2A26736900186F8F /* Assets.xcassets in Resources */,
 				A0129DF82A07D69F00FDE908 /* MainInterface.storyboard in Resources */,
 			);
@@ -479,6 +491,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A09F6F732A685A8000826D93 /* Kinopio.storekit in Resources */,
 				A097999C2A035736009F4681 /* Preview Assets.xcassets in Resources */,
 				A0F3CCEB2A0378FD00F86AC7 /* web.js in Resources */,
 				A09799982A035736009F4681 /* Assets.xcassets in Resources */,
@@ -495,6 +508,7 @@
 				A08501A72A4318B500DF6813 /* JournalWidget.swift in Sources */,
 				A0A113842A30483B00C5114B /* Space.swift in Sources */,
 				A08A656C2A27A4B100186F8F /* Configuration.swift in Sources */,
+				A09F6F792A685AAB00826D93 /* Store.swift in Sources */,
 				A08A65522A2672E200186F8F /* KinopioWidgetBundle.swift in Sources */,
 				A0A1138C2A30492800C5114B /* Networking.swift in Sources */,
 				A08A65672A275B1700186F8F /* Color.swift in Sources */,
@@ -520,6 +534,7 @@
 				A0A113902A30499600C5114B /* Networking+Error.swift in Sources */,
 				A08EE7672A07411700D7AADB /* ShareViewController.swift in Sources */,
 				A0A113982A304A5300C5114B /* JSONDecodeer.swift in Sources */,
+				A09F6F782A685AAB00826D93 /* Store.swift in Sources */,
 				A0A113832A30483B00C5114B /* Space.swift in Sources */,
 				A08A656A2A27A21400186F8F /* AddToInboxView.swift in Sources */,
 				A0A1138B2A30492800C5114B /* Networking.swift in Sources */,
@@ -550,6 +565,7 @@
 				A0A1138A2A30492800C5114B /* Networking.swift in Sources */,
 				A08EE75F2A0740EF00D7AADB /* NSItemProvider+Async.swift in Sources */,
 				A09799A52A035964009F4681 /* Configuration.swift in Sources */,
+				A09F6F772A685AAB00826D93 /* Store.swift in Sources */,
 				A09799AA2A035A4C009F4681 /* UserDefaults.swift in Sources */,
 				A0C001522A338ED3004FCBED /* IntentError.swift in Sources */,
 				A0A113862A30489500C5114B /* Card.swift in Sources */,

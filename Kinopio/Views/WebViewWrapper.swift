@@ -214,7 +214,7 @@ extension WebViewWrapper.Coordinator: WKUIDelegate {
 extension WebViewWrapper.Coordinator: WKScriptMessageHandler {
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
         if let method = WebViewWrapper.JSMethod(rawValue: message.name) {
-            method.execute(message: message)
+            method.execute(message: message, webView: webView!)
         }
         else if message.name == "onLoad" {
             // Replaces the didFinish method from WKNavigationDelegate to prevent white flashes during loading.

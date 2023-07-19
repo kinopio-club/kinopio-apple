@@ -1,0 +1,79 @@
+{
+  "identifier" : "46210BB1",
+  "nonRenewingSubscriptions" : [
+
+  ],
+  "products" : [
+
+  ],
+  "settings" : {
+    "_applicationInternalID" : "6448743101",
+    "_developerTeamID" : "VWRQY6FSN5",
+    "_lastSynchronizedDate" : 711481995.02697504
+  },
+  "subscriptionGroups" : [
+    {
+      "id" : "21364196",
+      "localizations" : [
+
+      ],
+      "name" : "Kinopio",
+      "subscriptions" : [
+        {
+          "adHocOffers" : [
+
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "6.99",
+          "familyShareable" : false,
+          "groupNumber" : 1,
+          "internalID" : "6451447484",
+          "introductoryOffer" : null,
+          "localizations" : [
+            {
+              "description" : "Monthly subscription for unlimited cards",
+              "displayName" : "Monthly Subscription",
+              "locale" : "en_US"
+            }
+          ],
+          "productID" : "apple_monthly_2023",
+          "recurringSubscriptionPeriod" : "P1M",
+          "referenceName" : "apple_monthly_2023",
+          "subscriptionGroupID" : "21364196",
+          "type" : "RecurringSubscription"
+        },
+        {
+          "adHocOffers" : [
+
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "69.99",
+          "familyShareable" : false,
+          "groupNumber" : 2,
+          "internalID" : "6451447407",
+          "introductoryOffer" : null,
+          "localizations" : [
+            {
+              "description" : "Yearly subscription for unlimited cards",
+              "displayName" : "Yearly Subscription",
+              "locale" : "en_US"
+            }
+          ],
+          "productID" : "apple_yearly_2023",
+          "recurringSubscriptionPeriod" : "P1Y",
+          "referenceName" : "apple_yearly_2023",
+          "subscriptionGroupID" : "21364196",
+          "type" : "RecurringSubscription"
+        }
+      ]
+    }
+  ],
+  "version" : {
+    "major" : 2,
+    "minor" : 0
+  }
+}
