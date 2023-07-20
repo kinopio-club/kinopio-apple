@@ -28,8 +28,6 @@
 		A08A65662A275B1600186F8F /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F3CCEC2A03836F00F86AC7 /* Color.swift */; };
 		A08A65672A275B1700186F8F /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F3CCEC2A03836F00F86AC7 /* Color.swift */; };
 		A08A65692A27A21400186F8F /* AddToInboxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08A65682A27A21400186F8F /* AddToInboxView.swift */; };
-		A08A656A2A27A21400186F8F /* AddToInboxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08A65682A27A21400186F8F /* AddToInboxView.swift */; };
-		A08A656B2A27A21400186F8F /* AddToInboxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08A65682A27A21400186F8F /* AddToInboxView.swift */; };
 		A08A656C2A27A4B100186F8F /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09799A42A035964009F4681 /* Configuration.swift */; };
 		A08D27542A0384FB0076B0B0 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F3CCEC2A03836F00F86AC7 /* Color.swift */; };
 		A08EE75E2A0740EF00D7AADB /* Sequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08EE75C2A0740EF00D7AADB /* Sequence.swift */; };
@@ -522,7 +520,6 @@
 				A0A113992A304A5300C5114B /* JSONDecodeer.swift in Sources */,
 				A08A65652A27234B00186F8F /* AvatarView.swift in Sources */,
 				A0A113912A30499600C5114B /* Networking+Error.swift in Sources */,
-				A08A656B2A27A21400186F8F /* AddToInboxView.swift in Sources */,
 				A08501AB2A4319AC00DF6813 /* JournalDailyPrompt.swift in Sources */,
 				A0A1137B2A2F7B6D00C5114B /* User.swift in Sources */,
 				A0A113882A30489500C5114B /* Card.swift in Sources */,
@@ -540,7 +537,6 @@
 				A0A113982A304A5300C5114B /* JSONDecodeer.swift in Sources */,
 				A09F6F782A685AAB00826D93 /* Store.swift in Sources */,
 				A0A113832A30483B00C5114B /* Space.swift in Sources */,
-				A08A656A2A27A21400186F8F /* AddToInboxView.swift in Sources */,
 				A0A1138B2A30492800C5114B /* Networking.swift in Sources */,
 				A08EE7782A07516C00D7AADB /* Configuration.swift in Sources */,
 				A08EE7732A07415700D7AADB /* NSItemProvider+Async.swift in Sources */,

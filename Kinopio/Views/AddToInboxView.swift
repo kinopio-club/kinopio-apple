@@ -2,7 +2,7 @@ import SwiftUI
 import WebKit
 
 struct AddToInboxView: UIViewRepresentable {
-    var onAdded: (() -> Void)?
+    var onClose: ((URL?) -> Void)?
     
     func makeUIView(context: Context) -> WKWebView  {
         let contentController = WKUserContentController()
@@ -12,6 +12,7 @@ struct AddToInboxView: UIViewRepresentable {
         config.userContentController = contentController
         
         let webView = WKWebView(frame: .zero, configuration: config)
+        webView.navigationDelegate = context.coordinator
         webView.underPageBackgroundColor = .white
         webView.backgroundColor = .white
         webView.allowsBackForwardNavigationGestures = false
@@ -25,28 +26,39 @@ struct AddToInboxView: UIViewRepresentable {
     }
     
     func makeCoordinator() -> Coordinator {
-        return Coordinator(onAdded: onAdded)
+        return Coordinator(onClose: onClose)
     }
     
     func updateUIView(_ uiView: WKWebView, context: Context) {
-        context.coordinator.onAdded = onAdded
+        context.coordinator.onClose = onClose
     }
     
     class Coordinator: NSObject {
-        var onAdded: (() -> Void)?
+        var onClose: ((URL?) -> Void)?
         
-        init(onAdded: (() -> Void)? = nil) {
-            self.onAdded = onAdded
+        init(onClose: ((URL?) -> Void)? = nil) {
+            self.onClose = onClose
         }
     }
     
 }
 
-extension AddToInboxView.Coordinator: WKScriptMessageHandler{
+extension AddToInboxView.Coordinator: WKScriptMessageHandler {
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
         if message.name == "onAdded" {
-           onAdded?()
+            onClose?(nil)
         }
+    }
+}
+
+extension AddToInboxView.Coordinator: WKNavigationDelegate {
+    func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction) async -> WKNavigationActionPolicy {
+        if let url = navigationAction.request.url, navigationAction.navigationType == .linkActivated {
+            onClose?(url)
+            return .cancel
+        }
+        
+        return .allow
     }
 }
 

@@ -8,6 +8,21 @@ struct ContentView: View {
     @State private var showAddToInput = false
     @State private var isManageSubscriptionsSheetVisible = false
     
+    private func onOpenURL(_ url: URL) {
+        if url.path == ("/add") {
+            showAddToInput = true
+        } else {
+            self.url = url
+        }
+    }
+    
+    private func onClose(_ url: URL?) {
+        showAddToInput.toggle()
+        if let url {
+            onOpenURL(url)
+        }
+    }
+    
     var body: some View {
         ZStack {
             backgroundColor.ignoresSafeArea(.all)
@@ -31,17 +46,11 @@ struct ContentView: View {
             .opacity(isLoading ? 0 : 1)
             .animation(.default, value: isLoading)
             .sheet(isPresented: $showAddToInput) {
-                AddToInboxView()
+                AddToInboxView(onClose: onClose)
                     .presentationDetents([.height(240)])
             }
             .manageSubscriptionsSheet(isPresented: $isManageSubscriptionsSheetVisible)
-            .onOpenURL { url in
-                if url.path == ("/add") {
-                    showAddToInput = true
-                } else {
-                    self.url = url
-                }
-            }
+            .onOpenURL(perform: onOpenURL)
         }
     }
     
