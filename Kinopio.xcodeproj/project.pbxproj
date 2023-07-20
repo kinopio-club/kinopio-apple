@@ -33,7 +33,7 @@
 		A08EE75E2A0740EF00D7AADB /* Sequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08EE75C2A0740EF00D7AADB /* Sequence.swift */; };
 		A08EE75F2A0740EF00D7AADB /* NSItemProvider+Async.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08EE75D2A0740EF00D7AADB /* NSItemProvider+Async.swift */; };
 		A08EE7672A07411700D7AADB /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08EE7662A07411700D7AADB /* ShareViewController.swift */; };
-		A08EE76E2A07411800D7AADB /* KinopioShareExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = A08EE7642A07411700D7AADB /* KinopioShareExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		A08EE76E2A07411800D7AADB /* ShareExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = A08EE7642A07411700D7AADB /* ShareExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		A08EE7732A07415700D7AADB /* NSItemProvider+Async.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08EE75D2A0740EF00D7AADB /* NSItemProvider+Async.swift */; };
 		A08EE7742A07415A00D7AADB /* Sequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08EE75C2A0740EF00D7AADB /* Sequence.swift */; };
 		A08EE7782A07516C00D7AADB /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09799A42A035964009F4681 /* Configuration.swift */; };
@@ -84,6 +84,8 @@
 		A0C001502A338C4A004FCBED /* SpaceEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C0014F2A338C4A004FCBED /* SpaceEntity.swift */; };
 		A0C001522A338ED3004FCBED /* IntentError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C001512A338ED3004FCBED /* IntentError.swift */; };
 		A0F3CCEB2A0378FD00F86AC7 /* web-start.js in Resources */ = {isa = PBXBuildFile; fileRef = A0F3CCEA2A0378FD00F86AC7 /* web-start.js */; };
+		A0FA99F72A69BF3A00600CE5 /* NSItemProvider+Async.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08EE75D2A0740EF00D7AADB /* NSItemProvider+Async.swift */; };
+		A0FA99F82A69BF4200600CE5 /* Sequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08EE75C2A0740EF00D7AADB /* Sequence.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,7 +113,7 @@
 			dstSubfolderSpec = 13;
 			files = (
 				A08A655A2A2672E300186F8F /* WidgetExtension.appex in Embed Foundation Extensions */,
-				A08EE76E2A07411800D7AADB /* KinopioShareExtension.appex in Embed Foundation Extensions */,
+				A08EE76E2A07411800D7AADB /* ShareExtension.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -120,8 +122,8 @@
 
 /* Begin PBXFileReference section */
 		A02914C12A53544200A7E0B6 /* MoonPhase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoonPhase.swift; sourceTree = "<group>"; };
-		A07D72B42A0939AA00FBD477 /* KinopioShareExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KinopioShareExtension.entitlements; sourceTree = "<group>"; };
-		A07D72B52A09DD8E00FBD477 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		A07D72B42A0939AA00FBD477 /* ShareExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ShareExtension.entitlements; sourceTree = "<group>"; };
+		A07D72B52A09DD8E00FBD477 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A08501A62A4318B500DF6813 /* JournalWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalWidget.swift; sourceTree = "<group>"; };
 		A08501A82A4319AC00DF6813 /* JournalDailyPrompt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalDailyPrompt.swift; sourceTree = "<group>"; };
 		A08A654A2A2672E200186F8F /* WidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = WidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -134,7 +136,7 @@
 		A08A65682A27A21400186F8F /* AddToInboxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToInboxView.swift; sourceTree = "<group>"; };
 		A08EE75C2A0740EF00D7AADB /* Sequence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sequence.swift; sourceTree = "<group>"; };
 		A08EE75D2A0740EF00D7AADB /* NSItemProvider+Async.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSItemProvider+Async.swift"; sourceTree = "<group>"; };
-		A08EE7642A07411700D7AADB /* KinopioShareExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = KinopioShareExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		A08EE7642A07411700D7AADB /* ShareExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ShareExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		A08EE7662A07411700D7AADB /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
 		A08EE7692A07411800D7AADB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		A08EE76B2A07411800D7AADB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -208,10 +210,10 @@
 		A08A65502A2672E200186F8F /* WidgetExtension */ = {
 			isa = PBXGroup;
 			children = (
-				A0A1139A2A3052F800C5114B /* WidgetExtension.entitlements */,
 				A08A65512A2672E200186F8F /* KinopioWidgetBundle.swift */,
 				A08501A62A4318B500DF6813 /* JournalWidget.swift */,
 				A08A65532A2672E200186F8F /* InboxWidget.swift */,
+				A0A1139A2A3052F800C5114B /* WidgetExtension.entitlements */,
 				A08A65572A2672E300186F8F /* Info.plist */,
 			);
 			path = WidgetExtension;
@@ -243,15 +245,15 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		A08EE7652A07411700D7AADB /* KinopioShareExtension */ = {
+		A08EE7652A07411700D7AADB /* ShareExtension */ = {
 			isa = PBXGroup;
 			children = (
-				A07D72B42A0939AA00FBD477 /* KinopioShareExtension.entitlements */,
 				A08EE7662A07411700D7AADB /* ShareViewController.swift */,
 				A08EE7682A07411700D7AADB /* MainInterface.storyboard */,
+				A07D72B42A0939AA00FBD477 /* ShareExtension.entitlements */,
 				A08EE76B2A07411800D7AADB /* Info.plist */,
 			);
-			path = KinopioShareExtension;
+			path = ShareExtension;
 			sourceTree = "<group>";
 		};
 		A09799872A035734009F4681 = {
@@ -259,7 +261,7 @@
 			children = (
 				A08A655E2A26731B00186F8F /* Shared */,
 				A09799922A035734009F4681 /* Kinopio */,
-				A08EE7652A07411700D7AADB /* KinopioShareExtension */,
+				A08EE7652A07411700D7AADB /* ShareExtension */,
 				A08A65502A2672E200186F8F /* WidgetExtension */,
 				A08A654B2A2672E200186F8F /* Frameworks */,
 				A09799912A035734009F4681 /* Products */,
@@ -270,7 +272,7 @@
 			isa = PBXGroup;
 			children = (
 				A09799902A035734009F4681 /* Kinopio.app */,
-				A08EE7642A07411700D7AADB /* KinopioShareExtension.appex */,
+				A08EE7642A07411700D7AADB /* ShareExtension.appex */,
 				A08A654A2A2672E200186F8F /* WidgetExtension.appex */,
 			);
 			name = Products;
@@ -279,14 +281,14 @@
 		A09799922A035734009F4681 /* Kinopio */ = {
 			isa = PBXGroup;
 			children = (
-				A07D72B52A09DD8E00FBD477 /* Info.plist */,
 				A09799932A035734009F4681 /* KinopioApp.swift */,
+				A09799AC2A035AA1009F4681 /* Haptics.swift */,
 				A09799AB2A035A68009F4681 /* Views */,
 				A09799A82A035A3F009F4681 /* Extensions */,
-				A09799AC2A035AA1009F4681 /* Haptics.swift */,
 				A0F3CCE92A03786700F86AC7 /* JavaScript */,
-				A09799992A035736009F4681 /* Kinopio.entitlements */,
 				A097999A2A035736009F4681 /* Preview Content */,
+				A09799992A035736009F4681 /* Kinopio.entitlements */,
+				A07D72B52A09DD8E00FBD477 /* Info.plist */,
 			);
 			path = Kinopio;
 			sourceTree = "<group>";
@@ -304,8 +306,6 @@
 			children = (
 				A09799AE2A035B08009F4681 /* WebViewWrapper+JSMethod.swift */,
 				A09799B22A035C9C009F4681 /* WKWebView.swift */,
-				A08EE75D2A0740EF00D7AADB /* NSItemProvider+Async.swift */,
-				A08EE75C2A0740EF00D7AADB /* Sequence.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -337,6 +337,8 @@
 				A09799A92A035A4C009F4681 /* UserDefaults.swift */,
 				A0A113962A304A5300C5114B /* JSONDecodeer.swift */,
 				A0F3CCEC2A03836F00F86AC7 /* Color.swift */,
+				A08EE75D2A0740EF00D7AADB /* NSItemProvider+Async.swift */,
+				A08EE75C2A0740EF00D7AADB /* Sequence.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -390,9 +392,9 @@
 			productReference = A08A654A2A2672E200186F8F /* WidgetExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
-		A08EE7632A07411700D7AADB /* KinopioShareExtension */ = {
+		A08EE7632A07411700D7AADB /* ShareExtension */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A08EE76F2A07411800D7AADB /* Build configuration list for PBXNativeTarget "KinopioShareExtension" */;
+			buildConfigurationList = A08EE76F2A07411800D7AADB /* Build configuration list for PBXNativeTarget "ShareExtension" */;
 			buildPhases = (
 				A08EE7602A07411700D7AADB /* Sources */,
 				A08EE7612A07411700D7AADB /* Frameworks */,
@@ -402,9 +404,9 @@
 			);
 			dependencies = (
 			);
-			name = KinopioShareExtension;
+			name = ShareExtension;
 			productName = KinopioShareExtension;
-			productReference = A08EE7642A07411700D7AADB /* KinopioShareExtension.appex */;
+			productReference = A08EE7642A07411700D7AADB /* ShareExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
 		A097998F2A035734009F4681 /* Kinopio */ = {
@@ -462,7 +464,7 @@
 			projectRoot = "";
 			targets = (
 				A097998F2A035734009F4681 /* Kinopio */,
-				A08EE7632A07411700D7AADB /* KinopioShareExtension */,
+				A08EE7632A07411700D7AADB /* ShareExtension */,
 				A08A65492A2672E200186F8F /* WidgetExtension */,
 			);
 		};
@@ -524,6 +526,8 @@
 				A0A1137B2A2F7B6D00C5114B /* User.swift in Sources */,
 				A0A113882A30489500C5114B /* Card.swift in Sources */,
 				A02914C42A53544200A7E0B6 /* MoonPhase.swift in Sources */,
+				A0FA99F72A69BF3A00600CE5 /* NSItemProvider+Async.swift in Sources */,
+				A0FA99F82A69BF4200600CE5 /* Sequence.swift in Sources */,
 				A0A113952A304A0700C5114B /* Networking+APIResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -597,7 +601,7 @@
 		};
 		A08EE76D2A07411800D7AADB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = A08EE7632A07411700D7AADB /* KinopioShareExtension */;
+			target = A08EE7632A07411700D7AADB /* ShareExtension */;
 			targetProxy = A08EE76C2A07411800D7AADB /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -619,7 +623,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
-				CODE_SIGN_ENTITLEMENTS = WidgetExtensionExtension.entitlements;
+				CODE_SIGN_ENTITLEMENTS = WidgetExtension/WidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = VWRQY6FSN5;
@@ -649,7 +653,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
-				CODE_SIGN_ENTITLEMENTS = WidgetExtensionExtension.entitlements;
+				CODE_SIGN_ENTITLEMENTS = WidgetExtension/WidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = VWRQY6FSN5;
@@ -678,12 +682,12 @@
 		A08EE7702A07411800D7AADB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = KinopioShareExtension/KinopioShareExtension.entitlements;
+				CODE_SIGN_ENTITLEMENTS = ShareExtension/ShareExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = VWRQY6FSN5;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = KinopioShareExtension/Info.plist;
+				INFOPLIST_FILE = ShareExtension/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = KinopioShareExtension;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
@@ -706,12 +710,12 @@
 		A08EE7712A07411800D7AADB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = KinopioShareExtension/KinopioShareExtension.entitlements;
+				CODE_SIGN_ENTITLEMENTS = ShareExtension/ShareExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = VWRQY6FSN5;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = KinopioShareExtension/Info.plist;
+				INFOPLIST_FILE = ShareExtension/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = KinopioShareExtension;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
@@ -935,7 +939,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A08EE76F2A07411800D7AADB /* Build configuration list for PBXNativeTarget "KinopioShareExtension" */ = {
+		A08EE76F2A07411800D7AADB /* Build configuration list for PBXNativeTarget "ShareExtension" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A08EE7702A07411800D7AADB /* Debug */,

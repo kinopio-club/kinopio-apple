@@ -16,8 +16,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "A08EE7632A07411700D7AADB"
-               BuildableName = "KinopioShareExtension.appex"
-               BlueprintName = "KinopioShareExtension"
+               BuildableName = "ShareExtension.appex"
+               BlueprintName = "ShareExtension"
                ReferencedContainer = "container:Kinopio.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -56,8 +56,12 @@
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES"
       launchAutomaticallySubstyle = "2">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <RemoteRunnable
+         runnableDebuggingMode = "1"
+         BundleIdentifier = "com.apple.mobilesafari"
+         RemotePath = "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS.simruntime/Contents/Resources/RuntimeRoot/Applications/MobileSafari.app">
+      </RemoteRunnable>
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A097998F2A035734009F4681"
@@ -65,7 +69,7 @@
             BlueprintName = "Kinopio"
             ReferencedContainer = "container:Kinopio.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
