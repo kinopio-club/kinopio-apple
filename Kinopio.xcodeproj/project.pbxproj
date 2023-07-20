@@ -19,7 +19,7 @@
 		A08A654F2A2672E200186F8F /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A08A654E2A2672E200186F8F /* SwiftUI.framework */; };
 		A08A65522A2672E200186F8F /* KinopioWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08A65512A2672E200186F8F /* KinopioWidgetBundle.swift */; };
 		A08A65542A2672E200186F8F /* InboxWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08A65532A2672E200186F8F /* InboxWidget.swift */; };
-		A08A655A2A2672E300186F8F /* WidgetExtensionExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = A08A654A2A2672E200186F8F /* WidgetExtensionExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		A08A655A2A2672E300186F8F /* WidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = A08A654A2A2672E200186F8F /* WidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		A08A655F2A26736900186F8F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A09799972A035736009F4681 /* Assets.xcassets */; };
 		A08A65602A26736900186F8F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A09799972A035736009F4681 /* Assets.xcassets */; };
 		A08A65632A27234B00186F8F /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08A65622A27234B00186F8F /* AvatarView.swift */; };
@@ -110,7 +110,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				A08A655A2A2672E300186F8F /* WidgetExtensionExtension.appex in Embed Foundation Extensions */,
+				A08A655A2A2672E300186F8F /* WidgetExtension.appex in Embed Foundation Extensions */,
 				A08EE76E2A07411800D7AADB /* KinopioShareExtension.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
@@ -124,7 +124,7 @@
 		A07D72B52A09DD8E00FBD477 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		A08501A62A4318B500DF6813 /* JournalWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalWidget.swift; sourceTree = "<group>"; };
 		A08501A82A4319AC00DF6813 /* JournalDailyPrompt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalDailyPrompt.swift; sourceTree = "<group>"; };
-		A08A654A2A2672E200186F8F /* WidgetExtensionExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = WidgetExtensionExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		A08A654A2A2672E200186F8F /* WidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = WidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		A08A654C2A2672E200186F8F /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		A08A654E2A2672E200186F8F /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		A08A65512A2672E200186F8F /* KinopioWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KinopioWidgetBundle.swift; sourceTree = "<group>"; };
@@ -161,7 +161,7 @@
 		A0A1138E2A30499600C5114B /* Networking+Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Networking+Error.swift"; sourceTree = "<group>"; };
 		A0A113922A304A0700C5114B /* Networking+APIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Networking+APIResponse.swift"; sourceTree = "<group>"; };
 		A0A113962A304A5300C5114B /* JSONDecodeer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONDecodeer.swift; sourceTree = "<group>"; };
-		A0A1139A2A3052F800C5114B /* WidgetExtensionExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WidgetExtensionExtension.entitlements; sourceTree = "<group>"; };
+		A0A1139A2A3052F800C5114B /* WidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WidgetExtension.entitlements; sourceTree = "<group>"; };
 		A0C0014D2A338B0A004FCBED /* CreateCardIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCardIntent.swift; sourceTree = "<group>"; };
 		A0C0014F2A338C4A004FCBED /* SpaceEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceEntity.swift; sourceTree = "<group>"; };
 		A0C001512A338ED3004FCBED /* IntentError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentError.swift; sourceTree = "<group>"; };
@@ -208,6 +208,7 @@
 		A08A65502A2672E200186F8F /* WidgetExtension */ = {
 			isa = PBXGroup;
 			children = (
+				A0A1139A2A3052F800C5114B /* WidgetExtension.entitlements */,
 				A08A65512A2672E200186F8F /* KinopioWidgetBundle.swift */,
 				A08501A62A4318B500DF6813 /* JournalWidget.swift */,
 				A08A65532A2672E200186F8F /* InboxWidget.swift */,
@@ -256,7 +257,6 @@
 		A09799872A035734009F4681 = {
 			isa = PBXGroup;
 			children = (
-				A0A1139A2A3052F800C5114B /* WidgetExtensionExtension.entitlements */,
 				A08A655E2A26731B00186F8F /* Shared */,
 				A09799922A035734009F4681 /* Kinopio */,
 				A08EE7652A07411700D7AADB /* KinopioShareExtension */,
@@ -271,7 +271,7 @@
 			children = (
 				A09799902A035734009F4681 /* Kinopio.app */,
 				A08EE7642A07411700D7AADB /* KinopioShareExtension.appex */,
-				A08A654A2A2672E200186F8F /* WidgetExtensionExtension.appex */,
+				A08A654A2A2672E200186F8F /* WidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -373,9 +373,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		A08A65492A2672E200186F8F /* WidgetExtensionExtension */ = {
+		A08A65492A2672E200186F8F /* WidgetExtension */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A08A655D2A2672E400186F8F /* Build configuration list for PBXNativeTarget "WidgetExtensionExtension" */;
+			buildConfigurationList = A08A655D2A2672E400186F8F /* Build configuration list for PBXNativeTarget "WidgetExtension" */;
 			buildPhases = (
 				A08A65462A2672E200186F8F /* Sources */,
 				A08A65472A2672E200186F8F /* Frameworks */,
@@ -385,9 +385,9 @@
 			);
 			dependencies = (
 			);
-			name = WidgetExtensionExtension;
+			name = WidgetExtension;
 			productName = WidgetExtensionExtension;
-			productReference = A08A654A2A2672E200186F8F /* WidgetExtensionExtension.appex */;
+			productReference = A08A654A2A2672E200186F8F /* WidgetExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
 		A08EE7632A07411700D7AADB /* KinopioShareExtension */ = {
@@ -463,7 +463,7 @@
 			targets = (
 				A097998F2A035734009F4681 /* Kinopio */,
 				A08EE7632A07411700D7AADB /* KinopioShareExtension */,
-				A08A65492A2672E200186F8F /* WidgetExtensionExtension */,
+				A08A65492A2672E200186F8F /* WidgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -592,7 +592,7 @@
 /* Begin PBXTargetDependency section */
 		A08A65592A2672E300186F8F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = A08A65492A2672E200186F8F /* WidgetExtensionExtension */;
+			target = A08A65492A2672E200186F8F /* WidgetExtension */;
 			targetProxy = A08A65582A2672E300186F8F /* PBXContainerItemProxy */;
 		};
 		A08EE76D2A07411800D7AADB /* PBXTargetDependency */ = {
@@ -926,7 +926,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A08A655D2A2672E400186F8F /* Build configuration list for PBXNativeTarget "WidgetExtensionExtension" */ = {
+		A08A655D2A2672E400186F8F /* Build configuration list for PBXNativeTarget "WidgetExtension" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A08A655B2A2672E400186F8F /* Debug */,
