@@ -8,6 +8,8 @@ struct WebViewWrapper: UIViewRepresentable {
     @Binding var backgroundColor: Color
     @Binding var isManageSubscriptionsSheetVisible: Bool
     
+    var webController: WebViewController
+    
     func makeUIView(context: Context) -> WKWebView  {
         // JS CONFIG
         let contentController = WKUserContentController()
@@ -75,6 +77,8 @@ struct WebViewWrapper: UIViewRepresentable {
         if webView.url?.absoluteString != url.absoluteString {
             webView.loadURL(url)
         }
+        
+        webController.webView = webView
     }
     
     func makeCoordinator() -> Coordinator {
