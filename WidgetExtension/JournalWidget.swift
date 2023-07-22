@@ -123,7 +123,7 @@ struct JournalWidgetView : View {
                     
                 }
             } else {
-                Text("There was a network error.")
+                Text("(シ_ _)シ There was a network error")
                     .font(.caption)
                     .foregroundColor(.white)
             }
@@ -143,7 +143,7 @@ struct JournalWidget: Widget {
             JournalWidgetView(entry: entry)
         }
         .configurationDisplayName("Daily Journal")
-        .description("Make a new daily journal or open your existing one.")
+        .description("Make a new journal space, or open your existing one.")
         .supportedFamilies([.systemSmall])
     }
 }

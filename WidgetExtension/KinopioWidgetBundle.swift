@@ -5,6 +5,6 @@ import SwiftUI
 struct KinopioWidgetBundle: WidgetBundle {
     var body: some Widget {
         JournalWidget()
-        InboxWidget()
+        AddWidget()
     }
 }

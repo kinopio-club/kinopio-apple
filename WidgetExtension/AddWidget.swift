@@ -1,7 +1,7 @@
 import WidgetKit
 import SwiftUI
 
-extension InboxWidget {
+extension AddWidget {
     struct Provider: TimelineProvider {
         func placeholder(in context: Context) -> Entry {
             Entry(date: Date(), numberOfCards: 21, isPreview: true)
@@ -47,7 +47,7 @@ extension InboxWidget {
     }
 }
 
-extension InboxWidget {
+extension AddWidget {
     struct Entry: TimelineEntry {
         let date: Date
         let numberOfCards: Int
@@ -57,8 +57,8 @@ extension InboxWidget {
     }
 }
 
-struct InboxWidgetView : View {
-    var entry: InboxWidget.Entry
+struct AddWidgetView : View {
+    var entry: AddWidget.Entry
     
     @Environment(\.widgetFamily) var family: WidgetFamily
     @Environment(\.colorScheme) var colorScheme: ColorScheme
@@ -127,7 +127,7 @@ struct InboxWidgetView : View {
                         WidgetButton {
                             Image(systemName: "plus")
                             Image("Inbox")
-                            Text("Add To Inbox")
+                            Text("Add Card")
                                 .fontWeight(.medium)
                                 .lineLimit(1)
                         }
@@ -135,7 +135,7 @@ struct InboxWidgetView : View {
                 }
                 .widgetURL(Configuration.addURL)
             } else {
-                Text("You have to login to Kinopio before using this widget.")
+                Text("You have to sign in to Kinopio before using this widget")
                     .font(.caption)
                     .foregroundColor(.white)
             }
@@ -189,15 +189,15 @@ struct InboxWidgetView : View {
     }
 }
 
-struct InboxWidget: Widget {
-    let kind: String = "InboxWidget"
+struct AddWidget: Widget {
+    let kind: String = "AddWidget"
     
     var body: some WidgetConfiguration {
         StaticConfiguration(kind: kind, provider: Provider()) { entry in
-            InboxWidgetView(entry: entry)
+            AddWidgetView(entry: entry)
         }
-        .configurationDisplayName("Add to Inbox")
-        .description("Quickly add cards to your Inbox.")
+        .configurationDisplayName("Add Card")
+        .description("Add cards to your Inbox and other spaces.")
         .supportedFamilies([.systemSmall, .accessoryInline, .accessoryCircular, .accessoryRectangular])
     }
 }
@@ -206,19 +206,19 @@ struct WidgetExtension_Previews: PreviewProvider {
     static var previews: some View {
         
         Group {
-            InboxWidgetView(entry: InboxWidget.Entry(date: Date(), numberOfCards: 21))
+            AddWidgetView(entry: AddWidget.Entry(date: Date(), numberOfCards: 21))
                 .previewContext(WidgetPreviewContext(family: .systemSmall))
-                .previewDisplayName("InboxWidget")
+                .previewDisplayName("AddWidget")
             
-            InboxWidgetView(entry: InboxWidget.Entry(date: Date(), numberOfCards: 21, isPreview: true))
+            AddWidgetView(entry: AddWidget.Entry(date: Date(), numberOfCards: 21, isPreview: true))
                 .previewContext(WidgetPreviewContext(family: .systemSmall))
-                .previewDisplayName("InboxWidget Placeholder")
+                .previewDisplayName("AddWidget Placeholder")
             
-            InboxWidgetView(entry: InboxWidget.Entry(date: Date(), numberOfCards: 0, isAuthenticated: false))
+            AddWidgetView(entry: AddWidget.Entry(date: Date(), numberOfCards: 0, isAuthenticated: false))
                 .previewContext(WidgetPreviewContext(family: .systemSmall))
-                .previewDisplayName("InboxWidget No Auth")
+                .previewDisplayName("AddWidget No Auth")
             
-            InboxWidgetView(entry: InboxWidget.Entry(date: Date(), numberOfCards: 21))
+            AddWidgetView(entry: AddWidget.Entry(date: Date(), numberOfCards: 21))
                 .previewContext(WidgetPreviewContext(family: .accessoryCircular))
                 .previewDisplayName("Lock Screen")
         }

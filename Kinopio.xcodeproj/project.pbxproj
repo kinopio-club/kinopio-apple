@@ -18,7 +18,7 @@
 		A08A654D2A2672E200186F8F /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A08A654C2A2672E200186F8F /* WidgetKit.framework */; };
 		A08A654F2A2672E200186F8F /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A08A654E2A2672E200186F8F /* SwiftUI.framework */; };
 		A08A65522A2672E200186F8F /* KinopioWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08A65512A2672E200186F8F /* KinopioWidgetBundle.swift */; };
-		A08A65542A2672E200186F8F /* InboxWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08A65532A2672E200186F8F /* InboxWidget.swift */; };
+		A08A65542A2672E200186F8F /* AddWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08A65532A2672E200186F8F /* AddWidget.swift */; };
 		A08A655A2A2672E300186F8F /* WidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = A08A654A2A2672E200186F8F /* WidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		A08A655F2A26736900186F8F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A09799972A035736009F4681 /* Assets.xcassets */; };
 		A08A65602A26736900186F8F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A09799972A035736009F4681 /* Assets.xcassets */; };
@@ -130,7 +130,7 @@
 		A08A654C2A2672E200186F8F /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		A08A654E2A2672E200186F8F /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		A08A65512A2672E200186F8F /* KinopioWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KinopioWidgetBundle.swift; sourceTree = "<group>"; };
-		A08A65532A2672E200186F8F /* InboxWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InboxWidget.swift; sourceTree = "<group>"; };
+		A08A65532A2672E200186F8F /* AddWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWidget.swift; sourceTree = "<group>"; };
 		A08A65572A2672E300186F8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A08A65622A27234B00186F8F /* AvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarView.swift; sourceTree = "<group>"; };
 		A08A65682A27A21400186F8F /* AddToInboxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToInboxView.swift; sourceTree = "<group>"; };
@@ -212,7 +212,7 @@
 			children = (
 				A08A65512A2672E200186F8F /* KinopioWidgetBundle.swift */,
 				A08501A62A4318B500DF6813 /* JournalWidget.swift */,
-				A08A65532A2672E200186F8F /* InboxWidget.swift */,
+				A08A65532A2672E200186F8F /* AddWidget.swift */,
 				A0A1139A2A3052F800C5114B /* WidgetExtension.entitlements */,
 				A08A65572A2672E300186F8F /* Info.plist */,
 			);
@@ -516,7 +516,7 @@
 				A08A65522A2672E200186F8F /* KinopioWidgetBundle.swift in Sources */,
 				A0A1138C2A30492800C5114B /* Networking.swift in Sources */,
 				A08A65672A275B1700186F8F /* Color.swift in Sources */,
-				A08A65542A2672E200186F8F /* InboxWidget.swift in Sources */,
+				A08A65542A2672E200186F8F /* AddWidget.swift in Sources */,
 				A0A1137E2A2F80C700C5114B /* UserDefaults.swift in Sources */,
 				A0A113802A2F80EB00C5114B /* Storage.swift in Sources */,
 				A0A113992A304A5300C5114B /* JSONDecodeer.swift in Sources */,
