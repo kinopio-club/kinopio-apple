@@ -81,7 +81,12 @@ class ShareViewController: UIViewController {
             webView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
             webView.translatesAutoresizingMaskIntoConstraints = false
             webView.heightAnchor.constraint(equalToConstant: 240).isActive = true
-            webView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1).isActive = true
+            if UIDevice.current.userInterfaceIdiom == .pad {
+                webView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+                webView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+            } else {
+                webView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1).isActive = true
+            }
             
             view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
             view.translatesAutoresizingMaskIntoConstraints = false
@@ -90,6 +95,10 @@ class ShareViewController: UIViewController {
             view.bottomAnchor.constraint(equalTo: view.superview!.bottomAnchor).isActive = true
             view.topAnchor.constraint(equalTo: view.superview!.topAnchor).isActive = true
             view.widthAnchor.constraint(equalTo: view.superview!.widthAnchor, multiplier: 1).isActive = true
+            if UIDevice.current.userInterfaceIdiom == .pad {
+                view.leftAnchor.constraint(equalTo: view.superview!.leftAnchor).isActive = true
+                view.rightAnchor.constraint(equalTo: view.superview!.rightAnchor).isActive = true
+            }
             view.keyboardLayoutGuide.topAnchor.constraint(equalToSystemSpacingBelow: webView.bottomAnchor, multiplier: 1).isActive = true
             
         }
