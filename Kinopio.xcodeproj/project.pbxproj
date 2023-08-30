@@ -167,6 +167,7 @@
 		A0C0014D2A338B0A004FCBED /* CreateCardIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCardIntent.swift; sourceTree = "<group>"; };
 		A0C0014F2A338C4A004FCBED /* SpaceEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceEntity.swift; sourceTree = "<group>"; };
 		A0C001512A338ED3004FCBED /* IntentError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentError.swift; sourceTree = "<group>"; };
+		A0D86B842A9EC94B00A37A26 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		A0F3CCEA2A0378FD00F86AC7 /* web-start.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = "web-start.js"; sourceTree = "<group>"; };
 		A0F3CCEC2A03836F00F86AC7 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -259,6 +260,7 @@
 		A09799872A035734009F4681 = {
 			isa = PBXGroup;
 			children = (
+				A0D86B842A9EC94B00A37A26 /* Config.xcconfig */,
 				A08A655E2A26731B00186F8F /* Shared */,
 				A09799922A035734009F4681 /* Kinopio */,
 				A08EE7652A07411700D7AADB /* ShareExtension */,
@@ -625,7 +627,6 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = WidgetExtension/WidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = VWRQY6FSN5;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WidgetExtension/Info.plist;
@@ -637,7 +638,6 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = club.kinopio.app.WidgetExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
@@ -655,7 +655,6 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = WidgetExtension/WidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = VWRQY6FSN5;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WidgetExtension/Info.plist;
@@ -667,7 +666,6 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = club.kinopio.app.WidgetExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
@@ -684,7 +682,6 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = ShareExtension/ShareExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = VWRQY6FSN5;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ShareExtension/Info.plist;
@@ -696,7 +693,6 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = club.kinopio.app.KinopioShareExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
@@ -712,7 +708,6 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = ShareExtension/ShareExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = VWRQY6FSN5;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ShareExtension/Info.plist;
@@ -724,7 +719,6 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = club.kinopio.app.KinopioShareExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
@@ -738,6 +732,7 @@
 		};
 		A097999D2A035736009F4681 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A0D86B842A9EC94B00A37A26 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -796,6 +791,7 @@
 		};
 		A097999E2A035736009F4681 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A0D86B842A9EC94B00A37A26 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -854,7 +850,6 @@
 				CODE_SIGN_ENTITLEMENTS = Kinopio/Kinopio.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Kinopio/Preview Content\"";
 				DEVELOPMENT_TEAM = VWRQY6FSN5;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -875,7 +870,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
-				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = club.kinopio.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
@@ -895,7 +889,6 @@
 				CODE_SIGN_ENTITLEMENTS = Kinopio/Kinopio.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Kinopio/Preview Content\"";
 				DEVELOPMENT_TEAM = VWRQY6FSN5;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -916,7 +909,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
-				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = club.kinopio.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
