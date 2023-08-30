@@ -35,7 +35,6 @@ enum MoonPhase: Int {
     private static func getPhase(year: Int, month: Int, day: Int) -> Int {
         var year = year
         var month = month
-        var day = day
         var c = 0.0
         var e = 0.0
         var jd = 0.0
