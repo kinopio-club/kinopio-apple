@@ -14,3 +14,8 @@ Native app for apple platforms
 | Kinopio/KinopioApp                        | Root file of the main app target                |
 | KinopioShareExtension/ShareViewController | Root file of the share extension target         |
 | WidgetExtension/KinopioWidgetBundle       | Root file of home and lock screen widgets       |
+
+# How to build
+
+- Rename Kinopio.xcconfig.template to Kinopio.xcconfig and update your
+  BundlePrefix, TeamID.
