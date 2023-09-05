@@ -121,6 +121,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		08BCE6D02AA71AAE003D6022 /* Kinopio.xcconfig.template */ = {isa = PBXFileReference; explicitFileType = text.xcconfig; path = Kinopio.xcconfig.template; sourceTree = "<group>"; };
 		08F8B3A82AA713AC004B0D25 /* Kinopio-release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Kinopio-release.xcconfig"; sourceTree = "<group>"; };
 		08F8B3AC2AA713CB004B0D25 /* Kinopio.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Kinopio.xcconfig; sourceTree = "<group>"; };
 		A02914C12A53544200A7E0B6 /* MoonPhase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoonPhase.swift; sourceTree = "<group>"; };
@@ -263,6 +264,7 @@
 			children = (
 				08F8B3A82AA713AC004B0D25 /* Kinopio-release.xcconfig */,
 				08F8B3AC2AA713CB004B0D25 /* Kinopio.xcconfig */,
+				08BCE6D02AA71AAE003D6022 /* Kinopio.xcconfig.template */,
 				A08A655E2A26731B00186F8F /* Shared */,
 				A09799922A035734009F4681 /* Kinopio */,
 				A08EE7652A07411700D7AADB /* ShareExtension */,
