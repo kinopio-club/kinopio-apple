@@ -2,6 +2,8 @@
 
 Native app for apple platforms
 
+[Download on the App Store](https://apps.apple.com/us/app/kinopio/id6448743101)
+
 # Primary Files
 
 | File                                      | Description                                     |
