@@ -16,3 +16,7 @@ Native app for apple platforms
 | Kinopio/KinopioApp                        | Root file of the main app target                |
 | KinopioShareExtension/ShareViewController | Root file of the share extension target         |
 | WidgetExtension/KinopioWidgetBundle       | Root file of home and lock screen widgets       |
+
+# How to build
+
+- if not on the Kinopio team, update `Config.xcconfig` with your own `BundlePrefix`, `TeamID` (but don't check in the file)
