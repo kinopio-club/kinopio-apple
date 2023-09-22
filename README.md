@@ -19,5 +19,4 @@ Native app for apple platforms
 
 # How to build
 
-- Copy Kinopio.xcconfig.template and rename to Kinopio.xcconfig, update your
-  BundlePrefix, TeamID.
+- if not on the Kinopio team, update `Config.xcconfig` with your own `BundlePrefix`, `TeamID` (but don't check in the file)
