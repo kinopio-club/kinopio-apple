@@ -4,12 +4,13 @@ import SwiftUI
 extension JournalWidget {
   struct Provider: TimelineProvider {
     func placeholder(in context: Context) -> Entry {
-      Entry(date: Date(), journalDailyPrompt: "What are three small ways you can improve your relationships today?", moonPhase: .getFrom())
+      let sampleEntry = Entry.generateSampleEntry()
+      return sampleEntry
     }
     
     func getSnapshot(in context: Context, completion: @escaping (Entry) -> ()) {
-      let entry = Entry(date: Date(), journalDailyPrompt: "What are three small ways you can improve your relationships today?", moonPhase: .getFrom())
-      completion(entry)
+      let sampleEntry = Entry.generateSampleEntry()
+      completion(sampleEntry)
     }
     
     func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
@@ -52,6 +53,17 @@ extension JournalWidget {
     let journalDailyPrompt: String
     let moonPhase: MoonPhase
     var isNetworkError = false
+
+    static func generateSampleEntry(isNetworkError: Bool = false) -> Entry {
+      let journalDailyPrompt: String = "What are three small ways you can improve your relationships today?"
+      var entry = Entry(
+        date: Date(),
+        journalDailyPrompt: journalDailyPrompt,
+        moonPhase: .getFrom()
+      )
+      entry.isNetworkError = isNetworkError
+      return entry
+    }
   }
 }
 
@@ -103,16 +115,12 @@ struct JournalWidgetView : View {
       if !entry.isNetworkError {
         VStack(alignment: .leading) {
           Header()
-          
           Spacer()
-          
           Text(entry.journalDailyPrompt)
             .font(.caption)
             .lineSpacing(1.5)
             .foregroundColor(.white)
-          
           Spacer()
-          
           WidgetButton {
             Image(systemName: "plus")
             entry.moonPhase.image
@@ -120,7 +128,6 @@ struct JournalWidgetView : View {
             Text("Daily Journal")
               .fontWeight(.medium)
           }
-          
         }
       } else {
         Text("(シ_ _)シ There was a network error")
@@ -150,17 +157,18 @@ struct JournalWidget: Widget {
 
 struct JournalWidget_Previews: PreviewProvider {
   static var previews: some View {
-    
+    let sampleEntry = JournalWidget.Entry.generateSampleEntry()
+    let networkErrorEntry = JournalWidget.Entry.generateSampleEntry(isNetworkError: true)
     Group {
-      JournalWidgetView(entry: JournalWidget.Entry(date: Date(), journalDailyPrompt: "What are three small ways you can improve your relationships today?", moonPhase: .getFrom()))
+      JournalWidgetView(entry: sampleEntry)
         .previewContext(WidgetPreviewContext(family: .systemSmall))
         .previewDisplayName("JournalWidget")
       
-      JournalWidgetView(entry: JournalWidget.Entry(date: Date(), journalDailyPrompt: "What are three small ways you can improve your relationships today?", moonPhase: .getFrom()))
+      JournalWidgetView(entry: sampleEntry)
         .previewContext(WidgetPreviewContext(family: .systemSmall))
         .previewDisplayName("JournalWidget Placeholder")
       
-      JournalWidgetView(entry: JournalWidget.Entry(date: Date(), journalDailyPrompt: "What are three small ways you can improve your relationships today?", moonPhase: .getFrom(), isNetworkError: true))
+      JournalWidgetView(entry: networkErrorEntry)
         .previewContext(WidgetPreviewContext(family: .systemSmall))
         .previewDisplayName("JournalWidget Network Error")
     }
