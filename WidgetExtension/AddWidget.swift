@@ -4,12 +4,13 @@ import SwiftUI
 extension AddWidget {
   struct Provider: TimelineProvider {
     func placeholder(in context: Context) -> Entry {
-      Entry(date: Date(), numberOfCards: 21, isPreview: true)
+      let sampleEntry = Entry.generateSampleEntry(isPreview: true)
+      return sampleEntry
     }
     
     func getSnapshot(in context: Context, completion: @escaping (Entry) -> ()) {
-      let entry = Entry(date: Date(), numberOfCards: 21)
-      completion(entry)
+      let sampleEntry = Entry.generateSampleEntry()
+      completion(sampleEntry)
     }
     
     func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
@@ -50,10 +51,22 @@ extension AddWidget {
 extension AddWidget {
   struct Entry: TimelineEntry {
     let date: Date
-    let numberOfCards: Int
+    var numberOfCards = 0
     var userColor: Color = Color("AccentColor")
     var isPreview = false
     var isAuthenticated: Bool = true
+
+    static func generateSampleEntry(isAuthenticated: Bool = true, isPreview: Bool = false, numberOfCards: Int = 10) -> Entry {
+      let userColor: Color = Color("AccentColor")
+      var entry = Entry(
+        date: Date(),
+        userColor: userColor
+      )
+      entry.isAuthenticated = isAuthenticated
+      entry.isPreview = isPreview
+      entry.numberOfCards = numberOfCards
+      return entry
+    }
   }
 }
 
@@ -69,9 +82,7 @@ struct AddWidgetView : View {
   func Header() -> some View {
     HStack {
       AvatarView(color: entry.userColor, size: 20)
-      
       Spacer()
-      
       HStack(spacing: 4) {
         Image("Inbox")
         Text("\(entry.numberOfCards) Cards")
@@ -120,9 +131,7 @@ struct AddWidgetView : View {
           } else {
             Header()
           }
-          
           Spacer()
-          
           ApplyPlaceholder {
             WidgetButton {
               Image(systemName: "plus")
@@ -163,7 +172,6 @@ struct AddWidgetView : View {
           .aspectRatio(contentMode: .fit)
           .frame(width: 18, height: 18)
           .opacity(0.6)
-        
         Text(entry.numberOfCards.description)
           .font(.headline)
       }
@@ -204,21 +212,23 @@ struct AddWidget: Widget {
 
 struct WidgetExtension_Previews: PreviewProvider {
   static var previews: some View {
-    
+    let sampleEntry = AddWidget.Entry.generateSampleEntry()
+    let placeholderEntry = AddWidget.Entry.generateSampleEntry(isPreview: true, numberOfCards: 21)
+    let noAuthEntry = AddWidget.Entry.generateSampleEntry(isAuthenticated: false)
     Group {
-      AddWidgetView(entry: AddWidget.Entry(date: Date(), numberOfCards: 21))
+      AddWidgetView(entry: sampleEntry)
         .previewContext(WidgetPreviewContext(family: .systemSmall))
         .previewDisplayName("AddWidget")
       
-      AddWidgetView(entry: AddWidget.Entry(date: Date(), numberOfCards: 21, isPreview: true))
+      AddWidgetView(entry: placeholderEntry)
         .previewContext(WidgetPreviewContext(family: .systemSmall))
         .previewDisplayName("AddWidget Placeholder")
       
-      AddWidgetView(entry: AddWidget.Entry(date: Date(), numberOfCards: 0, isAuthenticated: false))
+      AddWidgetView(entry: noAuthEntry)
         .previewContext(WidgetPreviewContext(family: .systemSmall))
         .previewDisplayName("AddWidget No Auth")
       
-      AddWidgetView(entry: AddWidget.Entry(date: Date(), numberOfCards: 21))
+      AddWidgetView(entry: sampleEntry)
         .previewContext(WidgetPreviewContext(family: .accessoryCircular))
         .previewDisplayName("Lock Screen")
     }
