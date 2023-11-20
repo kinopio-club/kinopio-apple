@@ -151,14 +151,7 @@ struct AddWidgetView : View {
     }
     .padding()
     .frame(maxWidth: .infinity, maxHeight: .infinity)
-    .background(green)
-  }
-  
-  func LockScreen() -> some View{
-    Image("Inbox")
-      .resizable()
-      .padding()
-      .background(green.ignoresSafeArea())
+    .widgetBackground(green)
   }
   
   var body: some View {
@@ -171,13 +164,13 @@ struct AddWidgetView : View {
           .resizable()
           .aspectRatio(contentMode: .fit)
           .frame(width: 18, height: 18)
-          .opacity(0.6)
+          .opacity(0.8)
         Text(entry.numberOfCards.description)
           .font(.headline)
       }
       .padding()
       .frame(maxWidth: .infinity, maxHeight: .infinity)
-      .background(Color.black.ignoresSafeArea())
+      .widgetBackground(Color.black.ignoresSafeArea())
       .widgetURL(Configuration.addURL)
     case .accessoryInline:
       Text("\(entry.numberOfCards) Cards in Inbox")
@@ -190,6 +183,7 @@ struct AddWidgetView : View {
           .frame(width: 16)
         Text("\(entry.numberOfCards) Cards")
       }
+      .widgetBackground(Color.black.ignoresSafeArea())
       .widgetURL(Configuration.addURL)
     @unknown default:
       HomeScreen()
@@ -207,31 +201,48 @@ struct AddWidget: Widget {
     .configurationDisplayName("Add Card")
     .description("Add cards to your Inbox and other spaces.")
     .supportedFamilies([.systemSmall, .accessoryInline, .accessoryCircular, .accessoryRectangular])
+    .contentMarginsDisabled()
   }
 }
 
-struct WidgetExtension_Previews: PreviewProvider {
-  static var previews: some View {
-    let sampleEntry = AddWidget.Entry.generateSampleEntry()
-    let placeholderEntry = AddWidget.Entry.generateSampleEntry(isPreview: true, numberOfCards: 21)
-    let noAuthEntry = AddWidget.Entry.generateSampleEntry(isAuthenticated: false)
-    Group {
-      AddWidgetView(entry: sampleEntry)
-        .previewContext(WidgetPreviewContext(family: .systemSmall))
-        .previewDisplayName("AddWidget")
-      
-      AddWidgetView(entry: placeholderEntry)
-        .previewContext(WidgetPreviewContext(family: .systemSmall))
-        .previewDisplayName("AddWidget Placeholder")
-      
-      AddWidgetView(entry: noAuthEntry)
-        .previewContext(WidgetPreviewContext(family: .systemSmall))
-        .previewDisplayName("AddWidget No Auth")
-      
-      AddWidgetView(entry: sampleEntry)
-        .previewContext(WidgetPreviewContext(family: .accessoryCircular))
-        .previewDisplayName("Lock Screen")
-    }
-    
-  }
+@available(iOS 17.0, *)
+#Preview("AddWidget", as: .systemSmall) {
+    AddWidget()
+} timeline: {
+    return [AddWidget.Entry.generateSampleEntry()]
+}
+
+@available(iOS 17.0, *)
+#Preview("AddWidget Placeholder", as: .systemSmall) {
+    AddWidget()
+} timeline: {
+    return [AddWidget.Entry.generateSampleEntry(isPreview: true, numberOfCards: 21)]
+}
+
+@available(iOS 17.0, *)
+#Preview("AddWidget No Auth", as: .systemSmall) {
+    AddWidget()
+} timeline: {
+    return [AddWidget.Entry.generateSampleEntry(isAuthenticated: false)]
+}
+
+@available(iOS 17.0, *)
+#Preview("AddWidget Lock Screen Circular", as: .accessoryCircular) {
+    AddWidget()
+} timeline: {
+    return [AddWidget.Entry.generateSampleEntry()]
+}
+
+@available(iOS 17.0, *)
+#Preview("AddWidget Lock Screen Rectangular", as: .accessoryRectangular) {
+    AddWidget()
+} timeline: {
+    return [AddWidget.Entry.generateSampleEntry()]
+}
+
+@available(iOS 17.0, *)
+#Preview("AddWidget Lock Screen Inline", as: .accessoryInline) {
+    AddWidget()
+} timeline: {
+    return [AddWidget.Entry.generateSampleEntry()]
 }

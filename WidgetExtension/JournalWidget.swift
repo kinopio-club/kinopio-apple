@@ -137,7 +137,7 @@ struct JournalWidgetView : View {
     }
     .padding()
     .frame(maxWidth: .infinity, maxHeight: .infinity)
-    .background(green)
+    .widgetBackground(green)
     .widgetURL(Configuration.newJournalURL)
   }
 }
@@ -152,26 +152,20 @@ struct JournalWidget: Widget {
     .configurationDisplayName("Daily Journal")
     .description("Make a new journal space, or open your existing one.")
     .supportedFamilies([.systemSmall])
+    .contentMarginsDisabled()
   }
 }
 
-struct JournalWidget_Previews: PreviewProvider {
-  static var previews: some View {
-    let sampleEntry = JournalWidget.Entry.generateSampleEntry()
-    let networkErrorEntry = JournalWidget.Entry.generateSampleEntry(isNetworkError: true)
-    Group {
-      JournalWidgetView(entry: sampleEntry)
-        .previewContext(WidgetPreviewContext(family: .systemSmall))
-        .previewDisplayName("JournalWidget")
-      
-      JournalWidgetView(entry: sampleEntry)
-        .previewContext(WidgetPreviewContext(family: .systemSmall))
-        .previewDisplayName("JournalWidget Placeholder")
-      
-      JournalWidgetView(entry: networkErrorEntry)
-        .previewContext(WidgetPreviewContext(family: .systemSmall))
-        .previewDisplayName("JournalWidget Network Error")
-    }
-    
-  }
+@available(iOS 17.0, *)
+#Preview("JournalWidget", as: .systemSmall) {
+    JournalWidget()
+} timeline: {
+    return [JournalWidget.Entry.generateSampleEntry()]
+}
+
+@available(iOS 17.0, *)
+#Preview("JournalWidget Network Error", as: .systemSmall) {
+    JournalWidget()
+} timeline: {
+    return [JournalWidget.Entry.generateSampleEntry(isNetworkError: true)]
 }
