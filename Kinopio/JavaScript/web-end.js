@@ -1,1 +1,3 @@
-window.webkit.messageHandlers.onLoad.postMessage('')
+window.addEventListener('load', () => {
+    window.webkit.messageHandlers.onLoad.postMessage('')
+})

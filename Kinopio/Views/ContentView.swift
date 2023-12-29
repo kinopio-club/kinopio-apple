@@ -3,7 +3,7 @@ import StoreKit
 import WebKit
 
 struct ContentView: View {
-    @State var isLoading = false
+    @State var isLoading = true
     @SceneStorage("url") var url = Configuration.webURL
     @SceneStorage("backgroundColor") var backgroundColor = Color.white
     @State private var showAddToInput = false
@@ -28,16 +28,10 @@ struct ContentView: View {
     
     var body: some View {
         ZStack {
-            backgroundColor.ignoresSafeArea(.all)
-            
-            if isLoading {
-                VStack {
-                    ProgressView()
-                        .progressViewStyle(.circular)
-                        .padding(.bottom)
-                }
-                .transition(.opacity.animation(.default))
-            }
+            Image("LogoBase")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 64, height: 64)
             
             WebViewWrapper(
                 url: $url,
