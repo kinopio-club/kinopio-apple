@@ -72,6 +72,7 @@ class ShareViewController: UIViewController {
             webView.allowsBackForwardNavigationGestures = false
             webView.layer.cornerRadius = 10
             webView.layer.masksToBounds = true
+            webView.scrollView.contentInset.top = 24 // Add inset for DragIndicator
             
             let request = URLRequest(url: Configuration.addURL)
             webView.load(request)
@@ -100,6 +101,18 @@ class ShareViewController: UIViewController {
                 view.rightAnchor.constraint(equalTo: view.superview!.rightAnchor).isActive = true
             }
             view.keyboardLayoutGuide.topAnchor.constraint(equalToSystemSpacingBelow: webView.bottomAnchor, multiplier: 1).isActive = true
+            
+            //MARK: DragIndicator
+            let DragIndicator = RoundedRectangle(cornerRadius: 10)
+                .fill(Color(uiColor: .lightGray))
+                .frame(width: 64, height: 6)
+                .padding(.top)
+            
+            let hostingController = UIHostingController(rootView: DragIndicator)
+            if let dragIndicatorView = hostingController.view {
+                webView.addSubview(dragIndicatorView)
+                dragIndicatorView.center.x = webView.center.x
+            }
             
         }
         
