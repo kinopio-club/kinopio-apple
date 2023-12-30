@@ -28,10 +28,6 @@ struct ContentView: View {
     
     var body: some View {
         ZStack {
-            Image("LogoBase")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 64, height: 64)
             
             WebViewWrapper(
                 url: $url,
@@ -42,13 +38,28 @@ struct ContentView: View {
             )
             .ignoresSafeArea()
             .opacity(isLoading ? 0 : 1)
-            .animation(.default, value: isLoading)
+            .animation(.default.delay(0.5), value: isLoading)
             .sheet(isPresented: $showAddToInput) {
                 AddToInboxView(onClose: onClose, webController: webController)
                     .presentationDetents([.height(240)])
             }
             .manageSubscriptionsSheet(isPresented: $isManageSubscriptionsSheetVisible)
             .onOpenURL(perform: onOpenURL)
+            
+            GeometryReader { geometry in
+                Image("LogoBase")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: isLoading ? 64 : 36, height: isLoading ? 64 : 36)
+                    .offset(
+                        x: isLoading ? geometry.size.width / 2 - 64 / 2 : 8,
+                        y: isLoading ? geometry.size.height / 2 - 64 / 2 : 6
+                    )
+                    .animation(.snappy.delay(0.2), value: isLoading)
+                    .opacity(isLoading ? 1 : 0)
+                    .animation(.default.delay(0.7), value: isLoading)
+            }
+            
         }
     }
     
