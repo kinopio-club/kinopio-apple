@@ -80,6 +80,9 @@
 		A0A113972A304A5300C5114B /* JSONDecodeer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A113962A304A5300C5114B /* JSONDecodeer.swift */; };
 		A0A113982A304A5300C5114B /* JSONDecodeer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A113962A304A5300C5114B /* JSONDecodeer.swift */; };
 		A0A113992A304A5300C5114B /* JSONDecodeer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A113962A304A5300C5114B /* JSONDecodeer.swift */; };
+		A0B7C6B32B42C0B7001D66A9 /* CloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B7C6B22B42C0B7001D66A9 /* CloseButton.swift */; };
+		A0B7C6B42B42C0B7001D66A9 /* CloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B7C6B22B42C0B7001D66A9 /* CloseButton.swift */; };
+		A0B7C6B52B42C0B7001D66A9 /* CloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B7C6B22B42C0B7001D66A9 /* CloseButton.swift */; };
 		A0C0014E2A338B0A004FCBED /* CreateCardIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C0014D2A338B0A004FCBED /* CreateCardIntent.swift */; };
 		A0C001502A338C4A004FCBED /* SpaceEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C0014F2A338C4A004FCBED /* SpaceEntity.swift */; };
 		A0C001522A338ED3004FCBED /* IntentError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C001512A338ED3004FCBED /* IntentError.swift */; };
@@ -169,6 +172,7 @@
 		A0A113922A304A0700C5114B /* Networking+APIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Networking+APIResponse.swift"; sourceTree = "<group>"; };
 		A0A113962A304A5300C5114B /* JSONDecodeer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONDecodeer.swift; sourceTree = "<group>"; };
 		A0A1139A2A3052F800C5114B /* WidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WidgetExtension.entitlements; sourceTree = "<group>"; };
+		A0B7C6B22B42C0B7001D66A9 /* CloseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseButton.swift; sourceTree = "<group>"; };
 		A0C0014D2A338B0A004FCBED /* CreateCardIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCardIntent.swift; sourceTree = "<group>"; };
 		A0C0014F2A338C4A004FCBED /* SpaceEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceEntity.swift; sourceTree = "<group>"; };
 		A0C001512A338ED3004FCBED /* IntentError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentError.swift; sourceTree = "<group>"; };
@@ -247,6 +251,7 @@
 			isa = PBXGroup;
 			children = (
 				A08A65622A27234B00186F8F /* AvatarView.swift */,
+				A0B7C6B22B42C0B7001D66A9 /* CloseButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -522,6 +527,7 @@
 				A0A113842A30483B00C5114B /* Space.swift in Sources */,
 				A08A656C2A27A4B100186F8F /* Configuration.swift in Sources */,
 				A09F6F792A685AAB00826D93 /* Store.swift in Sources */,
+				A0B7C6B52B42C0B7001D66A9 /* CloseButton.swift in Sources */,
 				A08A65522A2672E200186F8F /* KinopioWidgetBundle.swift in Sources */,
 				A0F4E5DB2B0B3ACE00D2E215 /* View.swift in Sources */,
 				A0A1138C2A30492800C5114B /* Networking.swift in Sources */,
@@ -556,6 +562,7 @@
 				A08EE7782A07516C00D7AADB /* Configuration.swift in Sources */,
 				A08EE7732A07415700D7AADB /* NSItemProvider+Async.swift in Sources */,
 				A0A1137A2A2F7B6D00C5114B /* User.swift in Sources */,
+				A0B7C6B42B42C0B7001D66A9 /* CloseButton.swift in Sources */,
 				A0A1137D2A2F80C700C5114B /* UserDefaults.swift in Sources */,
 				A0A113872A30489500C5114B /* Card.swift in Sources */,
 				A08EE7742A07415A00D7AADB /* Sequence.swift in Sources */,
@@ -594,6 +601,7 @@
 				A0A113792A2F7B6D00C5114B /* User.swift in Sources */,
 				A08A65692A27A21400186F8F /* AddToInboxView.swift in Sources */,
 				A0A1138F2A30499600C5114B /* Networking+Error.swift in Sources */,
+				A0B7C6B32B42C0B7001D66A9 /* CloseButton.swift in Sources */,
 				A08EE75E2A0740EF00D7AADB /* Sequence.swift in Sources */,
 				A09799B12A035B59009F4681 /* Storage.swift in Sources */,
 				A09799B32A035C9C009F4681 /* WKWebView.swift in Sources */,
@@ -868,7 +876,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Kinopio/Preview Content\"";
-				DEVELOPMENT_TEAM = 5EMC6RK8V9;
+				DEVELOPMENT_TEAM = VWRQY6FSN5;
 				DYLIB_CURRENT_VERSION = 1;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;

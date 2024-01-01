@@ -102,16 +102,18 @@ class ShareViewController: UIViewController {
             }
             view.keyboardLayoutGuide.topAnchor.constraint(equalToSystemSpacingBelow: webView.bottomAnchor, multiplier: 1).isActive = true
             
-            //MARK: DragIndicator
-            let DragIndicator = RoundedRectangle(cornerRadius: 10)
-                .fill(Color(uiColor: .lightGray))
-                .frame(width: 64, height: 6)
-                .padding(.top)
-            
-            let hostingController = UIHostingController(rootView: DragIndicator)
-            if let dragIndicatorView = hostingController.view {
-                webView.addSubview(dragIndicatorView)
-                dragIndicatorView.center.x = webView.center.x
+            //MARK: CloseButton
+            let closeButton = CloseButton(action: {
+                self.extensionContext?.completeRequest(returningItems: nil)
+            })
+            let hostingController = UIHostingController(rootView: closeButton)
+            if let buttonView = hostingController.view {
+                buttonView.backgroundColor = .clear
+                webView.addSubview(buttonView)
+                buttonView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+                buttonView.translatesAutoresizingMaskIntoConstraints = false
+                buttonView.rightAnchor.constraint(equalTo: webView.rightAnchor).isActive = true
+                buttonView.topAnchor.constraint(equalTo: webView.topAnchor).isActive = true
             }
             
         }
