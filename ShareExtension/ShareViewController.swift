@@ -122,8 +122,12 @@ extension ShareViewController: WKNavigationDelegate {
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         
         let escapedText = text.replacingOccurrences(of: "'", with: "\'")
-        let script = "window.postMessage('\(escapedText)', '*');navigator.isSecureAppContext = true;"
-        
+        let script = """
+navigator.isSecureAppContext = true;
+setTimeout(() => {
+    window.postMessage('\(escapedText)', '*');
+}, 300)
+"""
         webView.evaluateJavaScript(script)
     }
     
