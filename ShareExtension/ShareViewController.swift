@@ -72,6 +72,7 @@ class ShareViewController: UIViewController {
             webView.allowsBackForwardNavigationGestures = false
             webView.layer.cornerRadius = 10
             webView.layer.masksToBounds = true
+            webView.scrollView.contentInset.top = 24 // Add inset for DragIndicator
             
             let request = URLRequest(url: Configuration.addURL)
             webView.load(request)
@@ -100,6 +101,20 @@ class ShareViewController: UIViewController {
                 view.rightAnchor.constraint(equalTo: view.superview!.rightAnchor).isActive = true
             }
             view.keyboardLayoutGuide.topAnchor.constraint(equalToSystemSpacingBelow: webView.bottomAnchor, multiplier: 1).isActive = true
+            
+            //MARK: CloseButton
+            let closeButton = CloseButton(action: {
+                self.extensionContext?.completeRequest(returningItems: nil)
+            })
+            let hostingController = UIHostingController(rootView: closeButton)
+            if let buttonView = hostingController.view {
+                buttonView.backgroundColor = .clear
+                webView.addSubview(buttonView)
+                buttonView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+                buttonView.translatesAutoresizingMaskIntoConstraints = false
+                buttonView.rightAnchor.constraint(equalTo: webView.rightAnchor).isActive = true
+                buttonView.topAnchor.constraint(equalTo: webView.topAnchor).isActive = true
+            }
             
         }
         
