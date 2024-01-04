@@ -45,6 +45,7 @@ struct WebViewWrapper: UIViewRepresentable {
         config.allowsPictureInPictureMediaPlayback = true
         config.limitsNavigationsToAppBoundDomains = true
         config.userContentController = contentController
+        config.limitsNavigationsToAppBoundDomains = true // necessary to enable Service Workers
         
         let webView = WKWebView(frame: .zero, configuration: config)
         webView.underPageBackgroundColor = .clear
