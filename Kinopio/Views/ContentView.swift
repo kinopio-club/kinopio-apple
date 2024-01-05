@@ -29,6 +29,11 @@ struct ContentView: View {
     var body: some View {
         ZStack {
             
+            if !isLoading {
+                backgroundColor.ignoresSafeArea(.all)
+                    .transition(.opacity.animation(.default))
+            }
+            
             WebViewWrapper(
                 url: $url,
                 isLoading: $isLoading,
