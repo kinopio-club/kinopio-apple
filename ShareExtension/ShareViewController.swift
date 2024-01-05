@@ -75,6 +75,11 @@ class ShareViewController: UIViewController {
             config.userContentController = contentController
             
             let webView = WKWebView(frame: .zero, configuration: config)
+#if DEBUG
+            if #available(iOS 16.4, *) {
+                webView.isInspectable = true
+            }
+#endif
             webView.navigationDelegate = self
             webView.underPageBackgroundColor = .white
             webView.backgroundColor = .white
