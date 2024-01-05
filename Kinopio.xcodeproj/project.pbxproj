@@ -11,6 +11,7 @@
 		A02914C22A53544200A7E0B6 /* MoonPhase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02914C12A53544200A7E0B6 /* MoonPhase.swift */; };
 		A02914C32A53544200A7E0B6 /* MoonPhase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02914C12A53544200A7E0B6 /* MoonPhase.swift */; };
 		A02914C42A53544200A7E0B6 /* MoonPhase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02914C12A53544200A7E0B6 /* MoonPhase.swift */; };
+		A068E51E2B47A10F00185FAB /* web-start.js in Resources */ = {isa = PBXBuildFile; fileRef = A0F3CCEA2A0378FD00F86AC7 /* web-start.js */; };
 		A08501A72A4318B500DF6813 /* JournalWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08501A62A4318B500DF6813 /* JournalWidget.swift */; };
 		A08501A92A4319AC00DF6813 /* JournalDailyPrompt.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08501A82A4319AC00DF6813 /* JournalDailyPrompt.swift */; };
 		A08501AA2A4319AC00DF6813 /* JournalDailyPrompt.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08501A82A4319AC00DF6813 /* JournalDailyPrompt.swift */; };
@@ -498,6 +499,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A068E51E2B47A10F00185FAB /* web-start.js in Resources */,
 				A09F6F742A685A8000826D93 /* Kinopio.storekit in Resources */,
 				A08A655F2A26736900186F8F /* Assets.xcassets in Resources */,
 				A0129DF82A07D69F00FDE908 /* MainInterface.storyboard in Resources */,

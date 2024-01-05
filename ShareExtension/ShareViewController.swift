@@ -62,6 +62,15 @@ class ShareViewController: UIViewController {
             let script = WKUserScript(source: source, injectionTime: .atDocumentStart, forMainFrameOnly: true)
             contentController.addUserScript(script)
             
+            // Custom JS Scripts
+            guard let scriptPathStart = Bundle.main.path(forResource: "web-start", ofType: "js"),
+                  let scriptSourceStart = try? String(contentsOfFile: scriptPathStart) else {
+                fatalError("Couldn't load web-start.js")
+            }
+            contentController.addUserScript(
+                WKUserScript(source: scriptSourceStart, injectionTime: .atDocumentStart, forMainFrameOnly: true)
+            )
+            
             let config = WKWebViewConfiguration()
             config.userContentController = contentController
             
