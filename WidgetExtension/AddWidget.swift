@@ -17,19 +17,23 @@ extension AddWidget {
       let date = Calendar.current.date(byAdding: .minute, value: 15, to: Date())!
       
       guard let token = Storage.getToken() else {
-        return completion(Timeline(entries: [Entry(date: date, numberOfCards: 0, isAuthenticated: false)], policy: .atEnd))
+        return completion(Timeline(entries: [.unauthorized], policy: .never))
       }
       
       Task {
         do {
           let space = try await Networking.getUserInboxSpace(token: token)
           let user = try await Networking.getUser(token: token)
+            
+          // Cache for offline usage
+          Storage.setUserColor(user.color)
+          Storage.setNumberOfCards(space.cards?.count ?? 0)
           
           let entry = Entry(
             date: date,
             numberOfCards: space.cards?.count ?? 0,
             userColor: user.nativeColor,
-            isAuthenticated: true
+            state: .default
           )
           let timeline = Timeline(
             entries: [entry],
@@ -37,10 +41,25 @@ extension AddWidget {
           )
           
           completion(timeline)
+        } catch Networking.APIError.unauthorized, Networking.APIError.forbidden {
+            return completion(Timeline(entries: [.unauthorized], policy: .never))
         } catch {
-          let entry = Entry(date: date, numberOfCards: 0, isAuthenticated: false)
-          let timeline = Timeline(entries: [entry], policy: .atEnd)
-          completion(timeline)
+            if let userColor = Storage.getUserColor(),
+               let numberOfCards = Storage.getNumberOfCards() {
+                let entry = Entry(
+                  date: date,
+                  numberOfCards: numberOfCards,
+                  userColor: Color.parseWebColor(userColor) ?? .accentColor,
+                  state: .default
+                )
+                let timeline = Timeline(
+                  entries: [entry],
+                  policy: .atEnd
+                )
+                completion(timeline)
+            } else {
+                completion(Timeline(entries: [.networkError], policy: .atEnd))
+            }
         }
       }
       
@@ -54,18 +73,28 @@ extension AddWidget {
     var numberOfCards = 0
     var userColor: Color = Color("AccentColor")
     var isPreview = false
-    var isAuthenticated: Bool = true
+    var state: State
 
-    static func generateSampleEntry(isAuthenticated: Bool = true, isPreview: Bool = false, numberOfCards: Int = 10) -> Entry {
-      let userColor: Color = Color("AccentColor")
-      var entry = Entry(
-        date: Date(),
-        userColor: userColor
+    static func generateSampleEntry(state: State = .default, isPreview: Bool = false, numberOfCards: Int = 10) -> Entry {
+      return Entry(
+        date: .now,
+        numberOfCards: numberOfCards,
+        isPreview: isPreview,
+        state: state
       )
-      entry.isAuthenticated = isAuthenticated
-      entry.isPreview = isPreview
-      entry.numberOfCards = numberOfCards
-      return entry
+    }
+      
+    static var unauthorized: Self {
+        .init(date: .now, state: .unauthorized)
+    }
+      
+    static var networkError: Self {
+        let date = Calendar.current.date(byAdding: .minute, value: 15, to: .now)!
+        return .init(date: date, state: .networkError)
+    }
+      
+    enum State {
+      case `default`, networkError, unauthorized
     }
   }
 }
@@ -123,31 +152,35 @@ struct AddWidgetView : View {
   
   func HomeScreen() -> some View {
     VStack {
-      if entry.isAuthenticated {
-        VStack(alignment: .leading) {
-          if entry.isPreview {
-            Header()
-              .redacted(reason: .placeholder)
-          } else {
-            Header()
-          }
-          Spacer()
-          ApplyPlaceholder {
-            WidgetButton {
-              Image(systemName: "plus")
-              Image("Inbox")
-              Text("Add Card")
-                .fontWeight(.medium)
-                .lineLimit(1)
+        switch entry.state {
+        case .default:
+            VStack(alignment: .leading) {
+              if entry.isPreview {
+                Header()
+                  .redacted(reason: .placeholder)
+              } else {
+                Header()
+              }
+              Spacer()
+              ApplyPlaceholder {
+                WidgetButton {
+                  Image(systemName: "plus")
+                  Image("Inbox")
+                  Text("Add Card")
+                    .fontWeight(.medium)
+                    .lineLimit(1)
+                }
+              }
             }
-          }
+        case .networkError:
+            Text("(シ_ _)シ There was a network error")
+              .font(.caption)
+              .foregroundColor(.white)
+        case .unauthorized:
+            Text("You have to sign in to Kinopio before using this widget")
+              .font(.caption)
+              .foregroundColor(.white)
         }
-        .widgetURL(Configuration.addURL)
-      } else {
-        Text("You have to sign in to Kinopio before using this widget")
-          .font(.caption)
-          .foregroundColor(.white)
-      }
     }
     .padding()
     .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -223,7 +256,14 @@ struct AddWidget: Widget {
 #Preview("AddWidget No Auth", as: .systemSmall) {
     AddWidget()
 } timeline: {
-    return [AddWidget.Entry.generateSampleEntry(isAuthenticated: false)]
+    return [AddWidget.Entry.unauthorized]
+}
+
+@available(iOS 17.0, *)
+#Preview("AddWidget Network Error", as: .systemSmall) {
+    AddWidget()
+} timeline: {
+    return [AddWidget.Entry.networkError]
 }
 
 @available(iOS 17.0, *)
