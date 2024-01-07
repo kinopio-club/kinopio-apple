@@ -1,4 +1,7 @@
 import WebKit
+#if canImport(WidgetKit)
+import WidgetKit
+#endif
 
 extension WebViewWrapper {
     
@@ -35,8 +38,15 @@ extension WebViewWrapper {
                     )
                     
                     Storage.reset()
+                
+                    #if canImport(WidgetKit)
+                        WidgetCenter.shared.reloadAllTimelines()
+                    #endif
                 case .setApiKey:
                     if let token = message.body as? String {
+                        #if canImport(WidgetKit)
+                            WidgetCenter.shared.reloadAllTimelines()
+                        #endif
                         Storage.setToken(token)
                     }
                 case .createSubscription:
