@@ -172,10 +172,12 @@ struct AddWidgetView : View {
                 }
               }
             }
+            .widgetURL(Configuration.addURL)
         case .networkError:
             Text("(シ_ _)シ There was a network error")
               .font(.caption)
               .foregroundColor(.white)
+              .widgetURL(Configuration.addURL)
         case .unauthorized:
             Text("You have to sign in to Kinopio before using this widget")
               .font(.caption)
