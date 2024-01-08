@@ -30,6 +30,8 @@ enum Storage {
     
     static func reset() {
         userDefaults.removeObject(forKey: "token")
+        userDefaults.removeObject(forKey: "userColor")
+        userDefaults.removeObject(forKey: "numberOfCards")
     }
     
 }
