@@ -33,6 +33,7 @@ struct WebViewWrapper: UIViewRepresentable {
         
         // JS <-> Swift Interface
         contentController.add(context.coordinator, name: "onLoad")
+        contentController.add(context.coordinator, name: "restoreSpaceComplete")
         contentController.add(context.coordinator, name: "setBackgroundColor")
         contentController.add(context.coordinator, name: "showManageSubscriptions")
         for method in JSMethod.allCases {
@@ -237,9 +238,11 @@ extension WebViewWrapper.Coordinator: WKScriptMessageHandler {
         if let method = WebViewWrapper.JSMethod(rawValue: message.name) {
             method.execute(message: message, webView: webView!)
         }
-        else if message.name == "onLoad" {
+        else if ["onLoad", "restoreSpaceComplete"].contains(message.name) {
             // Replaces the didFinish method from WKNavigationDelegate to prevent white flashes during loading.
             // Requires an injected JS file that calls `window.webkit.messageHandlers.onLoad.postMessage('')`
+            // Alternatively https://github.com/kinopio-club/kinopio-client calls
+            // `window.webkit.messageHandlers.restoreSpaceComplete.postMessage(true)`
             isLoading = false
         }
         else if message.name == "setBackgroundColor", let color = message.body as? String {
