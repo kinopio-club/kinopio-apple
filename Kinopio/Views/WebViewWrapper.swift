@@ -54,12 +54,9 @@ struct WebViewWrapper: UIViewRepresentable {
         webView.allowsBackForwardNavigationGestures = false
         webView.navigationDelegate = context.coordinator
         webView.uiDelegate = context.coordinator
-        
-#if DEBUG
         if #available(iOS 16.4, *) {
             webView.isInspectable = true
         }
-#endif
         
         context.coordinator.urlChangedObservation = webView.observe(\.url, options: .new) { view, change in
             if let url = view.url {
