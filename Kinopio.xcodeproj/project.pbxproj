@@ -3,95 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 74;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A0129DF82A07D69F00FDE908 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A08EE7682A07411700D7AADB /* MainInterface.storyboard */; };
-		A02914C22A53544200A7E0B6 /* MoonPhase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02914C12A53544200A7E0B6 /* MoonPhase.swift */; };
-		A02914C32A53544200A7E0B6 /* MoonPhase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02914C12A53544200A7E0B6 /* MoonPhase.swift */; };
-		A02914C42A53544200A7E0B6 /* MoonPhase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02914C12A53544200A7E0B6 /* MoonPhase.swift */; };
-		A068E51E2B47A10F00185FAB /* web-start.js in Resources */ = {isa = PBXBuildFile; fileRef = A0F3CCEA2A0378FD00F86AC7 /* web-start.js */; };
-		A08501A92A4319AC00DF6813 /* JournalDailyPrompt.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08501A82A4319AC00DF6813 /* JournalDailyPrompt.swift */; };
-		A08501AA2A4319AC00DF6813 /* JournalDailyPrompt.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08501A82A4319AC00DF6813 /* JournalDailyPrompt.swift */; };
-		A08501AB2A4319AC00DF6813 /* JournalDailyPrompt.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08501A82A4319AC00DF6813 /* JournalDailyPrompt.swift */; };
 		A08A654D2A2672E200186F8F /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A08A654C2A2672E200186F8F /* WidgetKit.framework */; };
 		A08A654F2A2672E200186F8F /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A08A654E2A2672E200186F8F /* SwiftUI.framework */; };
-		A08A65522A2672E200186F8F /* KinopioWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08A65512A2672E200186F8F /* KinopioWidgetBundle.swift */; };
-		A08A65542A2672E200186F8F /* AddWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08A65532A2672E200186F8F /* AddWidget.swift */; };
 		A08A655A2A2672E300186F8F /* WidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = A08A654A2A2672E200186F8F /* WidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		A08A655F2A26736900186F8F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A09799972A035736009F4681 /* Assets.xcassets */; };
-		A08A65602A26736900186F8F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A09799972A035736009F4681 /* Assets.xcassets */; };
-		A08A65632A27234B00186F8F /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08A65622A27234B00186F8F /* AvatarView.swift */; };
-		A08A65642A27234B00186F8F /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08A65622A27234B00186F8F /* AvatarView.swift */; };
-		A08A65652A27234B00186F8F /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08A65622A27234B00186F8F /* AvatarView.swift */; };
-		A08A65662A275B1600186F8F /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F3CCEC2A03836F00F86AC7 /* Color.swift */; };
-		A08A65672A275B1700186F8F /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F3CCEC2A03836F00F86AC7 /* Color.swift */; };
-		A08A65692A27A21400186F8F /* AddToInboxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08A65682A27A21400186F8F /* AddToInboxView.swift */; };
-		A08A656C2A27A4B100186F8F /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09799A42A035964009F4681 /* Configuration.swift */; };
-		A08D27542A0384FB0076B0B0 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F3CCEC2A03836F00F86AC7 /* Color.swift */; };
-		A08EE75E2A0740EF00D7AADB /* Sequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08EE75C2A0740EF00D7AADB /* Sequence.swift */; };
-		A08EE75F2A0740EF00D7AADB /* NSItemProvider+Async.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08EE75D2A0740EF00D7AADB /* NSItemProvider+Async.swift */; };
-		A08EE7672A07411700D7AADB /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08EE7662A07411700D7AADB /* ShareViewController.swift */; };
 		A08EE76E2A07411800D7AADB /* ShareExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = A08EE7642A07411700D7AADB /* ShareExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		A08EE7732A07415700D7AADB /* NSItemProvider+Async.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08EE75D2A0740EF00D7AADB /* NSItemProvider+Async.swift */; };
-		A08EE7742A07415A00D7AADB /* Sequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08EE75C2A0740EF00D7AADB /* Sequence.swift */; };
-		A08EE7782A07516C00D7AADB /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09799A42A035964009F4681 /* Configuration.swift */; };
-		A09799942A035734009F4681 /* KinopioApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09799932A035734009F4681 /* KinopioApp.swift */; };
-		A09799962A035734009F4681 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09799952A035734009F4681 /* ContentView.swift */; };
-		A09799982A035736009F4681 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A09799972A035736009F4681 /* Assets.xcassets */; };
-		A097999C2A035736009F4681 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A097999B2A035736009F4681 /* Preview Assets.xcassets */; };
-		A09799A52A035964009F4681 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09799A42A035964009F4681 /* Configuration.swift */; };
-		A09799A72A0359EC009F4681 /* WebViewWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09799A62A0359EC009F4681 /* WebViewWrapper.swift */; };
-		A09799AA2A035A4C009F4681 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09799A92A035A4C009F4681 /* UserDefaults.swift */; };
-		A09799AD2A035AA1009F4681 /* Haptics.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09799AC2A035AA1009F4681 /* Haptics.swift */; };
-		A09799AF2A035B08009F4681 /* WebViewWrapper+JSMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09799AE2A035B08009F4681 /* WebViewWrapper+JSMethod.swift */; };
-		A09799B12A035B59009F4681 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09799B02A035B59009F4681 /* Storage.swift */; };
-		A09799B32A035C9C009F4681 /* WKWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09799B22A035C9C009F4681 /* WKWebView.swift */; };
-		A09F6F732A685A8000826D93 /* Kinopio.storekit in Resources */ = {isa = PBXBuildFile; fileRef = A09F6F722A685A8000826D93 /* Kinopio.storekit */; };
-		A09F6F742A685A8000826D93 /* Kinopio.storekit in Resources */ = {isa = PBXBuildFile; fileRef = A09F6F722A685A8000826D93 /* Kinopio.storekit */; };
-		A09F6F752A685A8000826D93 /* Kinopio.storekit in Resources */ = {isa = PBXBuildFile; fileRef = A09F6F722A685A8000826D93 /* Kinopio.storekit */; };
-		A09F6F772A685AAB00826D93 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09F6F762A685AAB00826D93 /* Store.swift */; };
-		A09F6F782A685AAB00826D93 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09F6F762A685AAB00826D93 /* Store.swift */; };
-		A09F6F792A685AAB00826D93 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09F6F762A685AAB00826D93 /* Store.swift */; };
-		A09F6F7B2A68889A00826D93 /* web-end.js in Resources */ = {isa = PBXBuildFile; fileRef = A09F6F7A2A68889A00826D93 /* web-end.js */; };
-		A0A113792A2F7B6D00C5114B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A113782A2F7B6D00C5114B /* User.swift */; };
-		A0A1137A2A2F7B6D00C5114B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A113782A2F7B6D00C5114B /* User.swift */; };
-		A0A1137B2A2F7B6D00C5114B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A113782A2F7B6D00C5114B /* User.swift */; };
-		A0A1137D2A2F80C700C5114B /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09799A92A035A4C009F4681 /* UserDefaults.swift */; };
-		A0A1137E2A2F80C700C5114B /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09799A92A035A4C009F4681 /* UserDefaults.swift */; };
-		A0A1137F2A2F80EA00C5114B /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09799B02A035B59009F4681 /* Storage.swift */; };
-		A0A113802A2F80EB00C5114B /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09799B02A035B59009F4681 /* Storage.swift */; };
-		A0A113822A30483B00C5114B /* Space.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A113812A30483B00C5114B /* Space.swift */; };
-		A0A113832A30483B00C5114B /* Space.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A113812A30483B00C5114B /* Space.swift */; };
-		A0A113842A30483B00C5114B /* Space.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A113812A30483B00C5114B /* Space.swift */; };
-		A0A113862A30489500C5114B /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A113852A30489400C5114B /* Card.swift */; };
-		A0A113872A30489500C5114B /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A113852A30489400C5114B /* Card.swift */; };
-		A0A113882A30489500C5114B /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A113852A30489400C5114B /* Card.swift */; };
-		A0A1138A2A30492800C5114B /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A113892A30492800C5114B /* Networking.swift */; };
-		A0A1138B2A30492800C5114B /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A113892A30492800C5114B /* Networking.swift */; };
-		A0A1138C2A30492800C5114B /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A113892A30492800C5114B /* Networking.swift */; };
-		A0A1138F2A30499600C5114B /* Networking+Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A1138E2A30499600C5114B /* Networking+Error.swift */; };
-		A0A113902A30499600C5114B /* Networking+Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A1138E2A30499600C5114B /* Networking+Error.swift */; };
-		A0A113912A30499600C5114B /* Networking+Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A1138E2A30499600C5114B /* Networking+Error.swift */; };
-		A0A113932A304A0700C5114B /* Networking+APIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A113922A304A0700C5114B /* Networking+APIResponse.swift */; };
-		A0A113942A304A0700C5114B /* Networking+APIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A113922A304A0700C5114B /* Networking+APIResponse.swift */; };
-		A0A113952A304A0700C5114B /* Networking+APIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A113922A304A0700C5114B /* Networking+APIResponse.swift */; };
-		A0A113972A304A5300C5114B /* JSONDecodeer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A113962A304A5300C5114B /* JSONDecodeer.swift */; };
-		A0A113982A304A5300C5114B /* JSONDecodeer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A113962A304A5300C5114B /* JSONDecodeer.swift */; };
-		A0A113992A304A5300C5114B /* JSONDecodeer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A113962A304A5300C5114B /* JSONDecodeer.swift */; };
-		A0B7C6B32B42C0B7001D66A9 /* CloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B7C6B22B42C0B7001D66A9 /* CloseButton.swift */; };
-		A0B7C6B42B42C0B7001D66A9 /* CloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B7C6B22B42C0B7001D66A9 /* CloseButton.swift */; };
-		A0B7C6B52B42C0B7001D66A9 /* CloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B7C6B22B42C0B7001D66A9 /* CloseButton.swift */; };
-		A0C0014E2A338B0A004FCBED /* CreateCardIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C0014D2A338B0A004FCBED /* CreateCardIntent.swift */; };
-		A0C001502A338C4A004FCBED /* SpaceEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C0014F2A338C4A004FCBED /* SpaceEntity.swift */; };
-		A0C001522A338ED3004FCBED /* IntentError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C001512A338ED3004FCBED /* IntentError.swift */; };
-		A0F3CCEB2A0378FD00F86AC7 /* web-start.js in Resources */ = {isa = PBXBuildFile; fileRef = A0F3CCEA2A0378FD00F86AC7 /* web-start.js */; };
-		A0F4E5D92B0B3ACE00D2E215 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F4E5D82B0B3ACE00D2E215 /* View.swift */; };
-		A0F4E5DA2B0B3ACE00D2E215 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F4E5D82B0B3ACE00D2E215 /* View.swift */; };
-		A0F4E5DB2B0B3ACE00D2E215 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F4E5D82B0B3ACE00D2E215 /* View.swift */; };
-		A0FA99F72A69BF3A00600CE5 /* NSItemProvider+Async.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08EE75D2A0740EF00D7AADB /* NSItemProvider+Async.swift */; };
-		A0FA99F82A69BF4200600CE5 /* Sequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08EE75C2A0740EF00D7AADB /* Sequence.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -129,56 +48,70 @@
 /* Begin PBXFileReference section */
 		08F8B3A82AA713AC004B0D25 /* Config-release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Config-release.xcconfig"; sourceTree = "<group>"; };
 		08F8B3AC2AA713CB004B0D25 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
-		A02914C12A53544200A7E0B6 /* MoonPhase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoonPhase.swift; sourceTree = "<group>"; };
-		A07D72B42A0939AA00FBD477 /* ShareExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ShareExtension.entitlements; sourceTree = "<group>"; };
-		A07D72B52A09DD8E00FBD477 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A08501A82A4319AC00DF6813 /* JournalDailyPrompt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalDailyPrompt.swift; sourceTree = "<group>"; };
 		A08A654A2A2672E200186F8F /* WidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = WidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		A08A654C2A2672E200186F8F /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		A08A654E2A2672E200186F8F /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
-		A08A65512A2672E200186F8F /* KinopioWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KinopioWidgetBundle.swift; sourceTree = "<group>"; };
-		A08A65532A2672E200186F8F /* AddWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWidget.swift; sourceTree = "<group>"; };
-		A08A65572A2672E300186F8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A08A65622A27234B00186F8F /* AvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarView.swift; sourceTree = "<group>"; };
-		A08A65682A27A21400186F8F /* AddToInboxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToInboxView.swift; sourceTree = "<group>"; };
-		A08EE75C2A0740EF00D7AADB /* Sequence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sequence.swift; sourceTree = "<group>"; };
-		A08EE75D2A0740EF00D7AADB /* NSItemProvider+Async.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSItemProvider+Async.swift"; sourceTree = "<group>"; };
 		A08EE7642A07411700D7AADB /* ShareExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ShareExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
-		A08EE7662A07411700D7AADB /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
-		A08EE7692A07411800D7AADB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
-		A08EE76B2A07411800D7AADB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A09799902A035734009F4681 /* Kinopio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kinopio.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		A09799932A035734009F4681 /* KinopioApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KinopioApp.swift; sourceTree = "<group>"; };
-		A09799952A035734009F4681 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		A09799972A035736009F4681 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		A09799992A035736009F4681 /* Kinopio.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Kinopio.entitlements; sourceTree = "<group>"; };
-		A097999B2A035736009F4681 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		A09799A42A035964009F4681 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
-		A09799A62A0359EC009F4681 /* WebViewWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewWrapper.swift; sourceTree = "<group>"; };
-		A09799A92A035A4C009F4681 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
-		A09799AC2A035AA1009F4681 /* Haptics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Haptics.swift; sourceTree = "<group>"; };
-		A09799AE2A035B08009F4681 /* WebViewWrapper+JSMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WebViewWrapper+JSMethod.swift"; sourceTree = "<group>"; };
-		A09799B02A035B59009F4681 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
-		A09799B22A035C9C009F4681 /* WKWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKWebView.swift; sourceTree = "<group>"; };
-		A09F6F722A685A8000826D93 /* Kinopio.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = Kinopio.storekit; sourceTree = "<group>"; };
-		A09F6F762A685AAB00826D93 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
-		A09F6F7A2A68889A00826D93 /* web-end.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = "web-end.js"; sourceTree = "<group>"; };
-		A0A113782A2F7B6D00C5114B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		A0A113812A30483B00C5114B /* Space.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Space.swift; sourceTree = "<group>"; };
-		A0A113852A30489400C5114B /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
-		A0A113892A30492800C5114B /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
-		A0A1138E2A30499600C5114B /* Networking+Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Networking+Error.swift"; sourceTree = "<group>"; };
-		A0A113922A304A0700C5114B /* Networking+APIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Networking+APIResponse.swift"; sourceTree = "<group>"; };
-		A0A113962A304A5300C5114B /* JSONDecodeer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONDecodeer.swift; sourceTree = "<group>"; };
-		A0A1139A2A3052F800C5114B /* WidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WidgetExtension.entitlements; sourceTree = "<group>"; };
-		A0B7C6B22B42C0B7001D66A9 /* CloseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseButton.swift; sourceTree = "<group>"; };
-		A0C0014D2A338B0A004FCBED /* CreateCardIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCardIntent.swift; sourceTree = "<group>"; };
-		A0C0014F2A338C4A004FCBED /* SpaceEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceEntity.swift; sourceTree = "<group>"; };
-		A0C001512A338ED3004FCBED /* IntentError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentError.swift; sourceTree = "<group>"; };
-		A0F3CCEA2A0378FD00F86AC7 /* web-start.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = "web-start.js"; sourceTree = "<group>"; };
-		A0F3CCEC2A03836F00F86AC7 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
-		A0F4E5D82B0B3ACE00D2E215 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		A00750B22E67421F0088858E /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				AppIntents/CreateCardIntent.swift,
+				AppIntents/IntentError.swift,
+				AppIntents/SpaceEntity.swift,
+			);
+			target = A08EE7632A07411700D7AADB /* ShareExtension */;
+		};
+		A00750B32E67421F0088858E /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				AppIntents/CreateCardIntent.swift,
+				AppIntents/IntentError.swift,
+				AppIntents/SpaceEntity.swift,
+			);
+			target = A08A65492A2672E200186F8F /* WidgetExtension */;
+		};
+		A00750D12E6742220088858E /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = A097998F2A035734009F4681 /* Kinopio */;
+		};
+		A00750D22E6742220088858E /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				"JavaScript/web-start.js",
+			);
+			target = A08EE7632A07411700D7AADB /* ShareExtension */;
+		};
+		A00750DB2E6742240088858E /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				/Localized/MainInterface.storyboard,
+				ShareViewController.swift,
+			);
+			target = A08EE7632A07411700D7AADB /* ShareExtension */;
+		};
+		A00750E32E6742260088858E /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				AddWidget.swift,
+				KinopioWidgetBundle.swift,
+			);
+			target = A08A65492A2672E200186F8F /* WidgetExtension */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		A00750692E67421F0088858E /* Shared */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (A00750B22E67421F0088858E /* PBXFileSystemSynchronizedBuildFileExceptionSet */, A00750B32E67421F0088858E /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Shared; sourceTree = "<group>"; };
+		A00750C42E6742220088858E /* Kinopio */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (A00750D12E6742220088858E /* PBXFileSystemSynchronizedBuildFileExceptionSet */, A00750D22E6742220088858E /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Kinopio; sourceTree = "<group>"; };
+		A00750D82E6742240088858E /* ShareExtension */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (A00750DB2E6742240088858E /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = ShareExtension; sourceTree = "<group>"; };
+		A00750E02E6742260088858E /* WidgetExtension */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (A00750E32E6742260088858E /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = WidgetExtension; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		A08A65472A2672E200186F8F /* Frameworks */ = {
@@ -216,64 +149,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		A08A65502A2672E200186F8F /* WidgetExtension */ = {
-			isa = PBXGroup;
-			children = (
-				A08A65512A2672E200186F8F /* KinopioWidgetBundle.swift */,
-				A08A65532A2672E200186F8F /* AddWidget.swift */,
-				A0A1139A2A3052F800C5114B /* WidgetExtension.entitlements */,
-				A08A65572A2672E300186F8F /* Info.plist */,
-			);
-			path = WidgetExtension;
-			sourceTree = "<group>";
-		};
-		A08A655E2A26731B00186F8F /* Shared */ = {
-			isa = PBXGroup;
-			children = (
-				A0C0014C2A338ADA004FCBED /* AppIntents */,
-				A0A1138D2A30497700C5114B /* Networking */,
-				A0A1137C2A2F80BE00C5114B /* Extensions */,
-				A0A113772A2F7B5E00C5114B /* Models */,
-				A08A65612A27233C00186F8F /* View */,
-				A09799A42A035964009F4681 /* Configuration.swift */,
-				A09799B02A035B59009F4681 /* Storage.swift */,
-				A09F6F762A685AAB00826D93 /* Store.swift */,
-				A02914C12A53544200A7E0B6 /* MoonPhase.swift */,
-				A09799972A035736009F4681 /* Assets.xcassets */,
-				A09F6F722A685A8000826D93 /* Kinopio.storekit */,
-			);
-			path = Shared;
-			sourceTree = "<group>";
-		};
-		A08A65612A27233C00186F8F /* View */ = {
-			isa = PBXGroup;
-			children = (
-				A08A65622A27234B00186F8F /* AvatarView.swift */,
-				A0B7C6B22B42C0B7001D66A9 /* CloseButton.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		A08EE7652A07411700D7AADB /* ShareExtension */ = {
-			isa = PBXGroup;
-			children = (
-				A08EE7662A07411700D7AADB /* ShareViewController.swift */,
-				A08EE7682A07411700D7AADB /* MainInterface.storyboard */,
-				A07D72B42A0939AA00FBD477 /* ShareExtension.entitlements */,
-				A08EE76B2A07411800D7AADB /* Info.plist */,
-			);
-			path = ShareExtension;
-			sourceTree = "<group>";
-		};
 		A09799872A035734009F4681 = {
 			isa = PBXGroup;
 			children = (
 				08F8B3A82AA713AC004B0D25 /* Config-release.xcconfig */,
 				08F8B3AC2AA713CB004B0D25 /* Config.xcconfig */,
-				A08A655E2A26731B00186F8F /* Shared */,
-				A09799922A035734009F4681 /* Kinopio */,
-				A08EE7652A07411700D7AADB /* ShareExtension */,
-				A08A65502A2672E200186F8F /* WidgetExtension */,
+				A00750692E67421F0088858E /* Shared */,
+				A00750C42E6742220088858E /* Kinopio */,
+				A00750D82E6742240088858E /* ShareExtension */,
+				A00750E02E6742260088858E /* WidgetExtension */,
 				A08A654B2A2672E200186F8F /* Frameworks */,
 				A09799912A035734009F4681 /* Products */,
 			);
@@ -287,101 +171,6 @@
 				A08A654A2A2672E200186F8F /* WidgetExtension.appex */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		A09799922A035734009F4681 /* Kinopio */ = {
-			isa = PBXGroup;
-			children = (
-				A09799932A035734009F4681 /* KinopioApp.swift */,
-				A09799AC2A035AA1009F4681 /* Haptics.swift */,
-				A09799AB2A035A68009F4681 /* Views */,
-				A09799A82A035A3F009F4681 /* Extensions */,
-				A0F3CCE92A03786700F86AC7 /* JavaScript */,
-				A097999A2A035736009F4681 /* Preview Content */,
-				A09799992A035736009F4681 /* Kinopio.entitlements */,
-				A07D72B52A09DD8E00FBD477 /* Info.plist */,
-			);
-			path = Kinopio;
-			sourceTree = "<group>";
-		};
-		A097999A2A035736009F4681 /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				A097999B2A035736009F4681 /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		A09799A82A035A3F009F4681 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				A09799AE2A035B08009F4681 /* WebViewWrapper+JSMethod.swift */,
-				A09799B22A035C9C009F4681 /* WKWebView.swift */,
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
-		A09799AB2A035A68009F4681 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				A09799952A035734009F4681 /* ContentView.swift */,
-				A09799A62A0359EC009F4681 /* WebViewWrapper.swift */,
-				A08A65682A27A21400186F8F /* AddToInboxView.swift */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		A0A113772A2F7B5E00C5114B /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				A0A113782A2F7B6D00C5114B /* User.swift */,
-				A0A113812A30483B00C5114B /* Space.swift */,
-				A0A113852A30489400C5114B /* Card.swift */,
-				A08501A82A4319AC00DF6813 /* JournalDailyPrompt.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		A0A1137C2A2F80BE00C5114B /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				A09799A92A035A4C009F4681 /* UserDefaults.swift */,
-				A0A113962A304A5300C5114B /* JSONDecodeer.swift */,
-				A0F3CCEC2A03836F00F86AC7 /* Color.swift */,
-				A08EE75D2A0740EF00D7AADB /* NSItemProvider+Async.swift */,
-				A08EE75C2A0740EF00D7AADB /* Sequence.swift */,
-				A0F4E5D82B0B3ACE00D2E215 /* View.swift */,
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
-		A0A1138D2A30497700C5114B /* Networking */ = {
-			isa = PBXGroup;
-			children = (
-				A0A113892A30492800C5114B /* Networking.swift */,
-				A0A1138E2A30499600C5114B /* Networking+Error.swift */,
-				A0A113922A304A0700C5114B /* Networking+APIResponse.swift */,
-			);
-			path = Networking;
-			sourceTree = "<group>";
-		};
-		A0C0014C2A338ADA004FCBED /* AppIntents */ = {
-			isa = PBXGroup;
-			children = (
-				A0C0014D2A338B0A004FCBED /* CreateCardIntent.swift */,
-				A0C0014F2A338C4A004FCBED /* SpaceEntity.swift */,
-				A0C001512A338ED3004FCBED /* IntentError.swift */,
-			);
-			path = AppIntents;
-			sourceTree = "<group>";
-		};
-		A0F3CCE92A03786700F86AC7 /* JavaScript */ = {
-			isa = PBXGroup;
-			children = (
-				A0F3CCEA2A0378FD00F86AC7 /* web-start.js */,
-				A09F6F7A2A68889A00826D93 /* web-end.js */,
-			);
-			path = JavaScript;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -399,6 +188,9 @@
 			);
 			dependencies = (
 			);
+			fileSystemSynchronizedGroups = (
+				A00750692E67421F0088858E /* Shared */,
+			);
 			name = WidgetExtension;
 			productName = WidgetExtensionExtension;
 			productReference = A08A654A2A2672E200186F8F /* WidgetExtension.appex */;
@@ -415,6 +207,9 @@
 			buildRules = (
 			);
 			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				A00750692E67421F0088858E /* Shared */,
 			);
 			name = ShareExtension;
 			productName = KinopioShareExtension;
@@ -435,6 +230,10 @@
 			dependencies = (
 				A08EE76D2A07411800D7AADB /* PBXTargetDependency */,
 				A08A65592A2672E300186F8F /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				A00750692E67421F0088858E /* Shared */,
+				A00750C42E6742220088858E /* Kinopio */,
 			);
 			name = Kinopio;
 			productName = Kinopio;
@@ -463,7 +262,6 @@
 				};
 			};
 			buildConfigurationList = A097998B2A035734009F4681 /* Build configuration list for PBXProject "Kinopio" */;
-			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -471,6 +269,7 @@
 				Base,
 			);
 			mainGroup = A09799872A035734009F4681;
+			preferredProjectObjectVersion = 56;
 			productRefGroup = A09799912A035734009F4681 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -487,8 +286,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A09F6F752A685A8000826D93 /* Kinopio.storekit in Resources */,
-				A08A65602A26736900186F8F /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -496,10 +293,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A068E51E2B47A10F00185FAB /* web-start.js in Resources */,
-				A09F6F742A685A8000826D93 /* Kinopio.storekit in Resources */,
-				A08A655F2A26736900186F8F /* Assets.xcassets in Resources */,
-				A0129DF82A07D69F00FDE908 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -507,11 +300,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A09F6F732A685A8000826D93 /* Kinopio.storekit in Resources */,
-				A09F6F7B2A68889A00826D93 /* web-end.js in Resources */,
-				A097999C2A035736009F4681 /* Preview Assets.xcassets in Resources */,
-				A0F3CCEB2A0378FD00F86AC7 /* web-start.js in Resources */,
-				A09799982A035736009F4681 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -522,27 +310,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A0A113842A30483B00C5114B /* Space.swift in Sources */,
-				A08A656C2A27A4B100186F8F /* Configuration.swift in Sources */,
-				A09F6F792A685AAB00826D93 /* Store.swift in Sources */,
-				A0B7C6B52B42C0B7001D66A9 /* CloseButton.swift in Sources */,
-				A08A65522A2672E200186F8F /* KinopioWidgetBundle.swift in Sources */,
-				A0F4E5DB2B0B3ACE00D2E215 /* View.swift in Sources */,
-				A0A1138C2A30492800C5114B /* Networking.swift in Sources */,
-				A08A65672A275B1700186F8F /* Color.swift in Sources */,
-				A08A65542A2672E200186F8F /* AddWidget.swift in Sources */,
-				A0A1137E2A2F80C700C5114B /* UserDefaults.swift in Sources */,
-				A0A113802A2F80EB00C5114B /* Storage.swift in Sources */,
-				A0A113992A304A5300C5114B /* JSONDecodeer.swift in Sources */,
-				A08A65652A27234B00186F8F /* AvatarView.swift in Sources */,
-				A0A113912A30499600C5114B /* Networking+Error.swift in Sources */,
-				A08501AB2A4319AC00DF6813 /* JournalDailyPrompt.swift in Sources */,
-				A0A1137B2A2F7B6D00C5114B /* User.swift in Sources */,
-				A0A113882A30489500C5114B /* Card.swift in Sources */,
-				A02914C42A53544200A7E0B6 /* MoonPhase.swift in Sources */,
-				A0FA99F72A69BF3A00600CE5 /* NSItemProvider+Async.swift in Sources */,
-				A0FA99F82A69BF4200600CE5 /* Sequence.swift in Sources */,
-				A0A113952A304A0700C5114B /* Networking+APIResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -550,26 +317,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A0A113902A30499600C5114B /* Networking+Error.swift in Sources */,
-				A08EE7672A07411700D7AADB /* ShareViewController.swift in Sources */,
-				A0A113982A304A5300C5114B /* JSONDecodeer.swift in Sources */,
-				A09F6F782A685AAB00826D93 /* Store.swift in Sources */,
-				A0A113832A30483B00C5114B /* Space.swift in Sources */,
-				A0A1138B2A30492800C5114B /* Networking.swift in Sources */,
-				A0F4E5DA2B0B3ACE00D2E215 /* View.swift in Sources */,
-				A08EE7782A07516C00D7AADB /* Configuration.swift in Sources */,
-				A08EE7732A07415700D7AADB /* NSItemProvider+Async.swift in Sources */,
-				A0A1137A2A2F7B6D00C5114B /* User.swift in Sources */,
-				A0B7C6B42B42C0B7001D66A9 /* CloseButton.swift in Sources */,
-				A0A1137D2A2F80C700C5114B /* UserDefaults.swift in Sources */,
-				A0A113872A30489500C5114B /* Card.swift in Sources */,
-				A08EE7742A07415A00D7AADB /* Sequence.swift in Sources */,
-				A08A65642A27234B00186F8F /* AvatarView.swift in Sources */,
-				A08501AA2A4319AC00DF6813 /* JournalDailyPrompt.swift in Sources */,
-				A08A65662A275B1600186F8F /* Color.swift in Sources */,
-				A0A1137F2A2F80EA00C5114B /* Storage.swift in Sources */,
-				A02914C32A53544200A7E0B6 /* MoonPhase.swift in Sources */,
-				A0A113942A304A0700C5114B /* Networking+APIResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -577,35 +324,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A08A65632A27234B00186F8F /* AvatarView.swift in Sources */,
-				A0C001502A338C4A004FCBED /* SpaceEntity.swift in Sources */,
-				A09799AD2A035AA1009F4681 /* Haptics.swift in Sources */,
-				A0A113822A30483B00C5114B /* Space.swift in Sources */,
-				A02914C22A53544200A7E0B6 /* MoonPhase.swift in Sources */,
-				A0A1138A2A30492800C5114B /* Networking.swift in Sources */,
-				A08EE75F2A0740EF00D7AADB /* NSItemProvider+Async.swift in Sources */,
-				A09799A52A035964009F4681 /* Configuration.swift in Sources */,
-				A09F6F772A685AAB00826D93 /* Store.swift in Sources */,
-				A09799AA2A035A4C009F4681 /* UserDefaults.swift in Sources */,
-				A0C001522A338ED3004FCBED /* IntentError.swift in Sources */,
-				A0A113862A30489500C5114B /* Card.swift in Sources */,
-				A0F4E5D92B0B3ACE00D2E215 /* View.swift in Sources */,
-				A0C0014E2A338B0A004FCBED /* CreateCardIntent.swift in Sources */,
-				A0A113972A304A5300C5114B /* JSONDecodeer.swift in Sources */,
-				A08D27542A0384FB0076B0B0 /* Color.swift in Sources */,
-				A08501A92A4319AC00DF6813 /* JournalDailyPrompt.swift in Sources */,
-				A09799A72A0359EC009F4681 /* WebViewWrapper.swift in Sources */,
-				A09799962A035734009F4681 /* ContentView.swift in Sources */,
-				A0A113792A2F7B6D00C5114B /* User.swift in Sources */,
-				A08A65692A27A21400186F8F /* AddToInboxView.swift in Sources */,
-				A0A1138F2A30499600C5114B /* Networking+Error.swift in Sources */,
-				A0B7C6B32B42C0B7001D66A9 /* CloseButton.swift in Sources */,
-				A08EE75E2A0740EF00D7AADB /* Sequence.swift in Sources */,
-				A09799B12A035B59009F4681 /* Storage.swift in Sources */,
-				A09799B32A035C9C009F4681 /* WKWebView.swift in Sources */,
-				A09799942A035734009F4681 /* KinopioApp.swift in Sources */,
-				A09799AF2A035B08009F4681 /* WebViewWrapper+JSMethod.swift in Sources */,
-				A0A113932A304A0700C5114B /* Networking+APIResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -623,17 +341,6 @@
 			targetProxy = A08EE76C2A07411800D7AADB /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		A08EE7682A07411700D7AADB /* MainInterface.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A08EE7692A07411800D7AADB /* Base */,
-			);
-			name = MainInterface.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		A08A655B2A2672E400186F8F /* Debug */ = {
