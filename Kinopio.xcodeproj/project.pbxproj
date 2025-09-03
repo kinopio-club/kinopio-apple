@@ -48,6 +48,7 @@
 /* Begin PBXFileReference section */
 		08F8B3A82AA713AC004B0D25 /* Config-release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Config-release.xcconfig"; sourceTree = "<group>"; };
 		08F8B3AC2AA713CB004B0D25 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
+		A0468EF62E68849E00E9F5A2 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		A08A654A2A2672E200186F8F /* WidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = WidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		A08A654C2A2672E200186F8F /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		A08A654E2A2672E200186F8F /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
@@ -152,6 +153,7 @@
 		A09799872A035734009F4681 = {
 			isa = PBXGroup;
 			children = (
+				A0468EF62E68849E00E9F5A2 /* README.md */,
 				08F8B3A82AA713AC004B0D25 /* Config-release.xcconfig */,
 				08F8B3AC2AA713CB004B0D25 /* Config.xcconfig */,
 				A00750692E67421F0088858E /* Shared */,
