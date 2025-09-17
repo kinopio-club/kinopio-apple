@@ -161,7 +161,7 @@ extension Color {
     }
 }
 
-extension Color: RawRepresentable {
+extension Color: @retroactive RawRepresentable {
     
     public init?(rawValue: String) {
         

@@ -5,7 +5,7 @@ extension JSONDecoder {
         case invalidDate
     }
     
-    static func JSONDateDecodingStrategy(decoder: Decoder) throws -> Date {
+    @Sendable static func JSONDateDecodingStrategy(decoder: Decoder) throws -> Date {
         let formatter = DateFormatter()
         formatter.calendar = Calendar(identifier: .iso8601)
         formatter.locale = Locale(identifier: "en_US_POSIX")

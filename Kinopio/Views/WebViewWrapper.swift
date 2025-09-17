@@ -126,7 +126,7 @@ extension WebViewWrapper.Coordinator: WKNavigationDelegate {
         }
         else if let url = navigationAction.request.url,
                 navigationAction.navigationType == .linkActivated {
-            await webView.loadURL(url)
+            webView.loadURL(url)
             return .cancel
         }
         // iframes
