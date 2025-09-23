@@ -4,7 +4,7 @@ import WebKit
 
 struct ContentView: View {
     @State var isLoading = true
-    @SceneStorage("url") var url = Configuration.webURL
+    @SceneStorage("url") var url = Configuration.appURL
     @SceneStorage("backgroundColor") var backgroundColor = Color.white
     @State private var showAddToInput = false
     @State private var isManageSubscriptionsSheetVisible = false

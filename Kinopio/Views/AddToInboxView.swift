@@ -27,7 +27,7 @@ struct AddToInboxView: UIViewRepresentable {
         }
 #endif
         
-        let request = URLRequest(url: Configuration.webURL.appendingPathComponent("add"))
+        let request = URLRequest(url: Configuration.addURL)
         webView.load(request)
         
         return webView
