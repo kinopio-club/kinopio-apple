@@ -7,4 +7,5 @@ struct Space: Identifiable, Codable {
     var privacy: String
     var createdAt: Date
     var editedAt: Date?
+    var previewThumbnailImage: URL?
 }

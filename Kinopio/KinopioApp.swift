@@ -16,12 +16,20 @@ struct KinopioApp: App {
                     }
                     do {
                         let spaces = try await Networking.getUserSpaces(token: token)
-                        let spaceEntitites = spaces
-                            .map { space in
-                                SpaceEntity(id: space.id, name: space.name)
-                            }
+                        
+                        var spaceEntities = [SpaceEntity]()
+                        for space in spaces {
+                            spaceEntities.append(
+                                SpaceEntity(
+                                    id: space.id,
+                                    name: space.name,
+                                    thumbnailURL: try? await ThumbnailCache.shared.imageURL(for: space)
+                                )
+                            )
+                        }
+                        
                         try await CSSearchableIndex.default().indexAppEntities(
-                            spaceEntitites
+                            spaceEntities
                         )
                     } catch {
                         print(error)

@@ -8,12 +8,21 @@ struct SpaceEntity: AppEntity {
     
     var id: String
     var name: String
+    var thumbnailURL: URL?
     
     var displayRepresentation: DisplayRepresentation {
-        DisplayRepresentation(
-            title: "\(name)",
-            image: .init(systemName: "heart.fill")
-        )
+        if let thumbnailURL {
+            DisplayRepresentation(
+                title: "\(name)",
+                subtitle: "Kinopio Space",
+                image: .init(url: thumbnailURL)
+            )
+        } else {
+            DisplayRepresentation(
+                title: "\(name)",
+                image: .init(systemName: "heart.fill")
+            )
+        }
     }
     
     var webURL: URL {
@@ -21,17 +30,38 @@ struct SpaceEntity: AppEntity {
     }
     
     struct SpaceEntityQuery: EntityStringQuery {
+        
+        func entitiesFrom(spaces: [Space]) async -> [SpaceEntity] {
+            await withTaskGroup { group in
+                var entities = [SpaceEntity]()
+                
+                for space in spaces {
+                    group.addTask {
+                        SpaceEntity(
+                            id: space.id,
+                            name: space.name,
+                            thumbnailURL: try? await ThumbnailCache.shared.imageURL(for: space)
+                        )
+                    }
+                }
+                
+                for await s in group {
+                    entities.append(s)
+                }
+                
+                return entities.sorted { $0.name.localizedStandardCompare($1.name) == .orderedAscending }
+            }
+        }
+        
         func entities(matching string: String) async throws -> [SpaceEntity] {
             guard let token = Storage.getToken() else {
                 return []
             }
             
             let spaces = try await Networking.getUserSpaces(token: token)
-            return spaces
-                .filter { $0.name.localizedCaseInsensitiveContains(string) }
-                .map { space in
-                    SpaceEntity(id: space.id, name: space.name)
-                }
+            let filteredSpaces = spaces.filter { $0.name.localizedCaseInsensitiveContains(string) }
+            
+            return await entitiesFrom(spaces: filteredSpaces)
         }
         
         func entities(for identifiers: [SpaceEntity.ID]) async throws -> [SpaceEntity] {
@@ -40,13 +70,8 @@ struct SpaceEntity: AppEntity {
             }
             
             let spaces = try await Networking.getUserSpaces(token: token)
-            return identifiers.flatMap { identifier in
-                spaces
-                    .filter { $0.id == identifier }
-                    .map { space in
-                        SpaceEntity(id: space.id, name: space.name)
-                    }
-            }
+            let filteredSpaces = spaces.filter { identifiers.contains($0.id) }
+            return await entitiesFrom(spaces: filteredSpaces)
         }
         
         func suggestedEntities() async throws -> [SpaceEntity] {
@@ -55,10 +80,7 @@ struct SpaceEntity: AppEntity {
             }
             
             let spaces = try await Networking.getUserSpaces(token: token)
-            return spaces
-                .map { space in
-                    SpaceEntity(id: space.id, name: space.name)
-                }
+            return await entitiesFrom(spaces: spaces)
         }
     }
     
@@ -82,6 +104,7 @@ extension SpaceEntity: IndexedEntity {
         
         attributes.title = name
         attributes.displayName = name
+        attributes.thumbnailURL = thumbnailURL
         
         return attributes
     }
