@@ -1,4 +1,5 @@
 import AppIntents
+import CoreSpotlight
 
 struct SpaceEntity: AppEntity {
     
@@ -9,7 +10,14 @@ struct SpaceEntity: AppEntity {
     var name: String
     
     var displayRepresentation: DisplayRepresentation {
-        DisplayRepresentation(title: "\(name)")
+        DisplayRepresentation(
+            title: "\(name)",
+            image: .init(systemName: "heart.fill")
+        )
+    }
+    
+    var webURL: URL {
+        Configuration.hostURL.appending(path: id)
     }
     
     struct SpaceEntityQuery: EntityStringQuery {
@@ -52,6 +60,30 @@ struct SpaceEntity: AppEntity {
                     SpaceEntity(id: space.id, name: space.name)
                 }
         }
+    }
+    
+}
+
+@available(iOS 18, *)
+extension SpaceEntity: URLRepresentableEntity {
+    
+    static var urlRepresentation: URLRepresentation {
+        "https://kinopio.club/\(.id)"
+    }
+    
+}
+
+
+@available(iOS 18, *)
+extension SpaceEntity: IndexedEntity {
+    
+    var attributeSet: CSSearchableItemAttributeSet {
+        let attributes = CSSearchableItemAttributeSet()
+        
+        attributes.title = name
+        attributes.displayName = name
+        
+        return attributes
     }
     
 }

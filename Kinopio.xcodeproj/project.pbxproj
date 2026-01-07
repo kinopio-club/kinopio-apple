@@ -62,6 +62,8 @@
 			membershipExceptions = (
 				AppIntents/CreateCardIntent.swift,
 				AppIntents/IntentError.swift,
+				AppIntents/OpenSpaceIntent.swift,
+				AppIntents/ShortcutsProvider.swift,
 				AppIntents/SpaceEntity.swift,
 			);
 			target = A08EE7632A07411700D7AADB /* ShareExtension */;
@@ -71,6 +73,8 @@
 			membershipExceptions = (
 				AppIntents/CreateCardIntent.swift,
 				AppIntents/IntentError.swift,
+				AppIntents/OpenSpaceIntent.swift,
+				AppIntents/ShortcutsProvider.swift,
 				AppIntents/SpaceEntity.swift,
 			);
 			target = A08A65492A2672E200186F8F /* WidgetExtension */;
