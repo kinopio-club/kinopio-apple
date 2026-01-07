@@ -6,7 +6,7 @@ struct ShortcutsProvider: AppShortcutsProvider {
         AppShortcut(
             intent: OpenSpaceIntent(),
             phrases: [
-                "Open \(\.$target) in Kinopio \(.applicationName)",
+                "Open \(\.$target) in \(.applicationName)",
             ],
             shortTitle: "Open Space",
             systemImageName: "heart.fill"
