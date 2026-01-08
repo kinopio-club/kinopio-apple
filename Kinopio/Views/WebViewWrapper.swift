@@ -73,10 +73,6 @@ struct WebViewWrapper: UIViewRepresentable {
     }
     
     func updateUIView(_ webView: WKWebView, context: Context) {
-        if webView.url?.absoluteString != url.absoluteString {
-            webView.loadURL(url)
-        }
-        
         webController.webView = webView
     }
     

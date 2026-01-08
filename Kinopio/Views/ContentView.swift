@@ -8,6 +8,7 @@ struct ContentView: View {
     @SceneStorage("backgroundColor") var backgroundColor = Color.white
     @State private var showAddToInput = false
     @State private var isManageSubscriptionsSheetVisible = false
+    @State private var id = UUID()
     
     var webController = WebViewController()
     
@@ -16,6 +17,10 @@ struct ContentView: View {
             showAddToInput = true
         } else {
             self.url = url
+            Task {
+                try await Task.sleep(for: .seconds(0.1))
+                self.id = UUID()
+            }
         }
     }
     
@@ -41,6 +46,7 @@ struct ContentView: View {
                 isManageSubscriptionsSheetVisible: $isManageSubscriptionsSheetVisible,
                 webController: webController
             )
+            .id(id)
             .ignoresSafeArea()
             .opacity(isLoading ? 0 : 1)
             .animation(.default.delay(0.5), value: isLoading)
