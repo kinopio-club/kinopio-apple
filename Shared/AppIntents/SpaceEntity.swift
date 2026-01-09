@@ -9,6 +9,8 @@ struct SpaceEntity: AppEntity {
     var id: String
     var name: String
     var thumbnailURL: URL?
+    var editedAt: Date?
+    var createdAt: Date
     
     var displayRepresentation: DisplayRepresentation {
         if let thumbnailURL {
@@ -31,7 +33,10 @@ struct SpaceEntity: AppEntity {
     
     struct SpaceEntityQuery: EntityStringQuery {
         
-        func entitiesFrom(spaces: [Space]) async -> [SpaceEntity] {
+        func entitiesFrom(
+            spaces: [Space],
+            sortedBy: ((SpaceEntity, SpaceEntity) -> Bool)? = nil
+        ) async -> [SpaceEntity] {
             await withTaskGroup { group in
                 var entities = [SpaceEntity]()
                 
@@ -40,7 +45,9 @@ struct SpaceEntity: AppEntity {
                         SpaceEntity(
                             id: space.id,
                             name: space.name,
-                            thumbnailURL: try? await ThumbnailCache.shared.imageURL(for: space)
+                            thumbnailURL: try? await ThumbnailCache.shared.imageURL(for: space),
+                            editedAt: space.editedAt,
+                            createdAt: space.createdAt
                         )
                     }
                 }
@@ -49,7 +56,13 @@ struct SpaceEntity: AppEntity {
                     entities.append(s)
                 }
                 
-                return entities.sorted { $0.name.localizedStandardCompare($1.name) == .orderedAscending }
+                if let sortedBy {
+                    return entities.sorted(by: sortedBy)
+                } else {
+                    return entities.sorted {
+                        $0.name.localizedStandardCompare($1.name) == .orderedAscending
+                    }
+                }
             }
         }
         
@@ -80,7 +93,11 @@ struct SpaceEntity: AppEntity {
             }
             
             let spaces = try await Networking.getUserSpaces(token: token)
-            return await entitiesFrom(spaces: spaces)
+            return await entitiesFrom(spaces: spaces) { a, b in
+                let aDate = a.editedAt ?? a.createdAt
+                let bDate = b.editedAt ?? b.createdAt
+                return aDate.compare(bDate) == .orderedDescending
+            }
         }
     }
     

@@ -23,7 +23,9 @@ struct KinopioApp: App {
                                 SpaceEntity(
                                     id: space.id,
                                     name: space.name,
-                                    thumbnailURL: try? await ThumbnailCache.shared.imageURL(for: space)
+                                    thumbnailURL: try? await ThumbnailCache.shared.imageURL(for: space),
+                                    editedAt: space.editedAt,
+                                    createdAt: space.createdAt
                                 )
                             )
                         }
