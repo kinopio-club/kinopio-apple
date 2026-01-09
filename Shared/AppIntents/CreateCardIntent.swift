@@ -55,8 +55,8 @@ struct CreateCardIntent: AppIntent {
         )
         
         do {
-            let card = try await Networking.createCard(token: token, card: card)
-            return .result(value: SpaceEntity(id: card.id, name: name))
+            let _ = try await Networking.createCard(token: token, card: card)
+            return .result(value: space)
         } catch Networking.APIError.unauthorized {
             throw IntentError.notAuthenticated
         }
