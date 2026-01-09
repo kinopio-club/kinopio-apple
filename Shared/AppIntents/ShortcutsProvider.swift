@@ -9,7 +9,7 @@ struct ShortcutsProvider: AppShortcutsProvider {
                 "Open \(\.$target) in \(.applicationName)",
             ],
             shortTitle: "Open Space",
-            systemImageName: "heart.fill"
+            systemImageName: "kinopio"
         )
     }
     

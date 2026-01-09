@@ -22,7 +22,6 @@ struct SpaceEntity: AppEntity {
         } else {
             DisplayRepresentation(
                 title: "\(name)",
-                image: .init(systemName: "heart.fill")
             )
         }
     }
