@@ -44,7 +44,7 @@ struct SpaceEntity: AppEntity {
                         SpaceEntity(
                             id: space.id,
                             name: space.name,
-                            thumbnailURL: try? await ThumbnailCache.shared.imageURL(for: space),
+                            thumbnailURL: await ThumbnailCache.shared.cachedImageURL(for: space),
                             editedAt: space.editedAt,
                             createdAt: space.createdAt
                         )
