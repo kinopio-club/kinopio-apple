@@ -8,17 +8,18 @@ struct KinopioApp: App {
     @Environment(\.scenePhase) private var scenePhase
     
     func indexSpaces() async {
-        let date = Date().timeIntervalSinceReferenceDate
-        
         guard let token = Storage.getToken(), #available(iOS 18.0, *) else {
             return
         }
+        let index = CSSearchableIndex.default()
+        
         do {
             // MARK: - Index Spaces
             let spaces = try await Networking.getUserSpaces(token: token)
+            let mostRecentSpaces = spaces.sortedByLastEditedAt.prefix(100)
             var spaceEntities = [SpaceEntity]()
             
-            for space in spaces {
+            for space in mostRecentSpaces {
                 spaceEntities.append(
                     SpaceEntity(
                         id: space.id,
@@ -29,11 +30,11 @@ struct KinopioApp: App {
                     )
                 )
             }
-            try await CSSearchableIndex.default().indexAppEntities(spaceEntities)
+            try await index.indexAppEntities(spaceEntities)
             
             // MARK: - Warmup Thumbnail Caches
             await withTaskGroup { group in
-                for space in spaces.prefix(30) {
+                for space in mostRecentSpaces {
                     group.addTask {
                         let _ = try? await ThumbnailCache.shared.imageURL(for: space)
                     }
