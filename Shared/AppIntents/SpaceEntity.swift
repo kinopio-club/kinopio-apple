@@ -122,6 +122,7 @@ extension SpaceEntity: IndexedEntity {
         attributes.title = name
         attributes.displayName = name
         attributes.thumbnailURL = thumbnailURL
+        attributes.contentDescription = "Kinopio Space"
         
         return attributes
     }
