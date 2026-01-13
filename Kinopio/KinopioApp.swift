@@ -16,7 +16,7 @@ struct KinopioApp: App {
         do {
             // MARK: - Index Spaces
             let spaces = try await Networking.getUserSpaces(token: token)
-            let mostRecentSpaces = spaces.sortedByLastEditedAt.prefix(100)
+            let mostRecentSpaces = spaces.sortedByLastEditedAt
             var spaceEntities = [SpaceEntity]()
             
             for space in mostRecentSpaces {

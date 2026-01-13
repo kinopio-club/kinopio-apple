@@ -92,8 +92,7 @@ struct SpaceEntity: AppEntity {
             }
             
             let spaces = try await Networking.getUserSpaces(token: token)
-            let mostRecentSpaces = spaces.sortedByLastEditedAt.prefix(100)
-            return await entitiesFrom(spaces: Array(mostRecentSpaces)) { a, b in
+            return await entitiesFrom(spaces: spaces) { a, b in
                 let aDate = a.editedAt ?? a.createdAt
                 let bDate = b.editedAt ?? b.createdAt
                 return aDate.compare(bDate) == .orderedDescending
