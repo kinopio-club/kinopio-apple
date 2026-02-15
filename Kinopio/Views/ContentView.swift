@@ -10,17 +10,21 @@ struct ContentView: View {
     @State private var isManageSubscriptionsSheetVisible = false
     @State private var id = UUID()
     
+    @Environment(\.openURL) private var openURL
+    
     var webController = WebViewController()
     
     private func onOpenURL(_ url: URL) {
-        if url.path == ("/add") {
+        if url.path == "/add" {
             showAddToInput = true
-        } else {
+        } else if url.isKinopio {
             self.url = url
             Task {
                 try await Task.sleep(for: .seconds(0.1))
                 self.id = UUID()
             }
+        } else {
+            openURL(url)
         }
     }
     

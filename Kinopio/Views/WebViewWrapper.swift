@@ -59,7 +59,7 @@ struct WebViewWrapper: UIViewRepresentable {
         }
         
         context.coordinator.urlChangedObservation = webView.observe(\.url, options: .new) { view, change in
-            if let url = view.url {
+            if let url = view.url, url.isKinopio {
                 self.url = url
             }
         }
@@ -122,7 +122,11 @@ extension WebViewWrapper.Coordinator: WKNavigationDelegate {
         }
         else if let url = navigationAction.request.url,
                 navigationAction.navigationType == .linkActivated {
-            webView.loadURL(url)
+            if url.isKinopio {
+                webView.loadURL(url)
+            } else {
+                await UIApplication.shared.open(url)
+            }
             return .cancel
         }
         // iframes
@@ -154,7 +158,7 @@ extension WebViewWrapper.Coordinator: WKNavigationDelegate {
     }
     
     func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
-        if let url = webView.url {
+        if let url = webView.url, url.isKinopio {
             self.url = url
         }
         isLoading = true
@@ -180,6 +184,10 @@ navigator.shouldAddSafeAreaPaddingBottom = \(shouldAddSafeAreaPaddingBottom)
 
 extension WebViewWrapper.Coordinator: WKUIDelegate {
     func webView(_ webView: WKWebView, createWebViewWith configuration: WKWebViewConfiguration, for navigationAction: WKNavigationAction, windowFeatures: WKWindowFeatures) -> WKWebView? {
+        if let url = navigationAction.request.url, !url.isKinopio {
+            UIApplication.shared.open(url)
+            return nil
+        }
         if let frame = navigationAction.targetFrame,
            frame.isMainFrame {
             return nil
