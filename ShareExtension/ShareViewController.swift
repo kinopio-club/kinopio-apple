@@ -61,6 +61,14 @@ class ShareViewController: UIViewController {
             
             let script = WKUserScript(source: source, injectionTime: .atDocumentStart, forMainFrameOnly: true)
             contentController.addUserScript(script)
+            // MARK: Inject Shared Text
+            contentController.addUserScript(
+                WKUserScript(
+                    source: "window.sharedCardName = '\(escapeForJavaScript(text))';",
+                    injectionTime: .atDocumentStart,
+                    forMainFrameOnly: true
+                )
+            )
             
             // Custom JS Scripts
             guard let scriptPathStart = Bundle.main.path(forResource: "web-start", ofType: "js"),
@@ -150,7 +158,7 @@ extension ShareViewController: WKNavigationDelegate {
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         
-        let escapedText = text.replacingOccurrences(of: "'", with: "\'")
+        let escapedText = escapeForJavaScript(text)
         let script = "window.postMessage('\(escapedText)', '*');navigator.isSecureAppContext = true;"
         
         webView.evaluateJavaScript(script)
@@ -175,6 +183,13 @@ extension ShareViewController: WKNavigationDelegate {
             responder = responder?.next
         }
         return false
+    }
+    
+    private func escapeForJavaScript(_ text: String) -> String {
+        text.replacingOccurrences(of: "\\", with: "\\\\")
+            .replacingOccurrences(of: "'", with: "\\'")
+            .replacingOccurrences(of: "\n", with: "\\n")
+            .replacingOccurrences(of: "\r", with: "\\r")
     }
     
 }
