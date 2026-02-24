@@ -52,15 +52,18 @@ class ShareViewController: UIViewController {
             
             let contentController = WKUserContentController()
             contentController.add(self, name: "onAdded")
-            var source = "localStorage.clear()"
-            
-            // MARK: Inject API Key
+            // MARK: Inject API Key into IndexedDB (keyval-store/keyval used by idb-keyval)
+            let authSource: String
             if let token = Storage.getToken() {
-                source = "localStorage.setItem('user', JSON.stringify({\"apiKey\": \"\(token)\"}))"
+                let escapedToken = escapeForJavaScript(token)
+                authSource = idbScript(action: "put({apiKey:'\(escapedToken)'},'user')")
+            } else {
+                authSource = idbScript(action: "delete('user')")
             }
+            contentController.addUserScript(
+                WKUserScript(source: authSource, injectionTime: .atDocumentStart, forMainFrameOnly: true)
+            )
             
-            let script = WKUserScript(source: source, injectionTime: .atDocumentStart, forMainFrameOnly: true)
-            contentController.addUserScript(script)
             // MARK: Inject Shared Text
             contentController.addUserScript(
                 WKUserScript(
@@ -190,6 +193,21 @@ extension ShareViewController: WKNavigationDelegate {
             .replacingOccurrences(of: "'", with: "\\'")
             .replacingOccurrences(of: "\n", with: "\\n")
             .replacingOccurrences(of: "\r", with: "\\r")
+    }
+    
+    /// Generates JS that opens the idb-keyval IndexedDB store and runs an action on it.
+    private func idbScript(action: String) -> String {
+        """
+        (function(){
+          var r=indexedDB.open('keyval-store');
+          r.onupgradeneeded=function(e){e.target.result.createObjectStore('keyval')};
+          r.onsuccess=function(e){
+            var d=e.target.result;
+            if(!d.objectStoreNames.contains('keyval'))return;
+            d.transaction('keyval','readwrite').objectStore('keyval').\(action);
+          };
+        })();
+        """
     }
     
 }
