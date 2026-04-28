@@ -8,7 +8,19 @@ import WebKit
 class ShareViewController: UIViewController {
     
     var text = ""
-    
+
+    // iOS 26 forces the share extension's sheet chrome to opaque white (FB20934974).
+    // Walking up the host view chain and clearing each backgroundColor restores the
+    // transparent presentation that lets our bottom card show as a card.
+    override func viewIsAppearing(_ animated: Bool) {
+        super.viewIsAppearing(animated)
+        var ancestor: UIView? = self.view
+        while ancestor != nil {
+            ancestor?.backgroundColor = .clear
+            ancestor = ancestor?.superview
+        }
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -116,7 +128,7 @@ class ShareViewController: UIViewController {
             
             view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
             view.translatesAutoresizingMaskIntoConstraints = false
-            view.backgroundColor = .black.withAlphaComponent(0.01)
+            view.backgroundColor = .clear
             
             view.bottomAnchor.constraint(equalTo: view.superview!.bottomAnchor).isActive = true
             view.topAnchor.constraint(equalTo: view.superview!.topAnchor).isActive = true
@@ -125,7 +137,13 @@ class ShareViewController: UIViewController {
                 view.leftAnchor.constraint(equalTo: view.superview!.leftAnchor).isActive = true
                 view.rightAnchor.constraint(equalTo: view.superview!.rightAnchor).isActive = true
             }
-            view.keyboardLayoutGuide.topAnchor.constraint(equalToSystemSpacingBelow: webView.bottomAnchor, multiplier: 1).isActive = true
+            // Make the keyboard layout guide track the screen bottom (not the safe area)
+            // so the webView extends through the home indicator area on iOS 26+ and covers
+            // any leftover sheet chrome. The guide still tracks the keyboard top when shown.
+            if #available(iOS 17.0, *) {
+                view.keyboardLayoutGuide.usesBottomSafeArea = false
+            }
+            webView.bottomAnchor.constraint(equalTo: view.keyboardLayoutGuide.topAnchor).isActive = true
             
             //MARK: CloseButton
             let closeButton = CloseButton(action: {
